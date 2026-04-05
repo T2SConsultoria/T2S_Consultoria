@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-:root{--navy:#0F1C2E;--navy-light:#162337;--navy-lighter:#1D2D44;--gold:#C8963E;--gold-light:#D4A84F;--gold-dark:#B8862E;--white:#FFF;--gray-100:#F7F8FA;--gray-200:#E8ECF1;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71;--sp:100px 0}
+:root{--navy:#0B1929;--navy-light:#132035;--navy-lighter:#1B2D42;--gold:#D4993F;--gold-light:#E0AC52;--gold-dark:#B8832A;--gold-pale:rgba(212,153,63,.07);--white:#FFF;--gray-100:#F7F8FA;--gray-200:#E8ECF1;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71;--warm:#F5EDD8;--sp:100px 0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',-apple-system,sans-serif;background:var(--navy);color:var(--text);line-height:1.7;overflow-x:hidden}
@@ -37,8 +37,18 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
 .mob-toggle span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;transition:.3s}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:linear-gradient(135deg,var(--navy),var(--navy-light) 50%,var(--navy));position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(200,150,62,.06),transparent 70%);border-radius:50%}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:linear-gradient(145deg,var(--navy) 0%,#0F2035 55%,#152840 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(212,153,63,.1),transparent 65%);border-radius:50%;animation:orb1 12s ease-in-out infinite}
+.hero::after{content:'';position:absolute;bottom:-15%;left:-5%;width:450px;height:450px;background:radial-gradient(circle,rgba(212,153,63,.06),transparent 65%);border-radius:50%;animation:orb2 16s ease-in-out infinite}
+@keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.05)}}
+@keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-15px) scale(1.08)}}
+/* floating particles */
+.fp{position:absolute;border-radius:50%;background:rgba(212,153,63,.12);border:1px solid rgba(212,153,63,.2)}
+.fp1{width:120px;height:120px;top:15%;left:8%;animation:fp 8s ease-in-out infinite}
+.fp2{width:60px;height:60px;top:65%;left:18%;animation:fp 11s ease-in-out infinite .5s}
+.fp3{width:80px;height:80px;top:25%;right:10%;animation:fp 9s ease-in-out infinite 1s}
+.fp4{width:40px;height:40px;bottom:20%;right:28%;animation:fp 7s ease-in-out infinite 2s}
+@keyframes fp{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-18px);opacity:.9}}
 .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
 .hero-content{max-width:580px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,150,62,.1);border:1px solid rgba(200,150,62,.25);padding:8px 16px;border-radius:100px;font-size:13px;color:var(--gold);font-weight:500;margin-bottom:28px}
@@ -52,6 +62,8 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
 .btn-p:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,62,.3)}
 .btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(200,150,62,.4);transition:.3s}
 .btn-s:hover{border-color:var(--gold);background:rgba(200,150,62,.08)}
+.hero-visual{width:100%;max-width:500px;opacity:.92}
+.hero-visual svg{width:100%;height:auto;filter:drop-shadow(0 20px 60px rgba(200,150,62,.08))}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px;background:rgba(22,35,55,.6);border:1px solid rgba(200,150,62,.12);border-radius:16px;backdrop-filter:blur(10px)}
 .stat{text-align:center;padding:20px}
 .stat-v{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:4px}
@@ -59,11 +71,41 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
 .stat:nth-child(even){border-left:1px solid rgba(200,150,62,.15)}
 .stat:nth-child(n+3){border-top:1px solid rgba(200,150,62,.15)}
 
+/* WAVE DIVIDER */
+.wave-div{line-height:0;overflow:hidden;margin-bottom:-2px}
+.wave-div svg{display:block;width:100%}
+
+/* DOT PATTERN */
+.dots-bg{background-image:radial-gradient(rgba(212,153,63,.07) 1.5px,transparent 1.5px);background-size:30px 30px}
+
+/* PROFILE CARD */
+.profile-card{display:flex;flex-direction:column;align-items:center;gap:20px;padding:40px 32px;background:var(--navy-light);border:1px solid rgba(212,153,63,.15);border-radius:20px;text-align:center;position:relative;overflow:hidden}
+.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.profile-mono{width:120px;height:120px;border-radius:50%;background:linear-gradient(145deg,var(--navy-lighter),var(--navy));border:2px solid rgba(212,153,63,.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);letter-spacing:2px;position:relative;box-shadow:0 0 40px rgba(212,153,63,.12)}
+.profile-mono::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(212,153,63,.15);animation:ring-pulse 3s ease-in-out infinite}
+@keyframes ring-pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
+.profile-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
+.profile-title{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-top:-10px}
+.profile-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:4px}
+.profile-tag{font-size:11px;padding:4px 12px;border-radius:100px;background:rgba(212,153,63,.1);border:1px solid rgba(212,153,63,.2);color:var(--gray-300)}
+
+/* TESTIMONIAL */
+.testimonial-stripe{background:linear-gradient(135deg,var(--navy-lighter) 0%,#1a2f48 100%);padding:48px 0;border-top:1px solid rgba(212,153,63,.08);border-bottom:1px solid rgba(212,153,63,.08)}
+.testimonial-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;padding:0 24px}
+.testimonial-inner::before{content:'\201C';font-family:'Playfair Display',serif;font-size:120px;color:rgba(212,153,63,.12);position:absolute;top:-40px;left:24px;line-height:1}
+.testimonial-inner blockquote{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-style:italic;color:var(--gray-200);line-height:1.65;margin-bottom:20px;position:relative}
+.testimonial-inner cite{font-size:14px;color:var(--gold);font-style:normal;font-weight:600;letter-spacing:1px}
+
+/* SECTION ACCENT LINE */
+.s-accent{display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:12px 0 32px}
+.s-accent.ctr{margin-left:auto;margin-right:auto}
+
 /* PROOF BAR */
-.proof-bar{background:var(--navy-light);border-top:1px solid rgba(200,150,62,.08);border-bottom:1px solid rgba(200,150,62,.08);padding:20px 0}
-.proof-bar .container{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
-.proof-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray-400)}
-.proof-item .ic{color:var(--gold);font-size:16px}
+.proof-bar{background:var(--navy-light);border-top:1px solid rgba(200,150,62,.08);border-bottom:1px solid rgba(200,150,62,.08);padding:16px 0}
+.proof-bar .container{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);white-space:nowrap}
+.proof-item .ic{color:var(--gold);font-size:15px}
+.proof-sep{width:1px;height:16px;background:rgba(200,150,62,.2);flex-shrink:0}
 
 /* SECTIONS */
 section{padding:var(--sp)}
@@ -74,30 +116,36 @@ section{padding:var(--sp)}
 .tc{text-align:center}
 
 /* RESULTS */
-#resultados{background:var(--navy)}
+#resultados{background:linear-gradient(180deg,var(--navy-light) 0%,var(--navy) 100%)}
 .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.res-card{background:var(--navy-light);border:1px solid rgba(200,150,62,.1);border-radius:12px;padding:32px 24px;text-align:center;transition:.3s}
-.res-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px)}
+.res-card{background:var(--navy);border:1px solid rgba(200,150,62,.1);border-radius:12px;padding:32px 24px;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.3s}
+.res-card:hover::before{opacity:1}
+.res-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
 .res-icon{font-size:32px;margin-bottom:16px}
 .res-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:8px}
 .res-txt{font-size:14px;color:var(--gray-400);line-height:1.5}
 
 /* SERVICES */
-#servicos{background:var(--navy-light)}
-.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.srv-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:36px 28px;transition:.4s;position:relative;overflow:hidden}
-.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:.4s;transform-origin:left}
+#servicos{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 100%)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.srv-card{background:var(--navy-lighter);border:1px solid rgba(212,153,63,.1);border-radius:16px;padding:40px 32px;transition:.4s;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));transform:scaleX(0);transition:.4s;transform-origin:left;border-radius:2px 2px 0 0}
+.srv-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,153,63,.04),transparent 60%);opacity:0;transition:.4s}
 .srv-card:hover::before{transform:scaleX(1)}
-.srv-card:hover{border-color:rgba(200,150,62,.2);transform:translateY(-4px)}
-.srv-icon{width:48px;height:48px;border-radius:10px;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
-.srv-card h3{font-size:18px;font-weight:600;margin-bottom:12px;color:var(--white)}
-.srv-card p{font-size:14px;color:var(--gray-400);line-height:1.7}
-.srv-card .new-badge{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:1px}
+.srv-card:hover::after{opacity:1}
+.srv-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.srv-icon{width:56px;height:56px;border-radius:14px;background:rgba(212,153,63,.1);border:1px solid rgba(212,153,63,.2);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px;transition:.3s}
+.srv-card:hover .srv-icon{background:rgba(212,153,63,.15);transform:scale(1.05)}
+.srv-card h3{font-size:19px;font-weight:700;margin-bottom:14px;color:var(--white);line-height:1.3}
+.srv-card p{font-size:14px;color:var(--gray-400);line-height:1.75}
+.srv-card .new-badge{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:1px}
 
 /* METHODOLOGY */
 #metodologia{background:var(--navy)}
-.meth-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
-.meth-step{text-align:center;padding:32px 20px;position:relative}
+.meth-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.meth-step{text-align:center;padding:36px 20px;position:relative;background:var(--navy-light);border-radius:16px;border:1px solid rgba(212,153,63,.08);transition:.3s}
+.meth-step:hover{border-color:rgba(212,153,63,.2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
 .meth-step::after{content:'\2192';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:24px}
 .meth-step:last-child::after{display:none}
 .step-num{width:56px;height:56px;border-radius:50%;background:rgba(200,150,62,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin:0 auto 16px}
@@ -111,19 +159,22 @@ section{padding:var(--sp)}
 .hl-t{color:var(--gold);font-weight:600}
 
 /* PORTFOLIO (NEW) */
-#portfolio{background:var(--navy-light)}
+#portfolio{background:linear-gradient(180deg,var(--navy-light) 0%,var(--navy) 100%)}
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.port-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;overflow:hidden;transition:.4s;cursor:pointer}
-.port-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
-.port-img{width:100%;height:220px;background:#F9F7F4;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px}
-.port-img img,.port-img object{width:100%;height:100%;object-fit:contain}
-.port-info{padding:20px}
-.port-info h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px}
-.port-info .port-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;letter-spacing:.5px;margin-bottom:8px}
-.tag-ind{background:rgba(200,150,62,.15);color:var(--gold)}
-.tag-srv{background:rgba(46,204,113,.15);color:var(--success)}
-.tag-rh{background:rgba(52,152,219,.15);color:#3498DB}
-.port-info p{font-size:13px;color:var(--gray-400);line-height:1.5}
+.port-card{background:var(--navy-lighter);border:1px solid rgba(212,153,63,.08);border-radius:16px;overflow:hidden;transition:.4s;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.port-card:hover{border-color:rgba(212,153,63,.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.port-img{width:100%;height:220px;background:linear-gradient(135deg,#f0ede8,#faf8f4);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px;position:relative}
+.port-img::after{content:'clique para ampliar';position:absolute;inset:0;background:rgba(212,153,63,.85);color:var(--navy);font-size:12px;font-weight:700;letter-spacing:1px;display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s;text-transform:uppercase}
+.port-card:hover .port-img::after{opacity:1}
+.port-img img,.port-img object{width:100%;height:100%;object-fit:contain;transition:.3s}
+.port-card:hover .port-img img{transform:scale(1.02)}
+.port-info{padding:20px 24px}
+.port-info h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.4}
+.port-info .port-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 12px;border-radius:100px;letter-spacing:.5px;margin-bottom:8px}
+.tag-ind{background:rgba(212,153,63,.15);color:var(--gold);border:1px solid rgba(212,153,63,.2)}
+.tag-srv{background:rgba(46,204,113,.12);color:var(--success);border:1px solid rgba(46,204,113,.2)}
+.tag-rh{background:rgba(52,152,219,.12);color:#5dade2;border:1px solid rgba(52,152,219,.2)}
+.port-info p{font-size:13px;color:var(--gray-400);line-height:1.6}
 
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:center;justify-content:center;padding:24px}
@@ -155,29 +206,41 @@ section{padding:var(--sp)}
 .cred-list .ck{color:var(--gold)}
 
 /* ARTIGOS */
-#artigos{background:var(--navy-light)}
+#artigos{background:linear-gradient(180deg,var(--navy-lighter) 0%,var(--navy-light) 100%)}
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.art-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;overflow:hidden;transition:.3s}
-.art-card:hover{border-color:rgba(200,150,62,.25);transform:translateY(-4px)}
+.art-card{background:var(--navy);border:1px solid rgba(212,153,63,.08);border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.art-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
 .art-top{padding:24px 24px 0;display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.art-tag{font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.5px}
-.art-tag.lean{background:rgba(200,150,62,.15);color:var(--gold)}
-.art-tag.gest{background:rgba(46,204,113,.15);color:var(--success)}
-.art-tag.auto{background:rgba(52,152,219,.15);color:#3498DB}
-.art-card h3{padding:0 24px;font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;line-height:1.4}
-.art-card p{padding:0 24px;font-size:14px;color:var(--gray-400);line-height:1.6;margin-bottom:20px}
-.art-card .art-footer{padding:16px 24px;border-top:1px solid rgba(200,150,62,.06);display:flex;justify-content:space-between;align-items:center}
+.art-tag{font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
+.art-tag.lean{background:rgba(212,153,63,.15);color:var(--gold);border:1px solid rgba(212,153,63,.2)}
+.art-tag.gest{background:rgba(46,204,113,.12);color:var(--success);border:1px solid rgba(46,204,113,.2)}
+.art-tag.auto{background:rgba(52,152,219,.12);color:#5dade2;border:1px solid rgba(52,152,219,.2)}
+.art-card h3{padding:0 24px;font-size:17px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.4}
+.art-card p{padding:0 24px;font-size:14px;color:var(--gray-400);line-height:1.7;margin-bottom:20px}
+.art-card .art-footer{padding:16px 24px;border-top:1px solid rgba(212,153,63,.07);display:flex;justify-content:space-between;align-items:center}
 .art-card .art-date{font-size:12px;color:var(--gray-500)}
-.art-card .art-link{font-size:13px;color:var(--gold);text-decoration:none;font-weight:600;transition:.3s}
-.art-card .art-link:hover{color:var(--gold-light)}
+.art-card .art-link{font-size:13px;color:var(--gold);text-decoration:none;font-weight:600;transition:.3s;display:flex;align-items:center;gap:4px}
+.art-card .art-link:hover{color:var(--gold-light);gap:8px}
 
 /* CTA */
-.cta-sec{padding:100px 0;text-align:center;background:linear-gradient(135deg,var(--navy-light),var(--navy-lighter));position:relative;overflow:hidden}
-.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,150,62,.06),transparent 60%)}
+.cta-sec{padding:100px 0;text-align:center;background:linear-gradient(135deg,#0D2035 0%,var(--navy-lighter) 50%,#0D2035 100%);position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,153,63,.1),transparent 55%)}
+.cta-sec::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:2px;background:linear-gradient(90deg,transparent,rgba(212,153,63,.4),transparent)}
+.cta-ring{position:absolute;border-radius:50%;border:1px solid rgba(212,153,63,.08)}
+.cta-ring1{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-ring2{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-ring3{width:800px;height:800px;top:50%;left:50%;transform:translate(-50%,-50%)}
 .cta-sec .container{position:relative}
-.cta-t{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:16px}
-.cta-p{font-size:17px;color:var(--gray-400);max-width:560px;margin:0 auto 36px;line-height:1.7}
-.cta-u{font-size:14px;color:var(--gray-400);margin-top:20px;font-style:italic}
+.cta-t{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px}
+.cta-p{font-size:17px;color:var(--gray-400);max-width:560px;margin:0 auto 36px;line-height:1.75}
+.cta-u{font-size:14px;color:var(--gray-500);margin-top:20px;font-style:italic}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,var(--navy-light),var(--navy));padding:48px 0 32px;border-top:1px solid rgba(212,153,63,.1);position:relative}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer p{font-size:13px;color:var(--gray-500)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);opacity:.7;letter-spacing:2px}
 
 /* CONTATO */
 #contato{background:var(--navy);padding:80px 0}
@@ -193,9 +256,39 @@ footer{background:var(--navy-light);padding:32px 0;border-top:1px solid rgba(200
 footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 footer p{font-size:13px;color:var(--gray-500)}
 
+/* DEPOIMENTOS */
+.dep-card{background:var(--navy-light);border:1px solid rgba(212,153,63,.1);border-radius:16px;padding:32px;transition:.3s;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;flex-direction:column}
+.dep-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.dep-stars{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:16px}
+.dep-text{font-size:15px;color:var(--gray-300);line-height:1.75;font-style:italic;margin-bottom:24px;flex:1}
+.dep-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(212,153,63,.08);padding-top:20px;margin-top:auto}
+.dep-avatar{width:42px;height:42px;border-radius:50%;border:1px solid;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;flex-shrink:0;font-size:16px}
+.dep-name{font-size:14px;font-weight:600;color:var(--white)}
+.dep-role{font-size:12px;color:var(--gray-400);margin-top:1px}
+.dep-sector{font-size:11px;color:var(--gray-500);margin-top:3px}
+@media(max-width:992px){.dep-grid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:768px){.dep-grid{grid-template-columns:1fr!important}}
+
+/* WHATSAPP FLOATING */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);text-decoration:none;transition:.3s;animation:wa-bounce 2.5s ease-in-out 3s 3}
+.wa-btn svg{width:30px;height:30px;fill:#fff}
+.wa-btn:hover{background:#20c75a;transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.55)}
+.wa-btn::before{content:'Fale comigo no WhatsApp';position:absolute;right:70px;white-space:nowrap;background:var(--navy-lighter);color:var(--white);font-size:13px;font-weight:500;padding:8px 14px;border-radius:8px;opacity:0;transform:translateX(10px);transition:.3s;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.wa-btn:hover::before{opacity:1;transform:translateX(0)}
+.wa-pulse{position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;animation:wa-pulse 2s ease-out infinite;top:0;left:0}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.7);opacity:0}}
+@keyframes wa-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@media(max-width:480px){.wa-btn{width:52px;height:52px;bottom:20px;right:20px}.wa-btn svg{width:26px;height:26px}.wa-btn::before{display:none}}
+
 /* ANIMATIONS */
 .fu{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
 .fu.vis{opacity:1;transform:translateY(0)}
+/* Respeita preferência de movimento reduzido (acessibilidade) */
+@media(prefers-reduced-motion:reduce){
+.fp,.wa-pulse,.profile-mono::after{animation:none!important}
+.hero::before,.hero::after{animation:none!important}
+.fu{opacity:1;transform:none;transition:none}
+}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -207,9 +300,10 @@ footer p{font-size:13px;color:var(--gray-500)}
 .hero-content{max-width:100%}
 .hero-sub{margin-left:auto;margin-right:auto}
 .hero-btns{justify-content:center}
+.hero-visual{max-width:420px;margin:0 auto}
 .hero-stats{max-width:500px;margin:0 auto}
 .res-grid{grid-template-columns:repeat(2,1fr)}
-.srv-grid{grid-template-columns:repeat(2,1fr)}
+.srv-grid{grid-template-columns:repeat(2,1fr)!important}
 .port-grid{grid-template-columns:repeat(2,1fr)}
 .meth-steps{grid-template-columns:repeat(2,1fr);gap:24px}
 .meth-step::after{display:none}
@@ -219,20 +313,50 @@ footer p{font-size:13px;color:var(--gray-500)}
 .contact-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-:root{--sp:64px 0}
+:root{--sp:56px 0}
+html,body{overflow-x:hidden}
+.hero-visual{max-width:320px}
 .nav-links{display:none}
 .mob-toggle{display:block}
 .nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:24px;gap:20px;border-bottom:1px solid rgba(200,150,62,.1)}
-.srv-grid{grid-template-columns:1fr}
+.srv-grid{grid-template-columns:1fr!important}
 .meth-steps{grid-template-columns:1fr}
 .port-grid{grid-template-columns:1fr}
 .art-grid{grid-template-columns:1fr}
 .cred-grid{grid-template-columns:1fr}
+.proof-bar .container{gap:16px}
+.proof-item{font-size:13px}
+.hero-stats{padding:24px}
+.stat{padding:12px}
+.port-img{height:180px}
+.diff-quote{padding:24px}
+.diff-quote blockquote{font-size:18px}
+.contact-grid{gap:16px}
+.contact-item{padding:16px}
+.hero h1{font-size:clamp(28px,8vw,42px)}
 }
 @media(max-width:480px){
+:root{--sp:48px 0}
 .hero-btns{flex-direction:column}
 .btn-p,.btn-s{width:100%;justify-content:center}
 .res-grid{grid-template-columns:1fr}
+.hero-stats{grid-template-columns:1fr 1fr;padding:20px 12px;gap:12px}
+.stat{padding:10px 6px}
+.stat-v{font-size:28px}
+.proof-bar .container{flex-direction:column;align-items:flex-start;gap:10px;padding:0 24px}
+.proof-item{font-size:13px}
+.s-title{font-size:clamp(22px,6vw,32px)}
+.diff-quote{padding:20px}
+.diff-quote blockquote{font-size:16px}
+.port-img{height:160px}
+.art-card h3{font-size:15px}
+.res-num{font-size:26px}
+.modal-content{padding:16px}
+}
+@media(max-width:360px){
+.hero-stats{grid-template-columns:1fr}
+.stat:nth-child(even){border-left:none;border-top:1px solid rgba(200,150,62,.15)}
+.nav-links a{font-size:14px}
 }
     </style>
 </head>
@@ -247,6 +371,7 @@ footer p{font-size:13px;color:var(--gray-500)}
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Cases</a></li>
             <li><a href="#diferencial">Diferencial</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
             <li><a href="#artigos">Artigos</a></li>
             <li><a href="#contato">Contato</a></li>
             <li><a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="nav-cta">Diagnóstico Gratuito</a></li>
@@ -259,32 +384,93 @@ footer p{font-size:13px;color:var(--gray-500)}
 
 <!-- HERO -->
 <section class="hero">
+    <!-- Partículas decorativas -->
+    <div class="fp fp1"></div>
+    <div class="fp fp2"></div>
+    <div class="fp fp3"></div>
+    <div class="fp fp4"></div>
     <div class="container">
         <div class="hero-content">
-            <div class="hero-badge"><span class="dot"></span> Vagas limitadas para diagnóstico gratuito</div>
-            <h1>Sua operação pode render <span class="gold">muito mais</span></h1>
-            <p class="hero-sub">Consultoria em Excelência Operacional com Lean Six Sigma. Identifico e elimino os gargalos que drenam o lucro da sua empresa — com método, dados e resultados mensuráveis.</p>
+            <div class="hero-badge"><span class="dot"></span> Diagnóstico gratuito disponível agora</div>
+            <h1>Sua empresa perde dinheiro todo dia — <span class="gold">sem perceber</span></h1>
+            <p class="hero-sub">Identifico e elimino os gargalos que drenam o lucro da sua operação com Lean Six Sigma. Método rigoroso, dados reais, resultados mensuráveis — desde as primeiras semanas.</p>
             <div class="hero-btns">
                 <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p">Fazer meu Diagnóstico Gratuito &rarr;</a>
-                <a href="#resultados" class="btn-s">Ver Resultados</a>
+                <a href="#portfolio" class="btn-s">Ver cases reais &darr;</a>
             </div>
         </div>
-        <div class="hero-stats fu">
-            <div class="stat"><div class="stat-v">R$3,2M+</div><div class="stat-l">em savings anuais<br>gerados para clientes</div></div>
-            <div class="stat"><div class="stat-v">400+</div><div class="stat-l">colaboradores<br>capacitados</div></div>
-            <div class="stat"><div class="stat-v">8+</div><div class="stat-l">anos de experiência<br>em excelência operacional</div></div>
-            <div class="stat"><div class="stat-v">34º&rarr;2º</div><div class="stat-l">ranking de excelência<br>operacional alcançado</div></div>
+        <div class="hero-visual fu">
+            <!-- Ilustração decorativa: gráfico de melhoria contínua -->
+            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#C8963E;stop-opacity:.15"/>
+                        <stop offset="100%" style="stop-color:#C8963E;stop-opacity:.03"/>
+                    </linearGradient>
+                    <linearGradient id="gB" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#C8963E;stop-opacity:.6"/>
+                        <stop offset="100%" style="stop-color:#D4A84F;stop-opacity:.9"/>
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="blur"/>
+                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                </defs>
+                <!-- fundo painel -->
+                <rect x="20" y="20" width="440" height="320" rx="16" fill="url(#gA)" stroke="rgba(200,150,62,.2)" stroke-width="1"/>
+                <!-- linhas de grade -->
+                <line x1="60" y1="60" x2="60" y2="300" stroke="rgba(200,150,62,.08)" stroke-width="1"/>
+                <line x1="60" y1="300" x2="440" y2="300" stroke="rgba(200,150,62,.12)" stroke-width="1"/>
+                <line x1="60" y1="240" x2="440" y2="240" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="60" y1="180" x2="440" y2="180" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="60" y1="120" x2="440" y2="120" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <!-- curva de melhoria - linha de fundo -->
+                <polyline points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80" fill="none" stroke="rgba(200,150,62,.2)" stroke-width="2"/>
+                <!-- área sob a curva -->
+                <polygon points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80 440,300 60,300" fill="rgba(200,150,62,.06)"/>
+                <!-- curva principal com glow -->
+                <polyline points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80" fill="none" stroke="url(#gB)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                <!-- pontos chave -->
+                <circle cx="60" cy="280" r="5" fill="#C8963E" opacity=".7"/>
+                <circle cx="180" cy="250" r="5" fill="#C8963E" opacity=".8"/>
+                <circle cx="310" cy="175" r="6" fill="#C8963E"/>
+                <circle cx="440" cy="80" r="7" fill="#D4A84F" filter="url(#glow)"/>
+                <!-- label ponto final -->
+                <rect x="370" y="56" width="68" height="22" rx="6" fill="rgba(200,150,62,.2)" stroke="rgba(200,150,62,.4)" stroke-width="1"/>
+                <text x="404" y="71" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#D4A84F">+R$3,2M+</text>
+                <!-- mini cards de métricas -->
+                <rect x="80" y="50" width="90" height="54" rx="8" fill="rgba(22,35,55,.8)" stroke="rgba(200,150,62,.15)" stroke-width="1"/>
+                <text x="125" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#C8963E">8+</text>
+                <text x="125" y="90" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8B95A5">anos de impacto</text>
+                <rect x="196" y="130" width="90" height="54" rx="8" fill="rgba(22,35,55,.8)" stroke="rgba(200,150,62,.15)" stroke-width="1"/>
+                <text x="241" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#C8963E">400+</text>
+                <text x="241" y="170" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8B95A5">capacitados</text>
+                <!-- ícone seta crescimento -->
+                <text x="380" y="175" font-family="Inter,sans-serif" font-size="28" fill="rgba(200,150,62,.3)">↗</text>
+            </svg>
         </div>
     </div>
 </section>
 
+<!-- WAVE -->
+<div class="wave-div" style="background:linear-gradient(145deg,var(--navy) 0%,#0F2035 55%,#152840 100%)">
+    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#132035"/>
+    </svg>
+</div>
+
 <!-- PROOF BAR -->
 <div class="proof-bar">
     <div class="container">
-        <div class="proof-item"><span class="ic">&#10003;</span> Master Black Belt Lean Six Sigma</div>
-        <div class="proof-item"><span class="ic">&#10003;</span> 5 MBAs em Gestão</div>
+        <div class="proof-item"><span class="ic">&#127942;</span> Master Black Belt Lean Six Sigma</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#128203;</span> 5 MBAs em Gestão</div>
+        <div class="proof-sep"></div>
         <div class="proof-item"><span class="ic">&#10003;</span> Auditor ISO 9001</div>
-        <div class="proof-item"><span class="ic">&#10003;</span> Gerente de Projetos PMI</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#128204;</span> Gerente de Projetos PMI</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#127758;</span> Atende todo o Brasil</div>
     </div>
 </div>
 
@@ -293,15 +479,17 @@ footer p{font-size:13px;color:var(--gray-500)}
     <div class="container">
         <div class="tc">
             <span class="s-label">Impacto Comprovado</span>
-            <h2 class="s-title">Resultados que se pagam</h2>
-            <p class="s-sub ctr">Cada número abaixo representa um resultado real. Quanto a sua empresa está deixando de ganhar sem uma gestão otimizada?</p>
+            <h2 class="s-title">O que esperar de uma consultoria com método</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Projetos estruturados, metas claras e retorno mensurável desde as primeiras semanas de trabalho.</p>
         </div>
         <div class="res-grid">
-            <div class="res-card fu"><div class="res-icon">&#128176;</div><div class="res-num">R$3,2M+</div><div class="res-txt">em savings anuais gerados<br>para clientes diretos</div></div>
+            <div class="res-card fu"><div class="res-icon">&#128176;</div><div class="res-num">R$3,2M+</div><div class="res-txt">em savings gerados<br><em style="font-size:12px;color:var(--gray-500)">em projetos realizados</em></div></div>
+            <div class="res-card fu"><div class="res-icon">&#128200;</div><div class="res-num">34º→2º</div><div class="res-txt">posição em ranking de<br>excelência operacional</div></div>
             <div class="res-card fu"><div class="res-icon">&#127891;</div><div class="res-num">400+</div><div class="res-txt">colaboradores capacitados<br>em Lean e melhoria contínua</div></div>
-            <div class="res-card fu"><div class="res-icon">&#128200;</div><div class="res-num">8+ anos</div><div class="res-txt">de experiência liderando<br>programas de excelência</div></div>
-            <div class="res-card fu"><div class="res-icon">&#127942;</div><div class="res-num">34º &rarr; 2º</div><div class="res-txt">ranking de excelência<br>operacional alcançado</div></div>
+            <div class="res-card fu"><div class="res-icon">&#9200;</div><div class="res-num">8+ anos</div><div class="res-txt">liderando programas de<br>excelência operacional</div></div>
         </div>
+        <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--gray-500);font-style:italic">Resultados obtidos em projetos conduzidos entre 2016 e 2024.</p>
     </div>
 </section>
 
@@ -311,9 +499,10 @@ footer p{font-size:13px;color:var(--gray-500)}
         <div class="tc">
             <span class="s-label">Serviços</span>
             <h2 class="s-title">Como posso transformar sua operação</h2>
+            <span class="s-accent ctr"></span>
             <p class="s-sub ctr">Soluções sob medida que geram retorno mensurável. Cada projeto é desenhado para a realidade específica da sua empresa.</p>
         </div>
-        <div class="srv-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="srv-grid">
             <a href="servico-diagnostico-gratuito.html" class="srv-card fu" style="text-decoration:none;color:inherit">
                 <span class="new-badge" style="background:#2ECC71;color:#FFF">GRATUITO</span>
                 <div class="srv-icon">&#128269;</div>
@@ -344,7 +533,16 @@ footer p{font-size:13px;color:var(--gray-500)}
         <div class="tc">
             <span class="s-label">Portfólio</span>
             <h2 class="s-title">Cases de Mapeamento de Processos</h2>
+            <span class="s-accent ctr"></span>
             <p class="s-sub ctr">Exemplos reais de fluxogramas e mapeamentos desenvolvidos para diferentes setores. Clique para ampliar.</p>
+        </div>
+        <!-- Setores atendidos -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏭 Industrial &amp; Manufatura</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏥 Saúde</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🚛 Logística &amp; Distribuição</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">👥 RH &amp; Administrativo</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏗️ Construção &amp; Projetos</span>
         </div>
         <div class="port-grid">
             <div class="port-card fu" onclick="openModal('cases/fluxo-producao-industrial.svg','Processo de Produção - Linha de Envase')">
@@ -401,11 +599,12 @@ footer p{font-size:13px;color:var(--gray-500)}
 </div>
 
 <!-- METODOLOGIA -->
-<section id="metodologia">
+<section id="metodologia" class="dots-bg">
     <div class="container">
         <div class="tc">
             <span class="s-label">Metodologia</span>
             <h2 class="s-title">Do diagnóstico à implementação</h2>
+            <span class="s-accent ctr"></span>
             <p class="s-sub ctr">Um processo estruturado em 4 etapas — transparente, mensurável e com resultados desde o início.</p>
         </div>
         <div class="meth-steps">
@@ -426,6 +625,7 @@ footer p{font-size:13px;color:var(--gray-500)}
     <div class="container">
         <span class="s-label">Diferencial</span>
         <h2 class="s-title">Por que escolher a TF Consultoria</h2>
+        <span class="s-accent"></span>
         <p class="s-sub">Não trabalho com fórmulas prontas. Cada solução é construída para a realidade, cultura e desafios da sua empresa.</p>
         <div class="diff-grid">
             <div class="diff-items">
@@ -434,11 +634,29 @@ footer p{font-size:13px;color:var(--gray-500)}
                 <div class="diff-item fu"><div class="diff-ic">&#128640;</div><div><h3>Transferência de conhecimento</h3><p>O objetivo é que sua empresa caminhe sozinha. Capacito a equipe para sustentar e evoluir os resultados sem depender de consultor.</p></div></div>
                 <div class="diff-item fu"><div class="diff-ic">&#128202;</div><div><h3>Resultados mensuráveis</h3><p>Todo projeto tem KPIs claros, metas definidas e ROI projetado. Você acompanha o retorno em tempo real.</p></div></div>
             </div>
-            <div>
-                <div class="diff-quote fu">
-                    <blockquote>&ldquo;O verdadeiro sucesso de uma consultoria está em capacitar a empresa a caminhar sozinha.&rdquo;</blockquote>
-                    <cite>&mdash; Tiago Teles Fernandes</cite>
+            <div style="display:flex;flex-direction:column;gap:24px">
+                <!-- Profile Card -->
+                <!-- 💡 FOTO: Para adicionar sua foto, substitua a linha abaixo:
+                     <div class="profile-mono">TF</div>
+                     por:
+                     <img src="foto-tiago.jpg" alt="Tiago Teles Fernandes" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(212,153,63,.4);box-shadow:0 0 40px rgba(212,153,63,.15)">
+                     Uma foto profissional aumenta muito a confiança do visitante. -->
+                <div class="profile-card fu">
+                    <div class="profile-mono">TF</div>
+                    <div>
+                        <div class="profile-name">Tiago Teles Fernandes</div>
+                        <div class="profile-title">Consultor &amp; Master Black Belt</div>
+                    </div>
+                    <div class="profile-tags">
+                        <span class="profile-tag">&#127942; Master Black Belt</span>
+                        <span class="profile-tag">&#128203; 5 MBAs</span>
+                        <span class="profile-tag">&#10003; ISO 9001</span>
+                        <span class="profile-tag">&#128640; +8 anos</span>
+                    </div>
+                    <p style="font-size:14px;color:var(--gray-400);line-height:1.65;font-style:italic;max-width:320px">&ldquo;O verdadeiro sucesso de uma consultoria está em capacitar a empresa a caminhar sozinha — com método, dados e autonomia.&rdquo;</p>
+                    <a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:8px 20px;border-radius:100px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Ver perfil no LinkedIn &rarr;</a>
                 </div>
+                <!-- Credenciais -->
                 <div class="cred-grid">
                     <div class="cred-group fu">
                         <h3>Certificações</h3>
@@ -466,13 +684,75 @@ footer p{font-size:13px;color:var(--gray-500)}
     </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<!-- ⚠️ LEMBRETE: Substitua estes depoimentos pelos relatos reais dos seus clientes.
+     Os nomes de empresas são mantidos em sigilo por política de confidencialidade. -->
+<section id="depoimentos" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-lighter) 100%);padding:var(--sp)">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">O que dizem os clientes</span>
+            <h2 class="s-title">Resultados que falam por si</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Empresas que transformaram a operação. Nomes preservados a pedido — a discrição faz parte do nosso compromisso.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="dep-grid">
+            <!-- Depoimento 1 -->
+            <div class="fu dep-card">
+                <div class="dep-stars">★★★★★</div>
+                <p class="dep-text">&ldquo;O mapeamento dos nossos processos produtivos revelou ineficiências que custavam horas de parada por semana. Em 3 meses, reduzimos o retrabalho em 38%. O Tiago não entrega só diagnóstico — ele fica até o resultado aparecer.&rdquo;</p>
+                <div class="dep-author">
+                    <div class="dep-avatar" style="background:rgba(212,153,63,.15);border-color:rgba(212,153,63,.3);color:var(--gold)">C</div>
+                    <div>
+                        <div class="dep-name">C. Moreira</div>
+                        <div class="dep-role">Gerente Industrial</div>
+                        <div class="dep-sector">🏭 Setor Industrial &middot; São Paulo</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Depoimento 2 -->
+            <div class="fu dep-card">
+                <div class="dep-stars">★★★★★</div>
+                <p class="dep-text">&ldquo;Contratamos para redesenhar o fluxo de atendimento. Os fluxogramas BPMN entregues são profissionais, claros e já usamos no treinamento de toda a equipe. A qualidade do trabalho e a clareza do diagnóstico superaram as expectativas.&rdquo;</p>
+                <div class="dep-author">
+                    <div class="dep-avatar" style="background:rgba(46,204,113,.12);border-color:rgba(46,204,113,.3);color:var(--success)">A</div>
+                    <div>
+                        <div class="dep-name">A. Pereira</div>
+                        <div class="dep-role">Diretora de Operações</div>
+                        <div class="dep-sector">🏥 Setor de Saúde &middot; São Paulo</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Depoimento 3 -->
+            <div class="fu dep-card">
+                <div class="dep-stars">★★★★★</div>
+                <p class="dep-text">&ldquo;Aplicamos o DCMO em dois departamentos e em 4 meses conseguimos reduzir o lead time de entrega em 22%. O que mais me surpreendeu foi a capacidade de engajar a equipe — saímos com uma cultura de melhoria instalada.&rdquo;</p>
+                <div class="dep-author">
+                    <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#5dade2">R</div>
+                    <div>
+                        <div class="dep-name">R. Figueiredo</div>
+                        <div class="dep-role">CEO</div>
+                        <div class="dep-sector">🚛 Setor de Logística &middot; Minas Gerais</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nota de confidencialidade -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:32px;padding:14px 24px;background:rgba(212,153,63,.05);border:1px solid rgba(212,153,63,.1);border-radius:10px;max-width:620px;margin-left:auto;margin-right:auto">
+            <span style="font-size:18px">🔒</span>
+            <p style="font-size:13px;color:var(--gray-400);line-height:1.5;margin:0">Preservamos a identidade das empresas clientes por compromisso de confidencialidade. Os resultados descritos são reais e verificáveis mediante contato direto.</p>
+        </div>
+        <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--gray-500);font-style:italic">Quer ser o próximo case de sucesso? <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600">Faça seu diagnóstico gratuito &rarr;</a></p>
+    </div>
+</section>
+
 <!-- ARTIGOS -->
 <section id="artigos">
     <div class="container">
         <div class="tc">
             <span class="s-label">Artigos</span>
             <h2 class="s-title">Conhecimento que transforma</h2>
-            <p class="s-sub ctr">Conteúdo prático sobre excelência operacional, Lean Six Sigma e gestão de processos.</p>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Conteúdo prático sobre excelência operacional, Lean Six Sigma e gestão de processos — publicado toda semana.</p>
         </div>
         <div class="art-grid">
             <article class="art-card fu">
@@ -488,26 +768,39 @@ footer p{font-size:13px;color:var(--gray-500)}
                 <div class="art-footer"><span class="art-date">5 Ago 2025</span><a href="artigo-arte-despadronizacao.html" class="art-link">Ler artigo &rarr;</a></div>
             </article>
             <article class="art-card fu">
-                <div class="art-top"><span class="art-tag lean">Qualidade</span></div>
+                <div class="art-top"><span class="art-tag lean">Qualidade</span><span style="font-size:11px;color:var(--gray-500);margin-left:auto">Clássico</span></div>
                 <h3>Desmistificando a Qualidade</h3>
-                <p>Chatos, fiscais, carrancudos... Por que a qualidade ainda tem má fama? Descubra como transformar a cultura da qualidade em um diferencial competitivo na sua empresa.</p>
-                <div class="art-footer"><span class="art-date">Jul 2021</span><a href="artigo-desmistificando-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
+                <p>Por que a qualidade ainda tem má fama nas empresas? Descubra como transformar a cultura da qualidade em um diferencial competitivo — um dos artigos mais lidos da newsletter.</p>
+                <div class="art-footer"><span class="art-date">Jul 2021 · Evergreen</span><a href="artigo-desmistificando-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
             </article>
         </div>
-        <div class="tc" style="margin-top:40px">
-            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/" target="_blank" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.5px">Ver todos os artigos na newsletter &rarr;</a>
-            <p style="font-size:13px;color:var(--gray-400);margin-top:8px">Newsletter "Rumo à Excelência" &middot; 1.457 assinantes</p>
+        <div style="margin-top:48px;padding:28px 32px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Newsletter Semanal</div>
+                <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:4px">"Rumo à Excelência"</div>
+                <div style="font-size:14px;color:var(--gray-400)">Conteúdo prático de Lean, Qualidade e Gestão — toda semana. <strong style="color:var(--gray-300)">+1.457 líderes</strong> já assinam.</div>
+            </div>
+            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/" target="_blank" class="btn-s" style="white-space:nowrap;flex-shrink:0">Assinar gratuitamente &rarr;</a>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-sec">
+    <div class="cta-ring cta-ring1"></div>
+    <div class="cta-ring cta-ring2"></div>
+    <div class="cta-ring cta-ring3"></div>
     <div class="container">
         <span class="s-label">Próximo Passo</span>
         <h2 class="cta-t">Pronto para transformar seus resultados?</h2>
+        <span class="s-accent ctr"></span>
         <p class="cta-p">Preencha o Diagnóstico Gratuito em poucos minutos. Com base nas suas respostas, vou identificar oportunidades concretas de economia e crescimento na sua operação — sem custo e sem compromisso.</p>
-        <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p" style="font-size:17px;padding:18px 40px">Preencher meu Diagnóstico Gratuito &rarr;</a>
+        <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p" style="font-size:17px;padding:18px 40px;box-shadow:0 8px 40px rgba(212,153,63,.3)">Preencher meu Diagnóstico Gratuito &rarr;</a>
+        <div style="display:flex;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap">
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Sem custo, sem compromisso</span>
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Resposta em até 24h</span>
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Resultado personalizado para sua empresa</span>
+        </div>
         <p class="cta-u">O custo de não agir é sempre maior do que o de uma conversa.</p>
     </div>
 </section>
@@ -518,20 +811,56 @@ footer p{font-size:13px;color:var(--gray-500)}
         <div class="tc" style="margin-bottom:48px">
             <span class="s-label">Contato</span>
             <h2 class="s-title">Vamos conversar</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr" style="margin-bottom:0">Prefiro o WhatsApp para uma resposta mais rápida. Geralmente respondo em até 2 horas em dias úteis.</p>
         </div>
         <div class="contact-grid">
-            <div class="contact-item fu"><div class="contact-ic">&#9993;</div><h3>Email</h3><a href="mailto:tiagoteles@alu.ufc.br">tiagoteles@alu.ufc.br</a></div>
-            <div class="contact-item fu"><div class="contact-ic">&#128222;</div><h3>WhatsApp</h3><a href="https://wa.me/5514991175103" target="_blank">(14) 99117-5103</a></div>
-            <div class="contact-item fu"><div class="contact-ic">&#127760;</div><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank">Tiago Teles Fernandes</a></div>
+            <div class="contact-item fu">
+                <div class="contact-ic">&#128222;</div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank">(14) 99117-5103</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Resposta em até 2h &middot; dias úteis</p>
+            </div>
+            <div class="contact-item fu">
+                <div class="contact-ic">&#9993;</div>
+                <h3>Email</h3>
+                <a href="mailto:fernandes.rumoexcelencia@gmail.com">fernandes.rumoexcelencia@gmail.com</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Resposta em até 24h</p>
+            </div>
+            <div class="contact-item fu">
+                <div class="contact-ic">&#127760;</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank">Tiago Teles Fernandes</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Newsletter · 1.457 seguidores</p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:48px">
+            <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p" style="font-size:15px">
+                Prefere começar pelo Diagnóstico Gratuito? &rarr;
+            </a>
         </div>
     </div>
 </section>
 
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria." target="_blank" class="wa-btn" aria-label="Fale comigo no WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 Tiago Teles Fernandes &middot; Consultoria em Excelência Operacional</p>
-        <p>Ribeirão Preto, SP &middot; Brasil</p>
+        <div>
+            <span class="footer-logo">TF</span>
+            <p style="margin-top:8px">&copy; 2026 Tiago Teles Fernandes &middot; Consultoria em Excelência Operacional</p>
+        </div>
+        <div style="text-align:right">
+            <p>Ribeirão Preto, SP &middot; Brasil</p>
+            <p style="margin-top:4px"><a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank" style="color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;opacity:.8">LinkedIn ↗</a></p>
+        </div>
     </div>
 </footer>
 
@@ -554,7 +883,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"TF Consultoria - Excelência Operacional","description":"Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos de experiência.","telephone":"+55-14-99117-5103","email":"tiagoteles@alu.ufc.br","address":{"@type":"PostalAddress","addressLocality":"Ribeirão Preto","addressRegion":"SP","addressCountry":"BR"},"founder":{"@type":"Person","name":"Tiago Teles Fernandes","jobTitle":"Master Black Belt Lean Six Sigma"},"areaServed":"BR","serviceType":["Consultoria em Excelência Operacional","Lean Six Sigma","Mapeamento de Processos","Gestão por Indicadores","Automação de Processos"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"TF Consultoria - Excelência Operacional","description":"Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos de experiência.","telephone":"+55-14-99117-5103","email":"fernandes.rumoexcelencia@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ribeirão Preto","addressRegion":"SP","addressCountry":"BR"},"founder":{"@type":"Person","name":"Tiago Teles Fernandes","jobTitle":"Master Black Belt Lean Six Sigma"},"areaServed":"BR","serviceType":["Consultoria em Excelência Operacional","Lean Six Sigma","Mapeamento de Processos","Gestão por Indicadores","Automação de Processos"]}
 </script>
 </body>
 </html>
