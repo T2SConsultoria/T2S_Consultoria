@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="a"  markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#546E7A"/></marker>
+    <marker id="ag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C62828"/></marker>
+    <filter id="sh" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.10"/></filter>
+  </defs>
+
+  <rect width="1200" height="420" fill="#F7FAFC" rx="8"/>
+  <text x="600" y="21" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A5F" letter-spacing="0.3">Logística &amp; Distribuição — Gestão de Pedidos</text>
+
+  <rect x="1" y="28" width="1198" height="390" fill="none" stroke="#B0BEC5" stroke-width="1.5" rx="2"/>
+  <rect x="1" y="28" width="33" height="390" fill="#1E3A5F" rx="2"/>
+  <text x="17" y="225" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ECEFF1" transform="rotate(-90,17,225)" letter-spacing="2">CADEIA DE DISTRIBUIÇÃO</text>
+
+  <!-- Lane 1 — Comercial & CS (cy=93) -->
+  <rect x="34" y="28" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="93" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,93)">Comercial &amp; CS</text>
+  <line x1="34" y1="158" x2="1199" y2="158" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 2 — Armazém (cy=223) -->
+  <rect x="34" y="158" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="223" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,223)">Armazém</text>
+  <line x1="34" y1="288" x2="1199" y2="288" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 3 — Transportadora (cy=353) -->
+  <rect x="34" y="288" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="353" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,353)">Transportadora</text>
+  <line x1="90" y1="28" x2="90" y2="418" stroke="#CFD8DC" stroke-width="0.8"/>
+
+  <!-- ===== LANE 1 (cy=93) ===== -->
+  <circle cx="118" cy="93" r="13" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="118" cy="93" r="5" fill="#43A047"/>
+  <text x="118" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Início</text>
+  <line x1="131" y1="93" x2="143" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Receber Pedido -->
+  <rect x="145" y="75" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="209" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Receber</text>
+  <text x="209" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Pedido</text>
+  <line x1="273" y1="93" x2="289" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Validar Pedido -->
+  <rect x="291" y="75" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="355" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Validar</text>
+  <text x="355" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Pedido</text>
+  <!-- T2 ↓ Lane 2 -->
+  <path d="M 355,111 L 355,223" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 2 (cy=223) ===== -->
+  <line x1="355" y1="223" x2="371" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Em Stock? -->
+  <polygon points="394,201 416,223 394,245 372,223" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="394" y="219" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Em</text>
+  <text x="394" y="229" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Stock?</text>
+
+  <!-- GW1 Não → Reposição -->
+  <path d="M 394,245 L 394,310 L 460,310" stroke="#C62828" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="405" y="282" font-size="7" fill="#C62828">Não</text>
+  <rect x="462" y="292" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="526" y="307" text-anchor="middle" font-size="9" fill="#1B2A3D">Reposição</text>
+  <text x="526" y="321" text-anchor="middle" font-size="9" fill="#1B2A3D">de Stock</text>
+  <!-- Reposição → merges back to Sim flow at x=590 cy=223 -->
+  <path d="M 590,310 L 616,310 L 616,245 L 616,223" stroke="#546E7A" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#a)"/>
+
+  <!-- GW1 Sim → Separar -->
+  <line x1="416" y1="223" x2="432" y2="223" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="424" y="216" text-anchor="middle" font-size="7" fill="#2E7D32">Sim</text>
+
+  <!-- T3 Separar Carga -->
+  <rect x="434" y="205" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="498" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Separar</text>
+  <text x="498" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Carga</text>
+
+  <!-- Reposição merge comes in at 616,223 — also connected to T3 via line -->
+  <line x1="616" y1="223" x2="632" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T4 Embalar & Etiquetar -->
+  <rect x="634" y="205" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="703" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Embalar &amp;</text>
+  <text x="703" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Etiquetar</text>
+  <!-- T3 → T4 -->
+  <line x1="562" y1="223" x2="578" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- T4 → Lane 3 -->
+  <path d="M 772,223 L 790,223 L 790,353" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 3 (cy=353) ===== -->
+  <line x1="790" y1="353" x2="806" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T5 Carregar Veículo -->
+  <rect x="808" y="335" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="872" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Carregar</text>
+  <text x="872" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">Veículo</text>
+  <line x1="936" y1="353" x2="952" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T6 Entrega ao Cliente -->
+  <rect x="954" y="335" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1018" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Entrega</text>
+  <text x="1018" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">ao Cliente</text>
+  <line x1="1082" y1="353" x2="1098" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Entrega OK? -->
+  <polygon points="1120,331 1142,353 1120,375 1098,353" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="1120" y="349" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Entrega</text>
+  <text x="1120" y="359" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">OK?</text>
+
+  <!-- GW2 Sim → Fim -->
+  <line x1="1142" y1="353" x2="1158" y2="353" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="1149" y="346" text-anchor="middle" font-size="7" fill="#2E7D32">Sim</text>
+  <circle cx="1184" cy="353" r="13" fill="none" stroke="#C62828" stroke-width="4.5"/>
+  <text x="1184" y="377" text-anchor="middle" font-size="7.5" fill="#78909C">Fim</text>
+
+  <!-- GW2 Não → Reentrega (dashed back) -->
+  <path d="M 1120,375 L 1120,400 L 872,400 L 872,371" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="996" y="396" text-anchor="middle" font-size="7" fill="#C62828">Não · Reentrega</text>
+</svg>

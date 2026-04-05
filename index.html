@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TF Consultoria | Excelência Operacional — Lean Six Sigma | Tiago Fernandes</title>
+    <meta name="description" content="Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos e R$3,2M+ em savings gerados. Diagnóstico gratuito para sua empresa.">
+    <meta name="keywords" content="consultoria, lean six sigma, excelência operacional, melhoria contínua, redução de custos, mapeamento de processos, Ribeirão Preto">
+    <meta name="author" content="Tiago Teles Fernandes">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TF Consultoria — Excelência Operacional com Lean Six Sigma">
+    <meta property="og:description" content="Master Black Belt com +8 anos e R$3,2M+ em savings. Diagnóstico gratuito para sua empresa.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+:root{--navy:#0F1C2E;--navy-light:#162337;--navy-lighter:#1D2D44;--gold:#C8963E;--gold-light:#D4A84F;--gold-dark:#B8862E;--white:#FFF;--gray-100:#F7F8FA;--gray-200:#E8ECF1;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71;--sp:100px 0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--navy);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+img{max-width:100%;height:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(15,28,46,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,150,62,.1);transition:.3s}
+nav.scrolled{padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,.3)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:2px}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-links a{color:var(--gray-300);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:6px;font-weight:600!important;letter-spacing:1px!important;transition:.3s!important}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mob-toggle span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:linear-gradient(135deg,var(--navy),var(--navy-light) 50%,var(--navy));position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(200,150,62,.06),transparent 70%);border-radius:50%}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
+.hero-content{max-width:580px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,150,62,.1);border:1px solid rgba(200,150,62,.25);padding:8px 16px;border-radius:100px;font-size:13px;color:var(--gold);font-weight:500;margin-bottom:28px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.15;margin-bottom:20px}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{font-size:18px;color:var(--gray-400);line-height:1.7;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:.3s;border:none;cursor:pointer;letter-spacing:.5px}
+.btn-p:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,62,.3)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(200,150,62,.4);transition:.3s}
+.btn-s:hover{border-color:var(--gold);background:rgba(200,150,62,.08)}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px;background:rgba(22,35,55,.6);border:1px solid rgba(200,150,62,.12);border-radius:16px;backdrop-filter:blur(10px)}
+.stat{text-align:center;padding:20px}
+.stat-v{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.stat-l{font-size:13px;color:var(--gray-400);line-height:1.5}
+.stat:nth-child(even){border-left:1px solid rgba(200,150,62,.15)}
+.stat:nth-child(n+3){border-top:1px solid rgba(200,150,62,.15)}
+
+/* PROOF BAR */
+.proof-bar{background:var(--navy-light);border-top:1px solid rgba(200,150,62,.08);border-bottom:1px solid rgba(200,150,62,.08);padding:20px 0}
+.proof-bar .container{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--gray-400)}
+.proof-item .ic{color:var(--gold);font-size:16px}
+
+/* SECTIONS */
+section{padding:var(--sp)}
+.s-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:16px;line-height:1.2}
+.s-sub{font-size:17px;color:var(--gray-400);max-width:600px;line-height:1.7;margin-bottom:48px}
+.s-sub.ctr{margin-left:auto;margin-right:auto;text-align:center}
+.tc{text-align:center}
+
+/* RESULTS */
+#resultados{background:var(--navy)}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.res-card{background:var(--navy-light);border:1px solid rgba(200,150,62,.1);border-radius:12px;padding:32px 24px;text-align:center;transition:.3s}
+.res-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px)}
+.res-icon{font-size:32px;margin-bottom:16px}
+.res-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.res-txt{font-size:14px;color:var(--gray-400);line-height:1.5}
+
+/* SERVICES */
+#servicos{background:var(--navy-light)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.srv-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:36px 28px;transition:.4s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:.4s;transform-origin:left}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-card:hover{border-color:rgba(200,150,62,.2);transform:translateY(-4px)}
+.srv-icon{width:48px;height:48px;border-radius:10px;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.srv-card h3{font-size:18px;font-weight:600;margin-bottom:12px;color:var(--white)}
+.srv-card p{font-size:14px;color:var(--gray-400);line-height:1.7}
+.srv-card .new-badge{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:1px}
+
+/* METHODOLOGY */
+#metodologia{background:var(--navy)}
+.meth-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.meth-step{text-align:center;padding:32px 20px;position:relative}
+.meth-step::after{content:'\2192';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:24px}
+.meth-step:last-child::after{display:none}
+.step-num{width:56px;height:56px;border-radius:50%;background:rgba(200,150,62,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin:0 auto 16px}
+.step-badge{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.b-free{background:rgba(46,204,113,.15);color:var(--success)}
+.b-paid{background:rgba(200,150,62,.15);color:var(--gold)}
+.meth-step h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--white)}
+.meth-step p{font-size:13px;color:var(--gray-400);line-height:1.6}
+.meth-hl{margin-top:48px;padding:32px;text-align:center;background:rgba(200,150,62,.06);border:1px solid rgba(200,150,62,.15);border-radius:12px}
+.meth-hl p{font-size:16px;color:var(--gray-300);margin-bottom:20px}
+.hl-t{color:var(--gold);font-weight:600}
+
+/* PORTFOLIO (NEW) */
+#portfolio{background:var(--navy-light)}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.port-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;overflow:hidden;transition:.4s;cursor:pointer}
+.port-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.port-img{width:100%;height:220px;background:#F9F7F4;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px}
+.port-img img,.port-img object{width:100%;height:100%;object-fit:contain}
+.port-info{padding:20px}
+.port-info h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px}
+.port-info .port-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;letter-spacing:.5px;margin-bottom:8px}
+.tag-ind{background:rgba(200,150,62,.15);color:var(--gold)}
+.tag-srv{background:rgba(46,204,113,.15);color:var(--success)}
+.tag-rh{background:rgba(52,152,219,.15);color:#3498DB}
+.port-info p{font-size:13px;color:var(--gray-400);line-height:1.5}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal-content{background:var(--white);border-radius:12px;max-width:95vw;max-height:90vh;overflow:auto;position:relative;padding:24px}
+.modal-close{position:absolute;top:12px;right:16px;background:var(--navy);color:var(--white);border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10}
+.modal-close:hover{background:var(--gold)}
+
+/* DIFERENCIAL */
+#diferencial{background:var(--navy)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.diff-items{display:flex;flex-direction:column;gap:24px}
+.diff-item{display:flex;gap:16px;padding:24px;background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;transition:.3s}
+.diff-item:hover{border-color:rgba(200,150,62,.25)}
+.diff-ic{width:44px;height:44px;min-width:44px;border-radius:10px;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:20px}
+.diff-item h3{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--white)}
+.diff-item p{font-size:14px;color:var(--gray-400);line-height:1.6}
+.diff-quote{padding:40px;background:var(--navy-light);border-left:3px solid var(--gold);border-radius:0 12px 12px 0}
+.diff-quote blockquote{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--gray-200);line-height:1.6;margin-bottom:20px}
+.diff-quote cite{font-size:14px;color:var(--gold);font-style:normal;font-weight:500}
+
+/* CREDENCIAIS */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.cred-group{padding:28px;background:rgba(200,150,62,.04);border:1px solid rgba(200,150,62,.08);border-radius:12px}
+.cred-group h3{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.cred-list{list-style:none}
+.cred-list li{padding:8px 0;font-size:14px;color:var(--gray-300);border-bottom:1px solid rgba(200,150,62,.06);display:flex;align-items:center;gap:10px}
+.cred-list li:last-child{border-bottom:none}
+.cred-list .ck{color:var(--gold)}
+
+/* ARTIGOS */
+#artigos{background:var(--navy-light)}
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.art-card{background:var(--navy);border:1px solid rgba(200,150,62,.08);border-radius:12px;overflow:hidden;transition:.3s}
+.art-card:hover{border-color:rgba(200,150,62,.25);transform:translateY(-4px)}
+.art-top{padding:24px 24px 0;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.art-tag{font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;letter-spacing:.5px}
+.art-tag.lean{background:rgba(200,150,62,.15);color:var(--gold)}
+.art-tag.gest{background:rgba(46,204,113,.15);color:var(--success)}
+.art-tag.auto{background:rgba(52,152,219,.15);color:#3498DB}
+.art-card h3{padding:0 24px;font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;line-height:1.4}
+.art-card p{padding:0 24px;font-size:14px;color:var(--gray-400);line-height:1.6;margin-bottom:20px}
+.art-card .art-footer{padding:16px 24px;border-top:1px solid rgba(200,150,62,.06);display:flex;justify-content:space-between;align-items:center}
+.art-card .art-date{font-size:12px;color:var(--gray-500)}
+.art-card .art-link{font-size:13px;color:var(--gold);text-decoration:none;font-weight:600;transition:.3s}
+.art-card .art-link:hover{color:var(--gold-light)}
+
+/* CTA */
+.cta-sec{padding:100px 0;text-align:center;background:linear-gradient(135deg,var(--navy-light),var(--navy-lighter));position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,150,62,.06),transparent 60%)}
+.cta-sec .container{position:relative}
+.cta-t{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:16px}
+.cta-p{font-size:17px;color:var(--gray-400);max-width:560px;margin:0 auto 36px;line-height:1.7}
+.cta-u{font-size:14px;color:var(--gray-400);margin-top:20px;font-style:italic}
+
+/* CONTATO */
+#contato{background:var(--navy);padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.contact-item{text-align:center;padding:24px}
+.contact-ic{width:48px;height:48px;border-radius:50%;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 16px}
+.contact-item h3{font-size:14px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.contact-item a{color:var(--gold);text-decoration:none;font-size:16px;font-weight:500;transition:.3s}
+.contact-item a:hover{color:var(--gold-light)}
+
+/* FOOTER */
+footer{background:var(--navy-light);padding:32px 0;border-top:1px solid rgba(200,150,62,.08)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer p{font-size:13px;color:var(--gray-500)}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.nav-links{gap:20px}
+.nav-links a{font-size:11px;letter-spacing:1.5px}
+}
+@media(max-width:992px){
+.hero .container{grid-template-columns:1fr;text-align:center}
+.hero-content{max-width:100%}
+.hero-sub{margin-left:auto;margin-right:auto}
+.hero-btns{justify-content:center}
+.hero-stats{max-width:500px;margin:0 auto}
+.res-grid{grid-template-columns:repeat(2,1fr)}
+.srv-grid{grid-template-columns:repeat(2,1fr)}
+.port-grid{grid-template-columns:repeat(2,1fr)}
+.meth-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+.meth-step::after{display:none}
+.diff-grid{grid-template-columns:1fr}
+.cred-grid{grid-template-columns:1fr 1fr}
+.art-grid{grid-template-columns:repeat(2,1fr)}
+.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+:root{--sp:64px 0}
+.nav-links{display:none}
+.mob-toggle{display:block}
+.nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:24px;gap:20px;border-bottom:1px solid rgba(200,150,62,.1)}
+.srv-grid{grid-template-columns:1fr}
+.meth-steps{grid-template-columns:1fr}
+.port-grid{grid-template-columns:1fr}
+.art-grid{grid-template-columns:1fr}
+.cred-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.hero-btns{flex-direction:column}
+.btn-p,.btn-s{width:100%;justify-content:center}
+.res-grid{grid-template-columns:1fr}
+}
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="container">
+        <a href="#" class="logo">TF</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Cases</a></li>
+            <li><a href="#diferencial">Diferencial</a></li>
+            <li><a href="#artigos">Artigos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="nav-cta">Diagnóstico Gratuito</a></li>
+        </ul>
+        <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="dot"></span> Vagas limitadas para diagnóstico gratuito</div>
+            <h1>Sua operação pode render <span class="gold">muito mais</span></h1>
+            <p class="hero-sub">Consultoria em Excelência Operacional com Lean Six Sigma. Identifico e elimino os gargalos que drenam o lucro da sua empresa — com método, dados e resultados mensuráveis.</p>
+            <div class="hero-btns">
+                <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p">Fazer meu Diagnóstico Gratuito &rarr;</a>
+                <a href="#resultados" class="btn-s">Ver Resultados</a>
+            </div>
+        </div>
+        <div class="hero-stats fu">
+            <div class="stat"><div class="stat-v">R$3,2M+</div><div class="stat-l">em savings anuais<br>gerados para clientes</div></div>
+            <div class="stat"><div class="stat-v">400+</div><div class="stat-l">colaboradores<br>capacitados</div></div>
+            <div class="stat"><div class="stat-v">8+</div><div class="stat-l">anos de experiência<br>em excelência operacional</div></div>
+            <div class="stat"><div class="stat-v">34º&rarr;2º</div><div class="stat-l">ranking de excelência<br>operacional alcançado</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+    <div class="container">
+        <div class="proof-item"><span class="ic">&#10003;</span> Master Black Belt Lean Six Sigma</div>
+        <div class="proof-item"><span class="ic">&#10003;</span> 5 MBAs em Gestão</div>
+        <div class="proof-item"><span class="ic">&#10003;</span> Auditor ISO 9001</div>
+        <div class="proof-item"><span class="ic">&#10003;</span> Gerente de Projetos PMI</div>
+    </div>
+</div>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Impacto Comprovado</span>
+            <h2 class="s-title">Resultados que se pagam</h2>
+            <p class="s-sub ctr">Cada número abaixo representa um resultado real. Quanto a sua empresa está deixando de ganhar sem uma gestão otimizada?</p>
+        </div>
+        <div class="res-grid">
+            <div class="res-card fu"><div class="res-icon">&#128176;</div><div class="res-num">R$3,2M+</div><div class="res-txt">em savings anuais gerados<br>para clientes diretos</div></div>
+            <div class="res-card fu"><div class="res-icon">&#127891;</div><div class="res-num">400+</div><div class="res-txt">colaboradores capacitados<br>em Lean e melhoria contínua</div></div>
+            <div class="res-card fu"><div class="res-icon">&#128200;</div><div class="res-num">8+ anos</div><div class="res-txt">de experiência liderando<br>programas de excelência</div></div>
+            <div class="res-card fu"><div class="res-icon">&#127942;</div><div class="res-num">34º &rarr; 2º</div><div class="res-txt">ranking de excelência<br>operacional alcançado</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Serviços</span>
+            <h2 class="s-title">Como posso transformar sua operação</h2>
+            <p class="s-sub ctr">Soluções sob medida que geram retorno mensurável. Cada projeto é desenhado para a realidade específica da sua empresa.</p>
+        </div>
+        <div class="srv-grid" style="grid-template-columns:repeat(3,1fr)">
+            <a href="servico-diagnostico-gratuito.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <span class="new-badge" style="background:#2ECC71;color:#FFF">GRATUITO</span>
+                <div class="srv-icon">&#128269;</div>
+                <h3>Diagnóstico Rápido de Oportunidades (DRO)</h3>
+                <p>Avaliação gratuita e sem compromisso da sua operação. Você responde sobre sua empresa e eu identifico onde está o dinheiro que ela está deixando na mesa. Primeiro passo para qualquer transformação.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+            <a href="servico-consultoria-completa.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <div class="srv-icon">&#127942;</div>
+                <h3>Consultoria Completa (DCMO + Implementação)</h3>
+                <p>Diagnóstico aprofundado de maturidade organizacional, plano de ação estratégico e implementação lado a lado. Inclui Lean Six Sigma, PDCA, gestão por indicadores, automação, auditorias ISO e tudo que sua operação precisar.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+            <a href="servico-mapeamento-processos.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <span class="new-badge">NOVO</span>
+                <div class="srv-icon">&#128736;</div>
+                <h3>Mapeamento de Processos (Avulso)</h3>
+                <p>Desenho profissional de fluxogramas no padrão BPMN, mapeamento AS-IS/TO-BE, SIPOC e VSM. Ideal para empresas que precisam documentar ou terceirizar a modelagem dos seus processos.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO / CASES -->
+<section id="portfolio">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Portfólio</span>
+            <h2 class="s-title">Cases de Mapeamento de Processos</h2>
+            <p class="s-sub ctr">Exemplos reais de fluxogramas e mapeamentos desenvolvidos para diferentes setores. Clique para ampliar.</p>
+        </div>
+        <div class="port-grid">
+            <div class="port-card fu" onclick="openModal('cases/fluxo-producao-industrial.svg','Processo de Produção - Linha de Envase')">
+                <div class="port-img"><img src="cases/fluxo-producao-industrial.svg" alt="Fluxo de Produção Industrial" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-ind">Industrial</span>
+                    <h3>Linha de Envase — Produção</h3>
+                    <p>Mapeamento completo do fluxo produtivo com pontos de inspeção de qualidade, loops de retrabalho e gates de aprovação.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-manutencao-industrial.svg','Plano de Manutenção Preventiva e Corretiva')">
+                <div class="port-img"><img src="cases/fluxo-manutencao-industrial.svg" alt="Fluxo de Manutenção Industrial" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-ind">Industrial</span>
+                    <h3>Manutenção Preventiva e Corretiva</h3>
+                    <p>Workflow de manutenção com classificação por criticidade, gestão de peças sobressalentes e ciclo de teste e liberação.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-atendimento-hospitalar.svg','Fluxo de Atendimento ao Paciente - Pronto Socorro')">
+                <div class="port-img"><img src="cases/fluxo-atendimento-hospitalar.svg" alt="Fluxo de Atendimento Hospitalar" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-srv">Saúde</span>
+                    <h3>Pronto Socorro — Atendimento ao Paciente</h3>
+                    <p>Fluxo de triagem com classificação de risco Manchester, roteamento por prioridade e decisões clínicas.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-logistica-distribuicao.svg','Gestão de Pedidos e Distribuição')">
+                <div class="port-img"><img src="cases/fluxo-logistica-distribuicao.svg" alt="Fluxo de Logística" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-srv">Logística</span>
+                    <h3>Gestão de Pedidos e Distribuição</h3>
+                    <p>Processo completo de fulfillment: do recebimento do pedido à confirmação de entrega, com verificações e tratamento de exceções.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-onboarding-rh.svg','Processo de Onboarding de Colaboradores')">
+                <div class="port-img"><img src="cases/fluxo-onboarding-rh.svg" alt="Fluxo de Onboarding RH" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-rh">RH</span>
+                    <h3>Onboarding de Colaboradores</h3>
+                    <p>Jornada completa de integração: documentação, acessos, treinamentos e avaliações de 30 e 90 dias até efetivação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="flowModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h3 id="modalTitle" style="font-size:18px;color:#1B2A3D;margin-bottom:16px;font-family:'Playfair Display',serif"></h3>
+        <img id="modalImg" src="" alt="" style="width:100%;max-width:1000px">
+    </div>
+</div>
+
+<!-- METODOLOGIA -->
+<section id="metodologia">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Metodologia</span>
+            <h2 class="s-title">Do diagnóstico à implementação</h2>
+            <p class="s-sub ctr">Um processo estruturado em 4 etapas — transparente, mensurável e com resultados desde o início.</p>
+        </div>
+        <div class="meth-steps">
+            <div class="meth-step fu"><div class="step-num">01</div><span class="step-badge b-free">Gratuito</span><h3>DRO</h3><p>Diagnóstico Rápido de Oportunidades. Você responde sobre sua operação e eu identifico onde está o dinheiro que sua empresa está deixando na mesa.</p></div>
+            <div class="meth-step fu"><div class="step-num">02</div><span class="step-badge b-paid">Contratado</span><h3>DCMO</h3><p>Diagnóstico Completo de Maturidade Organizacional. Estudo aprofundado de processos, indicadores, cultura e gargalos reais.</p></div>
+            <div class="meth-step fu"><div class="step-num">03</div><span class="step-badge b-paid">Entrega</span><h3>Relatório + Plano</h3><p>Apresentação detalhada com diagnóstico, prioridades e plano de ação personalizado com metas, cronograma e ROI projetado.</p></div>
+            <div class="meth-step fu"><div class="step-num">04</div><span class="step-badge b-paid">Execução</span><h3>Implementação</h3><p>Execução lado a lado com sua equipe, transferindo conhecimento para que a empresa sustente os resultados sozinha.</p></div>
+        </div>
+        <div class="meth-hl fu">
+            <p><span class="hl-t">Recomendação:</span> Para máximo impacto, contrate o pacote completo DCMO + Plano de Ação + Implementação — garantindo velocidade, economia e resultados duradouros.</p>
+            <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p">Começar pelo Diagnóstico Gratuito &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section id="diferencial">
+    <div class="container">
+        <span class="s-label">Diferencial</span>
+        <h2 class="s-title">Por que escolher a TF Consultoria</h2>
+        <p class="s-sub">Não trabalho com fórmulas prontas. Cada solução é construída para a realidade, cultura e desafios da sua empresa.</p>
+        <div class="diff-grid">
+            <div class="diff-items">
+                <div class="diff-item fu"><div class="diff-ic">&#128170;</div><div><h3>Soluções sob medida</h3><p>Cada projeto é customizado. Nada de templates genéricos — entro na sua operação para entender o que realmente precisa mudar.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#127793;</div><div><h3>Impacto em todos os níveis</h3><p>Da operação à alta liderança: ajudo a saber para onde ir, qual caminho seguir e como executar com consistência.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#128640;</div><div><h3>Transferência de conhecimento</h3><p>O objetivo é que sua empresa caminhe sozinha. Capacito a equipe para sustentar e evoluir os resultados sem depender de consultor.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#128202;</div><div><h3>Resultados mensuráveis</h3><p>Todo projeto tem KPIs claros, metas definidas e ROI projetado. Você acompanha o retorno em tempo real.</p></div></div>
+            </div>
+            <div>
+                <div class="diff-quote fu">
+                    <blockquote>&ldquo;O verdadeiro sucesso de uma consultoria está em capacitar a empresa a caminhar sozinha.&rdquo;</blockquote>
+                    <cite>&mdash; Tiago Teles Fernandes</cite>
+                </div>
+                <div class="cred-grid">
+                    <div class="cred-group fu">
+                        <h3>Certificações</h3>
+                        <ul class="cred-list">
+                            <li><span class="ck">&#10003;</span> Master Black Belt Lean Seis Sigma</li>
+                            <li><span class="ck">&#10003;</span> Black Belt Lean Seis Sigma</li>
+                            <li><span class="ck">&#10003;</span> Gestão de Projetos e Liderança</li>
+                            <li><span class="ck">&#10003;</span> Auditor SGQ ISO 9001</li>
+                            <li><span class="ck">&#10003;</span> Design Sprint Master</li>
+                        </ul>
+                    </div>
+                    <div class="cred-group fu">
+                        <h3>MBAs</h3>
+                        <ul class="cred-list">
+                            <li><span class="ck">&#10003;</span> Gestão Ágil</li>
+                            <li><span class="ck">&#10003;</span> Lean Manufacturing</li>
+                            <li><span class="ck">&#10003;</span> Gestão e Liderança</li>
+                            <li><span class="ck">&#10003;</span> Gestão Industrial</li>
+                            <li><span class="ck">&#10003;</span> Gestão da Qualidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ARTIGOS -->
+<section id="artigos">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Artigos</span>
+            <h2 class="s-title">Conhecimento que transforma</h2>
+            <p class="s-sub ctr">Conteúdo prático sobre excelência operacional, Lean Six Sigma e gestão de processos.</p>
+        </div>
+        <div class="art-grid">
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag lean">Qualidade</span></div>
+                <h3>O custo invisível da Não-Qualidade: Quando os impactos vão muito além do retrabalho</h3>
+                <p>Os impactos mais silenciosos da não-qualidade corroem a saúde do negócio: reputação, motivação da equipe e oportunidades perdidas. Descubra os três fantasmas da Não-Qualidade.</p>
+                <div class="art-footer"><span class="art-date">12 Ago 2025</span><a href="artigo-custo-nao-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag gest">Lean</span></div>
+                <h3>A Arte da "Despadronização": Quando quebrar regras impulsiona a inovação Lean</h3>
+                <p>E se a verdadeira inovação estiver fora do padrão? O uso inteligente do desvio controlado como ferramenta estratégica para evolução contínua dentro do Lean Thinking.</p>
+                <div class="art-footer"><span class="art-date">5 Ago 2025</span><a href="artigo-arte-despadronizacao.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag lean">Qualidade</span></div>
+                <h3>Desmistificando a Qualidade</h3>
+                <p>Chatos, fiscais, carrancudos... Por que a qualidade ainda tem má fama? Descubra como transformar a cultura da qualidade em um diferencial competitivo na sua empresa.</p>
+                <div class="art-footer"><span class="art-date">Jul 2021</span><a href="artigo-desmistificando-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+        </div>
+        <div class="tc" style="margin-top:40px">
+            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/" target="_blank" style="color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.5px">Ver todos os artigos na newsletter &rarr;</a>
+            <p style="font-size:13px;color:var(--gray-400);margin-top:8px">Newsletter "Rumo à Excelência" &middot; 1.457 assinantes</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+    <div class="container">
+        <span class="s-label">Próximo Passo</span>
+        <h2 class="cta-t">Pronto para transformar seus resultados?</h2>
+        <p class="cta-p">Preencha o Diagnóstico Gratuito em poucos minutos. Com base nas suas respostas, vou identificar oportunidades concretas de economia e crescimento na sua operação — sem custo e sem compromisso.</p>
+        <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p" style="font-size:17px;padding:18px 40px">Preencher meu Diagnóstico Gratuito &rarr;</a>
+        <p class="cta-u">O custo de não agir é sempre maior do que o de uma conversa.</p>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+    <div class="container">
+        <div class="tc" style="margin-bottom:48px">
+            <span class="s-label">Contato</span>
+            <h2 class="s-title">Vamos conversar</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item fu"><div class="contact-ic">&#9993;</div><h3>Email</h3><a href="mailto:tiagoteles@alu.ufc.br">tiagoteles@alu.ufc.br</a></div>
+            <div class="contact-item fu"><div class="contact-ic">&#128222;</div><h3>WhatsApp</h3><a href="https://wa.me/5514991175103" target="_blank">(14) 99117-5103</a></div>
+            <div class="contact-item fu"><div class="contact-ic">&#127760;</div><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank">Tiago Teles Fernandes</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Tiago Teles Fernandes &middot; Consultoria em Excelência Operacional</p>
+        <p>Ribeirão Preto, SP &middot; Brasil</p>
+    </div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+
+// Fade-up
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('active')}})});
+
+// Modal
+function openModal(src,title){document.getElementById('modalImg').src=src;document.getElementById('modalTitle').textContent=title;document.getElementById('flowModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('flowModal').classList.remove('active');document.body.style.overflow=''}
+document.getElementById('flowModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"TF Consultoria - Excelência Operacional","description":"Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos de experiência.","telephone":"+55-14-99117-5103","email":"tiagoteles@alu.ufc.br","address":{"@type":"PostalAddress","addressLocality":"Ribeirão Preto","addressRegion":"SP","addressCountry":"BR"},"founder":{"@type":"Person","name":"Tiago Teles Fernandes","jobTitle":"Master Black Belt Lean Six Sigma"},"areaServed":"BR","serviceType":["Consultoria em Excelência Operacional","Lean Six Sigma","Mapeamento de Processos","Gestão por Indicadores","Automação de Processos"]}
+</script>
+</body>
+</html>

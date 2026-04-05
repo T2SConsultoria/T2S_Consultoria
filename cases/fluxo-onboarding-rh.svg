@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="a"  markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#546E7A"/></marker>
+    <marker id="ag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C62828"/></marker>
+    <filter id="sh" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.10"/></filter>
+  </defs>
+
+  <rect width="1200" height="420" fill="#F7FAFC" rx="8"/>
+  <text x="600" y="21" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A5F" letter-spacing="0.3">Onboarding RH — Integração de Novo Colaborador</text>
+
+  <rect x="1" y="28" width="1198" height="390" fill="none" stroke="#B0BEC5" stroke-width="1.5" rx="2"/>
+  <rect x="1" y="28" width="33" height="390" fill="#1E3A5F" rx="2"/>
+  <text x="17" y="225" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ECEFF1" transform="rotate(-90,17,225)" letter-spacing="2">PROCESSO DE ONBOARDING</text>
+
+  <!-- Lane 1 — Recursos Humanos (cy=93) -->
+  <rect x="34" y="28" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="93" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,93)">Recursos Humanos</text>
+  <line x1="34" y1="158" x2="1199" y2="158" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 2 — Gestor (cy=223) -->
+  <rect x="34" y="158" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="223" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,223)">Gestor</text>
+  <line x1="34" y1="288" x2="1199" y2="288" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 3 — TI & Facilities (cy=353) -->
+  <rect x="34" y="288" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="353" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,353)">TI &amp; Facilities</text>
+  <line x1="90" y1="28" x2="90" y2="418" stroke="#CFD8DC" stroke-width="0.8"/>
+
+  <!-- ===== LANE 1 (cy=93) ===== -->
+  <circle cx="118" cy="93" r="13" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="118" cy="93" r="5" fill="#43A047"/>
+  <text x="118" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Início</text>
+  <line x1="131" y1="93" x2="143" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Formalizar Admissão -->
+  <rect x="145" y="75" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="214" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Formalizar</text>
+  <text x="214" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Admissão</text>
+  <line x1="283" y1="93" x2="299" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Enviar Documentação -->
+  <rect x="301" y="75" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="371" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Enviar</text>
+  <text x="371" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Documentação</text>
+  <!-- T2 → Lane 2 and Lane 3 simultaneously (fork) -->
+  <!-- Arrow to Lane 2 -->
+  <path d="M 441,93 L 480,93 L 480,223" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <!-- Arrow to Lane 3 -->
+  <path d="M 441,93 L 510,93 L 510,353" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 2 (cy=223) ===== -->
+  <line x1="480" y1="223" x2="496" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T3 Preparar Plano de Integração -->
+  <rect x="498" y="205" width="150" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="573" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Preparar Plano</text>
+  <text x="573" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">de Integração</text>
+  <line x1="648" y1="223" x2="664" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T4 Sessão de Acolhimento -->
+  <rect x="666" y="205" width="148" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="740" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Sessão de</text>
+  <text x="740" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Acolhimento</text>
+
+  <!-- ===== LANE 3 (cy=353) ===== -->
+  <line x1="510" y1="353" x2="526" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T5 Configurar Acessos & Posto -->
+  <rect x="528" y="335" width="160" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="608" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Configurar Acessos</text>
+  <text x="608" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">&amp; Posto de Trabalho</text>
+
+  <!-- Both T4 and T5 converge before GW1 -->
+  <!-- T4 → join at x=850 Lane 2 → down to Lane 3 join at 850,353 -->
+  <path d="M 814,223 L 850,223 L 850,353" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <!-- T5 → right to join at 850 -->
+  <line x1="688" y1="353" x2="850" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Setup Completo? -->
+  <polygon points="872,331 894,353 872,375 850,353" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="872" y="349" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Setup</text>
+  <text x="872" y="359" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">OK?</text>
+
+  <!-- GW1 Não → dashed retry back to T5 -->
+  <path d="M 872,375 L 872,405 L 608,405 L 608,371" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="740" y="401" text-anchor="middle" font-size="7" fill="#C62828">Não · Corrigir</text>
+
+  <!-- GW1 Sim → T6 -->
+  <line x1="894" y1="353" x2="910" y2="353" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="901" y="346" text-anchor="middle" font-size="7" fill="#2E7D32">Sim</text>
+
+  <!-- T6 Avaliação do Período de Experiência -->
+  <rect x="912" y="335" width="160" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="992" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Avaliação Período</text>
+  <text x="992" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">de Experiência</text>
+  <!-- T6 → up to Lane 1 for final step -->
+  <path d="M 1072,353 L 1100,353 L 1100,93" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- T7 Confirmar Vínculo (Lane 1) -->
+  <rect x="1102" y="75" width="78" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1141" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Confirmar</text>
+  <text x="1141" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Vínculo</text>
+  <line x1="1180" y1="93" x2="1183" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- End -->
+  <circle cx="1184" cy="93" r="13" fill="none" stroke="#C62828" stroke-width="4.5"/>
+  <text x="1184" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Fim</text>
+</svg>

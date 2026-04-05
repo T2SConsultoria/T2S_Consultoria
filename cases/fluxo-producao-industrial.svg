@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="a"  markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#546E7A"/></marker>
+    <marker id="ag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C62828"/></marker>
+    <filter id="sh" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.10"/></filter>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="1200" height="420" fill="#F7FAFC" rx="8"/>
+  <!-- Título -->
+  <text x="600" y="21" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A5F" letter-spacing="0.3">Produção Industrial — Linha de Envase</text>
+
+  <!-- Borda pool -->
+  <rect x="1" y="28" width="1198" height="390" fill="none" stroke="#B0BEC5" stroke-width="1.5" rx="2"/>
+  <!-- Cabeçalho pool -->
+  <rect x="1" y="28" width="33" height="390" fill="#1E3A5F" rx="2"/>
+  <text x="17" y="225" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ECEFF1" transform="rotate(-90,17,225)" letter-spacing="2">LINHA DE PRODUÇÃO</text>
+
+  <!-- Lane 1 — Recebimento & Logística -->
+  <rect x="34" y="28" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="93" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,93)">Recebimento &amp; Logística</text>
+  <line x1="34" y1="158" x2="1199" y2="158" stroke="#CFD8DC" stroke-width="1"/>
+  <!-- Lane 2 — Produção -->
+  <rect x="34" y="158" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="223" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,223)">Produção</text>
+  <line x1="34" y1="288" x2="1199" y2="288" stroke="#CFD8DC" stroke-width="1"/>
+  <!-- Lane 3 — CQ & Expedição -->
+  <rect x="34" y="288" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="353" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,353)">Controlo de Qualidade &amp; Expedição</text>
+  <!-- Separador vertical cabeçalho de lanes -->
+  <line x1="90" y1="28" x2="90" y2="418" stroke="#CFD8DC" stroke-width="0.8"/>
+
+  <!-- ===== LANE 1 (cy=93) ===== -->
+  <!-- Início -->
+  <circle cx="118" cy="93" r="13" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="118" cy="93" r="5" fill="#43A047"/>
+  <text x="118" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Início</text>
+  <line x1="131" y1="93" x2="142" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Receber Matéria-Prima -->
+  <rect x="144" y="75" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="208" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Receber</text>
+  <text x="208" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Matéria-Prima</text>
+  <line x1="272" y1="93" x2="284" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Inspeção de Recebimento -->
+  <rect x="286" y="75" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="355" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Inspeção de</text>
+  <text x="355" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Recebimento</text>
+  <line x1="424" y1="93" x2="437" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 MP Conforme? -->
+  <polygon points="460,71 482,93 460,115 438,93" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="460" y="90" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1B2A3D">MP</text>
+  <text x="460" y="100" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1B2A3D">OK?</text>
+
+  <!-- GW1 Não → Devolver -->
+  <line x1="482" y1="93" x2="496" y2="93" stroke="#C62828" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="489" y="87" text-anchor="middle" font-size="7" fill="#C62828">Não</text>
+  <rect x="498" y="75" width="128" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="562" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Devolver</text>
+  <text x="562" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Matéria-Prima</text>
+  <line x1="626" y1="93" x2="636" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <circle cx="649" cy="93" r="13" fill="none" stroke="#C62828" stroke-width="4.5"/>
+  <text x="649" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Fim</text>
+
+  <!-- GW1 Sim ↓ Lane 2 -->
+  <path d="M 460,115 L 460,223" stroke="#2E7D32" stroke-width="1.5" fill="none" marker-end="url(#ag)"/>
+  <text x="469" y="152" font-size="7" fill="#2E7D32">Sim</text>
+
+  <!-- ===== LANE 2 (cy=223) ===== -->
+  <line x1="460" y1="223" x2="476" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T3 Preparar Lote -->
+  <rect x="478" y="205" width="122" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="539" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Preparar</text>
+  <text x="539" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Lote</text>
+  <line x1="600" y1="223" x2="616" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T4 Produção / Envase -->
+  <rect x="618" y="205" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="687" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Produção /</text>
+  <text x="687" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Envase</text>
+  <line x1="756" y1="223" x2="772" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T5 Embalagem e Rotulagem -->
+  <rect x="774" y="205" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="843" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Embalagem</text>
+  <text x="843" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">e Rotulagem</text>
+
+  <!-- T5 → Lane 3 (L-shape) -->
+  <path d="M 912,223 L 930,223 L 930,353" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- Retrabalho tracejado (GW2 → T4) -->
+  <path d="M 1095,331 L 1095,223 L 757,223" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="1105" y="282" font-size="7" fill="#C62828">Não</text>
+  <text x="935" y="216" font-size="7" fill="#C62828">↩ Retrabalho</text>
+
+  <!-- ===== LANE 3 (cy=353) ===== -->
+  <line x1="930" y1="353" x2="947" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T6 Controlo de Qualidade -->
+  <rect x="949" y="335" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1018" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Controlo</text>
+  <text x="1018" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">de Qualidade</text>
+  <line x1="1087" y1="353" x2="1073" y2="353" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1073" y1="353" x2="1073" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Lote Aprovado? -->
+  <polygon points="1095,331 1117,353 1095,375 1073,353" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="1095" y="350" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1B2A3D">Lote</text>
+  <text x="1095" y="360" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1B2A3D">OK?</text>
+
+  <!-- GW2 Sim → Fim -->
+  <line x1="1117" y1="353" x2="1132" y2="353" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="1123" y="347" text-anchor="middle" font-size="7" fill="#2E7D32">Sim</text>
+  <circle cx="1158" cy="353" r="13" fill="none" stroke="#C62828" stroke-width="4.5"/>
+  <text x="1158" y="377" text-anchor="middle" font-size="7.5" fill="#78909C">Fim</text>
+</svg>

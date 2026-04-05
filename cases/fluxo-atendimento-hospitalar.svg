@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 550" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="a"  markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#546E7A"/></marker>
+    <marker id="ag" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C62828"/></marker>
+    <filter id="sh" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.10"/></filter>
+  </defs>
+
+  <rect width="1200" height="550" fill="#F7FAFC" rx="8"/>
+  <text x="600" y="21" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1E3A5F" letter-spacing="0.3">Atendimento Hospitalar — Fluxo de Triagem e Consulta</text>
+
+  <!-- Pool border -->
+  <rect x="1" y="28" width="1198" height="520" fill="none" stroke="#B0BEC5" stroke-width="1.5" rx="2"/>
+  <!-- Pool header -->
+  <rect x="1" y="28" width="33" height="520" fill="#1E3A5F" rx="2"/>
+  <text x="17" y="295" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ECEFF1" transform="rotate(-90,17,295)" letter-spacing="2">UNIDADE DE SAÚDE</text>
+
+  <!-- Lane 1 — Recepção (cy=88) -->
+  <rect x="34" y="28" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="93" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,93)">Recepção</text>
+  <line x1="34" y1="158" x2="1199" y2="158" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 2 — Triagem (cy=218) -->
+  <rect x="34" y="158" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="223" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,223)">Triagem</text>
+  <line x1="34" y1="288" x2="1199" y2="288" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 3 — Médico (cy=353) -->
+  <rect x="34" y="288" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="353" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,353)">Médico</text>
+  <line x1="34" y1="418" x2="1199" y2="418" stroke="#CFD8DC" stroke-width="1"/>
+
+  <!-- Lane 4 — Enfermagem (cy=483) -->
+  <rect x="34" y="418" width="56" height="130" fill="#EEF2F7"/>
+  <text x="62" y="483" text-anchor="middle" font-size="8" font-weight="600" fill="#37474F" transform="rotate(-90,62,483)">Enfermagem</text>
+
+  <!-- Vertical lane separator -->
+  <line x1="90" y1="28" x2="90" y2="548" stroke="#CFD8DC" stroke-width="0.8"/>
+
+  <!-- ===== LANE 1 (cy=93) ===== -->
+  <!-- Start -->
+  <circle cx="118" cy="93" r="13" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="118" cy="93" r="5" fill="#43A047"/>
+  <text x="118" y="117" text-anchor="middle" font-size="7.5" fill="#78909C">Início</text>
+  <line x1="131" y1="93" x2="143" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Admissão do Paciente -->
+  <rect x="145" y="75" width="138" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="214" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Admissão</text>
+  <text x="214" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">do Paciente</text>
+  <line x1="283" y1="93" x2="299" y2="93" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Registo & Identificação -->
+  <rect x="301" y="75" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="371" y="90" text-anchor="middle" font-size="9" fill="#1B2A3D">Registo &amp;</text>
+  <text x="371" y="104" text-anchor="middle" font-size="9" fill="#1B2A3D">Identificação</text>
+  <!-- T2 ↓ Lane 2 -->
+  <path d="M 371,111 L 371,223" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 2 (cy=223) ===== -->
+  <line x1="371" y1="223" x2="387" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T3 Triagem de Manchester -->
+  <rect x="389" y="205" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="459" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Triagem</text>
+  <text x="459" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">de Manchester</text>
+  <line x1="529" y1="223" x2="545" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Prioridade Alta? -->
+  <polygon points="568,201 590,223 568,245 546,223" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="568" y="219" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Alta</text>
+  <text x="568" y="229" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Prior.?</text>
+
+  <!-- GW1 Não → Sala de Espera -->
+  <line x1="590" y1="223" x2="608" y2="223" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="598" y="216" text-anchor="middle" font-size="7" fill="#546E7A">Não</text>
+  <rect x="610" y="205" width="130" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="675" y="220" text-anchor="middle" font-size="9" fill="#1B2A3D">Sala de</text>
+  <text x="675" y="234" text-anchor="middle" font-size="9" fill="#1B2A3D">Espera</text>
+  <!-- Sala Espera → join path right then down to Lane 3 -->
+  <path d="M 740,223 L 760,223 L 760,353" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- GW1 Sim ↓ Lane 3 (atend imediato) -->
+  <path d="M 568,245 L 568,353" stroke="#2E7D32" stroke-width="1.5" fill="none" marker-end="url(#ag)"/>
+  <text x="577" y="302" font-size="7" fill="#2E7D32">Sim</text>
+
+  <!-- ===== LANE 3 (cy=353) ===== -->
+  <!-- T4 Consulta / Atendimento -->
+  <line x1="568" y1="353" x2="584" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <rect x="586" y="335" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="656" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Consulta /</text>
+  <text x="656" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">Atendimento</text>
+  <!-- Sala espera path joins here too — note: the path from Sala Espera hits x=760 → this is to the right of the task above. We add a join connector from x=760 down to cy=353 and then merge. The path is already drawn above: path d="M 740,223 L 760,223 L 760,353" which arrives at 760,353. We connect from 760 to task -->
+  <line x1="760" y1="353" x2="776" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- But wait, this would create two arrows into different task positions. Let me rethink: the "Sim" path goes directly to cx=568 →T4 at x=586. The "Não→Sala Espera" path goes: Sala Espera ends at x=740, then path goes right to x=780, down to 353, then arrow points into a second task -->
+
+  <!-- T5 Prescrição / Diagnóstico (after consult) -->
+  <rect x="778" y="335" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="848" y="350" text-anchor="middle" font-size="9" fill="#1B2A3D">Prescrição /</text>
+  <text x="848" y="364" text-anchor="middle" font-size="9" fill="#1B2A3D">Diagnóstico</text>
+  <line x1="726" y1="353" x2="778" y2="353" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+  <!-- T5 ↓ Lane 4 -->
+  <path d="M 918,353 L 936,353 L 936,483" stroke="#546E7A" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 4 (cy=483) ===== -->
+  <line x1="936" y1="483" x2="952" y2="483" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T6 Medicação / Procedimentos -->
+  <rect x="954" y="465" width="140" height="36" rx="5" fill="#fff" stroke="#90A4AE" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1024" y="480" text-anchor="middle" font-size="9" fill="#1B2A3D">Medicação /</text>
+  <text x="1024" y="494" text-anchor="middle" font-size="9" fill="#1B2A3D">Procedimentos</text>
+  <line x1="1094" y1="483" x2="1110" y2="483" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Alta? -->
+  <polygon points="1132,461 1154,483 1132,505 1110,483" fill="#FDD835" stroke="#E6AC00" stroke-width="1.5"/>
+  <text x="1132" y="479" text-anchor="middle" font-size="7" font-weight="700" fill="#1B2A3D">Alta?</text>
+
+  <!-- GW2 Sim → Fim -->
+  <line x1="1154" y1="483" x2="1168" y2="483" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="1160" y="476" text-anchor="middle" font-size="7" fill="#2E7D32">Sim</text>
+  <circle cx="1184" cy="483" r="13" fill="none" stroke="#C62828" stroke-width="4.5"/>
+  <text x="1184" y="507" text-anchor="middle" font-size="7.5" fill="#78909C">Fim</text>
+
+  <!-- GW2 Não → reavaliação (dashed back to Consulta) -->
+  <path d="M 1132,505 L 1132,525 L 656,525 L 656,371" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="890" y="520" text-anchor="middle" font-size="7" fill="#C62828">Não · Reavaliação</text>
+</svg>
