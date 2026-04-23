@@ -197,14 +197,14 @@ section{padding:56px 0}
 <section class="gallery-section">
 <div class="container">
 <span class="s-label">Exemplos de Entregáveis</span>
-<h2 class="s-title">Fluxogramas BPMN — Padrão Internacional Bizagi</h2>
-<p style="font-size:15px;color:var(--gray-400);margin-bottom:36px;max-width:680px;line-height:1.8">Cada entregável é produzido no padrão internacional BPMN 2.0 com o estilo visual característico do Bizagi: tarefas em branco com bordas cinzas, gateways em amarelo, eventos de início em verde e eventos de fim em vermelho. Documentação clara, auditável e pronta para automação ou certificação ISO.</p>
+<h2 class="s-title">Fluxogramas BPMN — Padrão Internacional</h2>
+<p style="font-size:15px;color:var(--gray-400);margin-bottom:36px;max-width:780px;line-height:1.8">Cada entregável é produzido no padrão internacional BPMN 2.0 com swimlanes (raias) que definem claramente os responsáveis por cada atividade, gateways para decisões complexas, eventos de início/fim padronizados e tratamento completo de exceções. Documentação clara, auditável e pronta para automação ou certificação ISO.</p>
 
 <div class="tab-nav">
 <button class="tab-btn active" onclick="showTab(0,this)">🏭 Produção Industrial</button>
 <button class="tab-btn" onclick="showTab(1,this)">🔧 Manutenção Industrial</button>
 <button class="tab-btn" onclick="showTab(2,this)">🏥 Pronto Socorro</button>
-<button class="tab-btn" onclick="showTab(3,this)">📦 Logística</button>
+<button class="tab-btn" onclick="showTab(3,this)">📦 Logística Completa</button>
 <button class="tab-btn" onclick="showTab(4,this)">👥 Onboarding RH</button>
 </div>
 
@@ -212,12 +212,12 @@ section{padding:56px 0}
 <div class="diagram-card">
 <div class="diagram-header">
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-<span>fluxo-producao-industrial.bpmn</span>
+<span>fluxo-producao-industrial-complexo.bpmn</span>
 </div>
-<img src="cases/fluxo-producao-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Linha de Envase com Recebimento, Inspeção, Produção e Controle de Qualidade" loading="lazy"/>
+<img src="cases/fluxo-producao-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Linha de Envase com 4 swimlanes (Almoxarifado, Qualidade, Produção, Logística), múltiplas tarefas, gateways de decisão e tratamento de não conformidades" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Linha de Envase · 4 Tarefas · 1 Gateway Exclusivo</span>
-<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
+<span class="meta-label">4 Swimlanes · 14 Atividades · 2 Gateways · Tratamento de Exceções</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
 </div>
 </div>
 </div>
@@ -226,12 +226,12 @@ section{padding:56px 0}
 <div class="diagram-card">
 <div class="diagram-header">
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-<span>fluxo-manutencao-industrial.bpmn</span>
+<span>fluxo-manutencao-corretiva-preventiva.bpmn</span>
 </div>
-<img src="cases/fluxo-manutencao-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Manutenção Corretiva e Preventiva com Ordens de Serviço" loading="lazy"/>
+<img src="cases/fluxo-manutencao-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Manutenção Corretiva e Preventiva com 5 swimlanes, análise de criticidade, gestão de peças e comissionamento" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Ordens de Serviço · Corretiva & Preventiva · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
+<span class="meta-label">5 Swimlanes · 12 Atividades · 3 Gateways · Fluxos Paralelos</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
 </div>
 </div>
 </div>
@@ -240,12 +240,12 @@ section{padding:56px 0}
 <div class="diagram-card">
 <div class="diagram-header">
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-<span>fluxo-pronto-socorro-triagem.bpmn</span>
+<span>fluxo-atendimento-pronto-socorro.bpmn</span>
 </div>
-<img src="cases/fluxo-atendimento-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Triagem de Manchester em Pronto Socorro" loading="lazy"/>
+<img src="cases/fluxo-atendimento-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Atendimento Hospitalar com Triagem Manchester, 7 swimlanes, protocolos de emergência e múltiplas especialidades" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Triagem de Manchester · 3 Tarefas · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
+<span class="meta-label">7 Swimlanes · 12 Atividades · 3 Gateways · Protocolos de Emergência</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
 </div>
 </div>
 </div>
@@ -277,6 +277,10 @@ section{padding:56px 0}
 </div>
 </div>
 </div>
+
+<!-- Tabs adicionais para fluxos complexos futuros -->
+<div class="tab-pane" id="tab-5" style="display:none"></div>
+<div class="tab-pane" id="tab-6" style="display:none"></div>
 </div>
 </section>
 
