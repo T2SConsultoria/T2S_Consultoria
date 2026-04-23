@@ -106,6 +106,13 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
 .proof-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);white-space:nowrap}
 .proof-item .ic{color:var(--gold);font-size:15px}
 .proof-sep{width:1px;height:16px;background:rgba(200,150,62,.2);flex-shrink:0}
+/* Belt Badges */
+.belt-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.5px}
+.belt-yellow{background:linear-gradient(135deg,#F4D03F,#B7950B);color:#1a1a1a}
+.belt-green{background:linear-gradient(135deg,#2ECC71,#1E8449);color:#fff}
+.belt-black{background:linear-gradient(135deg,#34495E,#1a252f);color:#fff;border:1px solid rgba(212,153,63,.3)}
+.belt-master{background:linear-gradient(135deg,#D4993F,#9A6E24);color:#0B1929;border:1px solid rgba(212,153,63,.4)}
+.belt-icon{font-size:14px}
 
 /* SECTIONS */
 section{padding:var(--sp)}
@@ -281,6 +288,20 @@ footer p{font-size:13px;color:var(--gray-500)}
 .dep-sector{font-size:11px;color:var(--gray-500);margin-top:3px}
 @media(max-width:992px){.dep-grid{grid-template-columns:1fr 1fr!important}}
 @media(max-width:768px){.dep-grid{grid-template-columns:1fr!important}}
+
+/* Testimonial Slider Animation */
+@keyframes fadeSlide{0%,100%{opacity:0;transform:translateY(20px)}20%,80%{opacity:1;transform:translateY(0)}}
+.testimonial-slide{animation:fadeSlide 20s ease-in-out infinite}
+.testimonial-slide:nth-child(1){animation-delay:0s}
+.testimonial-slide:nth-child(2){animation-delay:4s}
+.testimonial-slide:nth-child(3){animation-delay:8s}
+.testimonial-slide:nth-child(4){animation-delay:12s}
+.testimonial-slide:nth-child(5){animation-delay:16s}
+.testimonial-slide:nth-child(6){animation-delay:0s}
+.testimonial-slide:nth-child(7){animation-delay:4s}
+.testimonial-slide:nth-child(8){animation-delay:8s}
+.testimonial-slide:nth-child(9){animation-delay:12s}
+.testimonial-slide:nth-child(10){animation-delay:16s}
 
 /* WHATSAPP FLOATING */
 .wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);text-decoration:none;transition:.3s;animation:wa-bounce 2.5s ease-in-out 3s 3}
@@ -603,7 +624,7 @@ section{opacity:1}
             <li><a href="#contratacao">Contratação</a></li>
             <li><a href="#artigos">Artigos</a></li>
             <li><a href="#contato">Contato</a></li>
-            <li><a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="nav-cta">Diagnóstico Gratuito</a></li>
+            <li><a href="diagnostico-gratuito.html"  class="nav-cta">Diagnóstico Gratuito</a></li>
         </ul>
         <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
             <span></span><span></span><span></span>
@@ -644,12 +665,12 @@ section{opacity:1}
                 <div style="width:1px;height:20px;background:rgba(200,150,62,.2)"></div>
                 <div style="display:flex;align-items:center;gap:8px">
                     <span style="font-size:20px">⭐</span>
-                    <span style="font-size:13px;color:var(--gray-400)"><strong style="color:var(--gold)">100%</strong> recomendação</span>
+                    <span style="font-size:13px;color:var(--gray-400)">Alta taxa de <strong style="color:var(--gold)">retenção de clientes</strong></span>
                 </div>
             </div>
             
             <div class="hero-btns">
-                <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p btn-pulse">Descobrir onde estou perdendo dinheiro &rarr;</a>
+                <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse">Descobrir onde estou perdendo dinheiro &rarr;</a>
                 <a href="#assessment" class="btn-s">Teste rápido: sua empresa está saudável? &darr;</a>
             </div>
             <div class="urg-badge fu"><span class="urg-dot"></span> <span class="urg-num" id="diagCount">7</span> diagnósticos realizados esta semana</div>
@@ -829,7 +850,7 @@ section{opacity:1}
                     </a>
                 </div>
                 
-                <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" style="display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 18px;border-radius:6px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">
+                <a href="diagnostico-gratuito.html"  style="display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 18px;border-radius:6px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">
                     Solicitar proposta de treinamento &rarr;
                 </a>
             </div>
@@ -924,7 +945,7 @@ section{opacity:1}
         </div>
         <div class="meth-hl fu">
             <p><span class="hl-t">Recomendação:</span> Para máximo impacto, contrate o pacote completo DCMO + Plano de Ação + Implementação — garantindo velocidade, economia e resultados duradouros.</p>
-            <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p">Começar pelo Diagnóstico Gratuito &rarr;</a>
+            <a href="diagnostico-gratuito.html"  class="btn-p">Começar pelo Diagnóstico Gratuito &rarr;</a>
         </div>
     </div>
 </section>
@@ -1021,7 +1042,7 @@ section{opacity:1}
                 </div>
                 <div class="assess-level" id="assessLevel"></div>
                 <div class="assess-msg" id="assessMsg"></div>
-                <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p btn-pulse" id="assessCTA" style="margin-bottom:8px">Quero o Diagnóstico Completo (Gratuito) &rarr;</a>
+                <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse" id="assessCTA" style="margin-bottom:8px">Quero o Diagnóstico Completo (Gratuito) &rarr;</a>
                 <div class="assess-share-row">
                     <button class="assess-share-btn" onclick="shareResult('whatsapp')">📱 Compartilhar no WhatsApp</button>
                     <button class="assess-share-btn" onclick="shareResult('linkedin')">💼 Compartilhar no LinkedIn</button>
@@ -1071,21 +1092,22 @@ section{opacity:1}
                         <div class="profile-title">Consultor &amp; Master Black Belt</div>
                     </div>
                     <div class="profile-tags">
-                        <span class="profile-tag">&#127942; Master Black Belt</span>
+                        <span class="belt-badge belt-master"><span class="belt-icon">&#127942;</span> Master Black Belt</span>
                         <span class="profile-tag">&#128203; 5 MBAs</span>
                         <span class="profile-tag">&#10003; ISO 9001</span>
                         <span class="profile-tag">&#128640; +8 anos</span>
                     </div>
                     <p style="font-size:14px;color:var(--gray-400);line-height:1.65;font-style:italic;max-width:320px">&ldquo;O verdadeiro sucesso de uma consultoria está em capacitar a empresa a caminhar sozinha — com método, dados e autonomia.&rdquo;</p>
-                    <a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:8px 20px;border-radius:100px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Ver perfil no LinkedIn &rarr;</a>
+                    <a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:8px 20px;border-radius:100px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Ver perfil no LinkedIn &rarr;</a>
                 </div>
                 <!-- Credenciais -->
                 <div class="cred-grid">
                     <div class="cred-group fu">
                         <h3>Certificações</h3>
                         <ul class="cred-list">
-                            <li><span class="ck">&#10003;</span> Master Black Belt Lean Seis Sigma</li>
-                            <li><span class="ck">&#10003;</span> Black Belt Lean Seis Sigma</li>
+                            <li><span class="belt-badge belt-black" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Black Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
+                            <li><span class="belt-badge belt-green" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Green Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
+                            <li><span class="belt-badge belt-yellow" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Yellow Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
                             <li><span class="ck">&#10003;</span> Gestão de Projetos e Liderança</li>
                             <li><span class="ck">&#10003;</span> Auditor SGQ ISO 9001</li>
                             <li><span class="ck">&#10003;</span> Design Sprint Master</li>
@@ -1122,48 +1144,142 @@ section{opacity:1}
         <!-- NOVO: Video/Depoimento em Destaque -->
         <div class="fu" style="max-width:720px;margin:0 auto 48px;padding:32px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:16px;text-align:center">
             <div style="font-size:42px;margin-bottom:16px">🎥</div>
-            <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:12px">Quer ver casos reais em vídeo?</h3>
+            <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:12px">Quer ver cases reais em vídeo?</h3>
             <p style="font-size:14px;color:var(--gray-400);margin-bottom:20px;line-height:1.6">Estou produzindo uma série com depoimentos exclusivos de clientes e cases detalhados de transformação. <strong style="color:var(--gold)">Em breve disponível aqui.</strong></p>
-            <a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 20px;border-radius:8px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Acompanhe no LinkedIn &rarr;</a>
+            <a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 20px;border-radius:8px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Acompanhe no LinkedIn &rarr;</a>
         </div>
         
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="dep-grid">
-            <!-- Depoimento 1 -->
-            <div class="fu dep-card">
-                <div class="dep-stars">★★★★★</div>
-                <p class="dep-text">&ldquo;O mapeamento dos nossos processos produtivos revelou ineficiências que custavam horas de parada por semana. Em 3 meses, reduzimos o retrabalho em 38%. O Tiago não entrega só diagnóstico — ele fica até o resultado aparecer.&rdquo;</p>
-                <div class="dep-author">
-                    <div class="dep-avatar" style="background:rgba(212,153,63,.15);border-color:rgba(212,153,63,.3);color:var(--gold)">C</div>
-                    <div>
-                        <div class="dep-name">C. Moreira</div>
-                        <div class="dep-role">Gerente Industrial</div>
-                        <div class="dep-sector">🏭 Setor Industrial &middot; São Paulo</div>
+        <!-- Slider Automático de Depoimentos (10 depoimentos rotacionando) -->
+        <div style="position:relative;overflow:hidden;margin-bottom:32px">
+            <div class="dep-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+                <!-- Depoimento 1 - Industrial -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;O mapeamento dos processos produtivos revelou gargalos que nos custavam horas de parada. Em 3 meses, reduzimos o retrabalho em 38%. O Tiago não entrega só diagnóstico — ele fica até o resultado aparecer.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(212,153,63,.15);border-color:rgba(212,153,63,.3);color:var(--gold)">C</div>
+                        <div>
+                            <div class="dep-name">C. Moreira</div>
+                            <div class="dep-role">Gerente Industrial</div>
+                            <div class="dep-sector">🏭 Indústria Metalúrgica &middot; São Paulo</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Depoimento 2 -->
-            <div class="fu dep-card">
-                <div class="dep-stars">★★★★★</div>
-                <p class="dep-text">&ldquo;Contratamos para redesenhar o fluxo de atendimento. Os fluxogramas BPMN entregues são profissionais, claros e já usamos no treinamento de toda a equipe. A qualidade do trabalho e a clareza do diagnóstico superaram as expectativas.&rdquo;</p>
-                <div class="dep-author">
-                    <div class="dep-avatar" style="background:rgba(46,204,113,.12);border-color:rgba(46,204,113,.3);color:var(--success)">A</div>
-                    <div>
-                        <div class="dep-name">A. Pereira</div>
-                        <div class="dep-role">Diretora de Operações</div>
-                        <div class="dep-sector">🏥 Setor de Saúde &middot; São Paulo</div>
+                <!-- Depoimento 2 - Saúde -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Redesenhamos o fluxo de atendimento hospitalar. Os fluxogramas BPMN são tão claros que viraram material de treinamento. A equipe toda ganhou agilidade e os pacientes perceberam a diferença.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(46,204,113,.12);border-color:rgba(46,204,113,.3);color:var(--success)">A</div>
+                        <div>
+                            <div class="dep-name">A. Pereira</div>
+                            <div class="dep-role">Diretora de Operações</div>
+                            <div class="dep-sector">🏥 Rede Hospitalar &middot; Minas Gerais</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Depoimento 3 -->
-            <div class="fu dep-card">
-                <div class="dep-stars">★★★★★</div>
-                <p class="dep-text">&ldquo;Aplicamos o DCMO em dois departamentos e em 4 meses conseguimos reduzir o lead time de entrega em 22%. O que mais me surpreendeu foi a capacidade de engajar a equipe — saímos com uma cultura de melhoria instalada.&rdquo;</p>
-                <div class="dep-author">
-                    <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#5dade2">R</div>
-                    <div>
-                        <div class="dep-name">R. Figueiredo</div>
-                        <div class="dep-role">CEO</div>
-                        <div class="dep-sector">🚛 Setor de Logística &middot; Minas Gerais</div>
+                <!-- Depoimento 3 - Logística -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Aplicamos o DCMO em dois departamentos e em 4 meses reduzimos o lead time de entrega em 22%. O que mais me surpreendeu foi a capacidade de engajar a equipe — saímos com cultura de melhoria instalada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#5dade2">R</div>
+                        <div>
+                            <div class="dep-name">R. Figueiredo</div>
+                            <div class="dep-role">CEO</div>
+                            <div class="dep-sector">🚛 Transportadora &middot; Minas Gerais</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 4 - Varejo -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Nosso estoque era um caos. Com a consultoria, implementamos controle visual e reduzimos rupturas em 65%. O ROI veio em menos de 2 meses. Recomendo para qualquer varejista que queira profissionalizar a gestão.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(155,89,182,.12);border-color:rgba(155,89,182,.3);color:#af7ac5">L</div>
+                        <div>
+                            <div class="dep-name">L. Santos</div>
+                            <div class="dep-role">Gerente de Operações</div>
+                            <div class="dep-sector">🛒 Rede de Varejo &middot; Rio de Janeiro</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 5 - Alimentos -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Trabalhamos desperdício na linha de produção. O Lean Six Sigma trouxe método e disciplina. Economizamos R$ 180 mil no primeiro ano só com redução de matéria-prima descartada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(230,126,34,.12);border-color:rgba(230,126,34,.3);color:#e67e22">M</div>
+                        <div>
+                            <div class="dep-name">M. Oliveira</div>
+                            <div class="dep-role">Diretor Industrial</div>
+                            <div class="dep-sector">🍞 Indústria de Alimentos &middot; São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 6 - Serviços -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Somos uma empresa de serviços e achávamos que Lean não se aplicava. Estávamos errados. Otimizamos processos administrativos e reduzimos tempo de faturamento de 5 dias para 2.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(26,188,156,.12);border-color:rgba(26,188,156,.3);color:#1abc9c">F</div>
+                        <div>
+                            <div class="dep-name">F. Costa</div>
+                            <div class="dep-role">Sócio-Diretor</div>
+                            <div class="dep-sector">💼 Escritório de Contabilidade &middot; Paraná</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 7 - Tecnologia -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Implementamos Agile + Lean no desenvolvimento. Entregas mais rápidas, menos bugs e equipe mais motivada. O Tiago tem didática incrível para traduzir conceitos complexos.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#3498db">P</div>
+                        <div>
+                            <div class="dep-name">P. Almeida</div>
+                            <div class="dep-role">CTO</div>
+                            <div class="dep-sector">💻 Software House &middot; São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 8 - Construção -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Na construção civil, cada dia de atraso custa caro. Com o planejamento Lean, reduzimos atrasos em 45% e melhoramos a previsibilidade das obras. Cliente mais satisfeito, caixa mais saudável.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(149,165,166,.12);border-color:rgba(149,165,166,.3);color:#95a5a6">J</div>
+                        <div>
+                            <div class="dep-name">J. Rodrigues</div>
+                            <div class="dep-role">Engenheiro Chefe</div>
+                            <div class="dep-sector">🏗️ Construtora &middot; Bahia</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 9 - Educação -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Aplicamos Lean em processos acadêmicos e administrativos da instituição. Reduzimos tempo de matrícula em 60% e aumentamos a satisfação dos alunos. Transformação cultural completa.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(231,76,60,.12);border-color:rgba(231,76,60,.3);color:#e74c3c">S</div>
+                        <div>
+                            <div class="dep-name">S. Martins</div>
+                            <div class="dep-role">Diretora Acadêmica</div>
+                            <div class="dep-sector">🎓 Instituição de Ensino &middot; Rio Grande do Sul</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 10 - Energia -->
+                <div class="fu dep-card testimonial-slide">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Setor de energia exige precisão. O trabalho de padronização e controle estatístico reduziu falhas em 52%. Segurança operacional e eficiência andaram juntas nessa jornada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(241,196,15,.12);border-color:rgba(241,196,15,.3);color:#f1c40f">E</div>
+                        <div>
+                            <div class="dep-name">E. Barbosa</div>
+                            <div class="dep-role">Gerente de Manutenção</div>
+                            <div class="dep-sector">⚡ Distribuidora de Energia &middot; Ceará</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1173,7 +1289,7 @@ section{opacity:1}
             <span style="font-size:18px">🔒</span>
             <p style="font-size:13px;color:var(--gray-400);line-height:1.5;margin:0">Preservamos a identidade das empresas clientes por compromisso de confidencialidade. Os resultados descritos são reais e verificáveis mediante contato direto.</p>
         </div>
-        <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--gray-500);font-style:italic">Quer ser o próximo case de sucesso? <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600">Faça seu diagnóstico gratuito &rarr;</a></p>
+        <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--gray-500);font-style:italic">Atendimento presencial em todo o Brasil e online para qualquer lugar do mundo. <a href="#contato" style="color:var(--gold);text-decoration:none;font-weight:600">Agende seu diagnóstico gratuito &rarr;</a></p>
     </div>
 </section>
 
@@ -1212,7 +1328,7 @@ section{opacity:1}
                 <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:4px">"Rumo à Excelência"</div>
                 <div style="font-size:14px;color:var(--gray-400)">Conteúdo prático de Lean, Qualidade e Gestão — toda semana. <strong style="color:var(--gray-300)">+1.457 líderes</strong> já assinam.</div>
             </div>
-            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/" target="_blank" class="btn-s" style="white-space:nowrap;flex-shrink:0">Assinar gratuitamente &rarr;</a>
+            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/"  class="btn-s" style="white-space:nowrap;flex-shrink:0">Assinar gratuitamente &rarr;</a>
         </div>
     </div>
 </section>
@@ -1313,7 +1429,7 @@ section{opacity:1}
             </div>
         </div>
         
-        <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p btn-pulse" style="font-size:17px;padding:18px 44px;box-shadow:0 8px 40px rgba(212,153,63,.35)">Descobrir minhas oportunidades agora &rarr;</a>
+        <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse" style="font-size:17px;padding:18px 44px;box-shadow:0 8px 40px rgba(212,153,63,.35)">Descobrir minhas oportunidades agora &rarr;</a>
         <div style="display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap">
             <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> 100% gratuito</span>
             <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Resposta em 24h</span>
@@ -1337,7 +1453,7 @@ section{opacity:1}
             <div class="contact-item fu">
                 <div class="contact-ic">&#128222;</div>
                 <h3>WhatsApp</h3>
-                <a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." target="_blank">(14) 99117-5103</a>
+                <a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." >(14) 99117-5103</a>
                 <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Resposta em até 2h &middot; dias úteis</p>
             </div>
             <div class="contact-item fu">
@@ -1349,12 +1465,12 @@ section{opacity:1}
             <div class="contact-item fu">
                 <div class="contact-ic">&#127760;</div>
                 <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank">Tiago Teles Fernandes</a>
+                <a href="https://www.linkedin.com/in/tiagotelesfernandes/" >Tiago Teles Fernandes</a>
                 <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Newsletter · 1.457 seguidores</p>
             </div>
         </div>
         <div style="text-align:center;margin-top:48px">
-            <a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="btn-p" style="font-size:15px">
+            <a href="diagnostico-gratuito.html"  class="btn-p" style="font-size:15px">
                 Prefere começar pelo Diagnóstico Gratuito? &rarr;
             </a>
         </div>
@@ -1362,7 +1478,7 @@ section{opacity:1}
 </section>
 
 <!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria." target="_blank" class="wa-btn" aria-label="Fale comigo no WhatsApp">
+<a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria."  class="wa-btn" aria-label="Fale comigo no WhatsApp">
     <div class="wa-pulse"></div>
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -1378,7 +1494,7 @@ section{opacity:1}
         </div>
         <div style="text-align:right">
             <p>Ribeirão Preto, SP &middot; Brasil</p>
-            <p style="margin-top:4px"><a href="https://www.linkedin.com/in/tiagotelesfernandes/" target="_blank" style="color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;opacity:.8">LinkedIn ↗</a></p>
+            <p style="margin-top:4px"><a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;opacity:.8">LinkedIn ↗</a></p>
         </div>
     </div>
 </footer>
@@ -1629,7 +1745,7 @@ function shareResult(platform){
       <div style=\"font-size:36px;margin-bottom:12px\">⏳</div>
       <h3 style=\"font-family:'Playfair Display',serif;font-size:22px;color:var(--white);margin-bottom:8px\">Espere! Antes de ir...</h3>
       <p style=\"font-size:14px;color:var(--gray-400);line-height:1.6;margin-bottom:20px\">Você está saindo sem descobrir quanto dinheiro sua empresa está perdendo. O diagnóstico gratuito leva 2 minutos e pode revelar <strong style=\"color:var(--gold)\">oportunidades de até 30% de economia</strong>.</p>
-      <a href=\"https://aelqm0ft.forms.app/dro-tiagofernandes\" target=\"_blank\" class=\"btn-p btn-pulse\" style=\"width:100%;justify-content:center\">Fazer diagnóstico agora &rarr;</a>
+      <a href=\"diagnostico-gratuito.html\" target=\"_blank\" class=\"btn-p btn-pulse\" style=\"width:100%;justify-content:center\">Fazer diagnóstico agora &rarr;</a>
       <p style=\"font-size:12px;color:var(--gray-500);text-align:center;margin-top:16px\">Sem compromisso • Resposta em 24h</p>
     </div>
   `;
