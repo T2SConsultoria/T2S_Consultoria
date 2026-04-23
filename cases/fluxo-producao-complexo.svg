@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 650" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="arrowNormal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#546E7A"/>
+    </marker>
+    <marker id="arrowException" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#E53935"/>
+    </marker>
+    <linearGradient id="swimlaneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F7FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ECEFF4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="650" fill="#ffffff" rx="8" stroke="#CFD8DC" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="700" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1C2E">Processo de Produção Industrial — Linha de Envase Completa</text>
+  <text x="700" y="48" text-anchor="middle" font-size="11" fill="#78909C">Fluxo BPMN 2.0 com Múltiplas Responsabilidades e Tratamento de Exceções</text>
+  
+  <!-- Swimlanes Headers -->
+  <rect x="20" y="70" width="1360" height="110" fill="url(#swimlaneGrad)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="180" width="1360" height="140" fill="url(#swimlaneGrad)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="320" width="1360" height="140" fill="url(#swimlaneGrad)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="460" width="1360" height="140" fill="url(#swimlaneGrad)" stroke="#B0BEC5" stroke-width="1"/>
+  
+  <!-- Swimlane Labels -->
+  <text x="35" y="95" font-size="12" font-weight="600" fill="#37474F">Almoxarifado</text>
+  <line x1="20" y1="105" x2="1380" y2="105" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <text x="35" y="205" font-size="12" font-weight="600" fill="#37474F">Qualidade</text>
+  <line x1="20" y1="215" x2="1380" y2="215" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <text x="35" y="345" font-size="12" font-weight="600" fill="#37474F">Produção</text>
+  <line x1="20" y1="355" x2="1380" y2="355" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <text x="35" y="485" font-size="12" font-weight="600" fill="#37474F">Logística / Expedição</text>
+  <line x1="20" y1="495" x2="1380" y2="495" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- START EVENT -->
+  <circle cx="120" cy="125" r="16" fill="none" stroke="#2E7D32" stroke-width="3"/>
+  <circle cx="120" cy="125" r="7" fill="#43A047"/>
+  <text x="120" y="155" text-anchor="middle" font-size="9" fill="#546E7A">Pedido de</text>
+  <text x="120" y="167" text-anchor="middle" font-size="9" fill="#546E7A">Produção</text>
+  
+  <!-- T1: Receber Matéria-Prima -->
+  <rect x="180" y="107" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="250" y="122" text-anchor="middle" font-size="10" fill="#0F1C2E">Receber</text>
+  <text x="250" y="136" text-anchor="middle" font-size="10" fill="#0F1C2E">Matéria-Prima</text>
+  <line x1="136" y1="125" x2="175" y2="125" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- T2: Conferir Nota Fiscal -->
+  <rect x="340" y="107" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="410" y="122" text-anchor="middle" font-size="10" fill="#0F1C2E">Conferir Nota</text>
+  <text x="410" y="136" text-anchor="middle" font-size="10" fill="#0F1C2E">Fiscal</text>
+  <line x1="320" y1="125" x2="335" y2="125" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- T3: Armazenar MP -->
+  <rect x="500" y="107" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="570" y="122" text-anchor="middle" font-size="10" fill="#0F1C2E">Armazenar em</text>
+  <text x="570" y="136" text-anchor="middle" font-size="10" fill="#0F1C2E">Estoques</text>
+  <line x1="480" y1="125" x2="495" y2="125" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- Flow to Quality -->
+  <line x1="640" y1="125" x2="660" y2="125" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="660" y1="125" x2="660" y2="250" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- T4: Solicitar Amostra -->
+  <rect x="580" y="232" width="160" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="660" y="247" text-anchor="middle" font-size="10" fill="#0F1C2E">Solicitar Amostra para</text>
+  <text x="660" y="261" text-anchor="middle" font-size="10" fill="#0F1C2E">Análise</text>
+  
+  <!-- T5: Realizar Ensaios -->
+  <rect x="760" y="232" width="150" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="835" y="247" text-anchor="middle" font-size="10" fill="#0F1C2E">Realizar Ensaios</text>
+  <text x="835" y="261" text-anchor="middle" font-size="10" fill="#0F1C2E">Físico-Químicos</text>
+  <line x1="740" y1="250" x2="755" y2="250" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- GW1: MP Aprovada? -->
+  <polygon points="980,222 1010,250 980,278 950,250" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="980" y="245" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">MP</text>
+  <text x="980" y="258" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">OK?</text>
+  <line x1="910" y1="250" x2="945" y2="250" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- GW1 → Sim → Production -->
+  <line x1="1010" y1="250" x2="1030" y2="250" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1030" y1="250" x2="1030" y2="390" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  <text x="1038" y="275" font-size="9" fill="#2E7D32" font-weight="600">Sim</text>
+  
+  <!-- T6: Liberar MP para Produção -->
+  <rect x="950" y="372" width="160" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1030" y="387" text-anchor="middle" font-size="10" fill="#0F1C2E">Liberar MP para</text>
+  <text x="1030" y="401" text-anchor="middle" font-size="10" fill="#0F1C2E">Produção</text>
+  
+  <!-- GW1 → Não → Exception -->
+  <line x1="980" y1="278" x2="980" y2="310" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrowException)"/>
+  <text x="990" y="300" font-size="9" fill="#C62828" font-weight="600">Não</text>
+  
+  <!-- T7: Gerar Não Conformidade -->
+  <rect x="900" y="312" width="160" height="36" rx="5" fill="#FFEBEE" stroke="#E57373" stroke-width="1.5"/>
+  <text x="980" y="327" text-anchor="middle" font-size="10" fill="#C62828">Gerar Relatório de</text>
+  <text x="980" y="341" text-anchor="middle" font-size="10" fill="#C62828">Não Conformidade</text>
+  
+  <!-- T8: Devolver ao Fornecedor -->
+  <rect x="1080" y="312" width="160" height="36" rx="5" fill="#FFEBEE" stroke="#E57373" stroke-width="1.5"/>
+  <text x="1160" y="327" text-anchor="middle" font-size="10" fill="#C62828">Devolver ao</text>
+  <text x="1160" y="341" text-anchor="middle" font-size="10" fill="#C62828">Fornecedor</text>
+  <line x1="1060" y1="330" x2="1075" y2="330" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrowException)"/>
+  
+  <!-- Intermediate Event: Notificação -->
+  <circle cx="1260" cy="330" r="14" fill="#FFF3E0" stroke="#FB8C00" stroke-width="2"/>
+  <circle cx="1260" cy="330" r="10" fill="none" stroke="#FB8C00" stroke-width="1.5"/>
+  <text x="1260" cy="355" text-anchor="middle" font-size="8" fill="#F57C00">Notificar</text>
+  <text x="1260" cy="367" text-anchor="middle" font-size="8" fill="#F57C00">Compras</text>
+  <line x1="1240" y1="330" x2="1245" y2="330" stroke="#FB8C00" stroke-width="1.5"/>
+  
+  <!-- Flow from T6 to Production -->
+  <line x1="1110" y1="390" x2="1130" y2="390" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- T9: Preparar Máquina -->
+  <rect x="1150" y="372" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1220" y="387" text-anchor="middle" font-size="10" fill="#0F1C2E">Preparar e</text>
+  <text x="1220" y="401" text-anchor="middle" font-size="10" fill="#0F1C2E">Configurar Máquina</text>
+  
+  <!-- T10: Realizar Envase -->
+  <rect x="1310" y="372" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1380" y="387" text-anchor="middle" font-size="10" fill="#0F1C2E">Realizar</text>
+  <text x="1380" y="401" text-anchor="middle" font-size="10" fill="#0F1C2E">Envase</text>
+  <line x1="1290" y1="390" x2="1305" y2="390" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- Flow down to Logistics -->
+  <line x1="1450" y1="390" x2="1470" y2="390" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1470" y1="390" x2="1470" y2="530" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1470" y1="530" x2="1200" y2="530" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- T11: Inspeção Final -->
+  <rect x="1050" y="512" width="150" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1125" y="527" text-anchor="middle" font-size="10" fill="#0F1C2E">Inspeção Visual</text>
+  <text x="1125" y="541" text-anchor="middle" font-size="10" fill="#0F1C2E">Final</text>
+  
+  <!-- GW2: Produto Conforme? -->
+  <polygon points="1270,522 1300,550 1270,578 1240,550" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="1270" y="545" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">Prod.</text>
+  <text x="1270" y="558" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">OK?</text>
+  <line x1="1200" y1="530" x2="1235" y2="550" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- GW2 → Sim → Expedir -->
+  <line x1="1300" y1="550" x2="1320" y2="550" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  <text x="1315" y="540" font-size="9" fill="#2E7D32" font-weight="600">Sim</text>
+  
+  <!-- T12: Etiquetar e Paletizar -->
+  <rect x="1340" y="532" width="150" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1415" y="547" text-anchor="middle" font-size="10" fill="#0F1C2E">Etiquetar e</text>
+  <text x="1415" y="561" text-anchor="middle" font-size="10" fill="#0F1C2E">Paletizar</text>
+  
+  <!-- T13: Emitir Documento Fiscal -->
+  <rect x="1340" y="480" width="150" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1415" y="495" text-anchor="middle" font-size="10" fill="#0F1C2E">Emitir NF-e e</text>
+  <text x="1415" y="509" text-anchor="middle" font-size="10" fill="#0F1C2E">Documentos</text>
+  
+  <!-- END EVENT 1: Produto Expedido -->
+  <circle cx="1520" cy="550" r="18" fill="none" stroke="#B71C1C" stroke-width="5"/>
+  <text x="1520" y="580" text-anchor="middle" font-size="9" fill="#546E7A">Produto</text>
+  <text x="1520" y="592" text-anchor="middle" font-size="9" fill="#546E7A">Expedido</text>
+  <line x1="1490" y1="550" x2="1500" y2="550" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrowNormal)"/>
+  
+  <!-- GW2 → Não → Retrabalho -->
+  <line x1="1270" y1="578" x2="1270" y2="610" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrowException)"/>
+  <text x="1280" y="598" font-size="9" fill="#C62828" font-weight="600">Não</text>
+  
+  <!-- T14: Enviar para Retrabalho -->
+  <rect x="1190" y="612" width="160" height="36" rx="5" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="1270" y="627" text-anchor="middle" font-size="10" fill="#E65100">Enviar para</text>
+  <text x="1270" y="641" text-anchor="middle" font-size="10" fill="#E65100">Retrabalho</text>
+  
+  <!-- Loop back arrow (curved) -->
+  <path d="M 1190 630 Q 1000 630, 1000 530 L 1045 530" fill="none" stroke="#E65100" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#arrowException)"/>
+  
+  <!-- Parallel Gateway: Iniciar Processos Paralelos -->
+  <polygon points="720,430 745,455 720,480 695,455" fill="#9FA8DA" stroke="#5C6BC0" stroke-width="1.5"/>
+  <text x="720" y="450" text-anchor="middle" font-size="16" font-weight="700" fill="#3949AB">+</text>
+  
+  <!-- Legend -->
+  <rect x="20" y="615" width="300" height="25" fill="#FAFAFA" stroke="#CFD8DC" stroke-width="1" rx="4"/>
+  <text x="35" y="632" font-size="10" fill="#546E7A" font-weight="600">Legenda:</text>
+  <circle cx="100" cy="628" r="6" fill="none" stroke="#2E7D32" stroke-width="2"/>
+  <text x="115" y="632" font-size="9" fill="#546E7A">Início</text>
+  <rect x="160" y="623" width="20" height="10" fill="#fff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="188" y="632" font-size="9" fill="#546E7A">Tarefa</text>
+  <polygon points="220,628 226,628 223,633" fill="#FDD835" stroke="#F57F17" stroke-width="1"/>
+  <text x="235" y="632" font-size="9" fill="#546E7A">Decisão</text>
+  <circle cx="280" cy="628" r="6" fill="none" stroke="#B71C1C" stroke-width="3"/>
+  <text x="295" y="632" font-size="9" fill="#546E7A">Fim</text>
+</svg>

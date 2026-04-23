@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 750" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="arrN" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#546E7A"/></marker>
+    <marker id="arrE" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#E53935"/></marker>
+    <linearGradient id="swG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#F5F7FA;stop-opacity:1"/><stop offset="100%" style="stop-color:#ECEFF4;stop-opacity:1"/></linearGradient>
+  </defs>
+  <rect width="1500" height="750" fill="#ffffff" rx="8" stroke="#CFD8DC" stroke-width="2"/>
+  <text x="750" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1C2E">Processo de Atendimento Hospitalar — Pronto Socorro com Triagem</text>
+  <text x="750" y="48" text-anchor="middle" font-size="11" fill="#78909C">Fluxo BPMN 2.0 com Múltiplas Especialidades e Protocolos de Emergência</text>
+  
+  <!-- Swimlanes -->
+  <rect x="20" y="70" width="1460" height="90" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="160" width="1460" height="100" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="260" width="1460" height="100" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="360" width="1460" height="100" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="460" width="1460" height="100" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="560" width="1460" height="100" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  <rect x="20" y="660" width="1460" height="80" fill="url(#swG)" stroke="#B0BEC5" stroke-width="1"/>
+  
+  <text x="35" y="95" font-size="12" font-weight="600" fill="#37474F">Recepção</text>
+  <line x1="20" y1="105" x2="1480" y2="105" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="185" font-size="12" font-weight="600" fill="#37474F">Enfermagem / Triagem</text>
+  <line x1="20" y1="195" x2="1480" y2="195" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="285" font-size="12" font-weight="600" fill="#37474F">Médico Plantonista</text>
+  <line x1="20" y1="295" x2="1480" y2="295" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="385" font-size="12" font-weight="600" fill="#37474F">Exames / Laboratório</text>
+  <line x1="20" y1="395" x2="1480" y2="395" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="485" font-size="12" font-weight="600" fill="#37474F">Farmácia</text>
+  <line x1="20" y1="495" x2="1480" y2="495" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="585" font-size="12" font-weight="600" fill="#37474F">Observação / Internação</text>
+  <line x1="20" y1="595" x2="1480" y2="595" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="35" y="685" font-size="12" font-weight="600" fill="#37474F">Administrativo / Alta</text>
+  <line x1="20" y1="695" x2="1480" y2="695" stroke="#ECEFF4" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- START -->
+  <circle cx="100" cy="115" r="16" fill="none" stroke="#2E7D32" stroke-width="3"/>
+  <circle cx="100" cy="115" r="7" fill="#43A047"/>
+  <text x="100" y="143" text-anchor="middle" font-size="9" fill="#546E7A">Chegada do</text>
+  <text x="100" y="155" text-anchor="middle" font-size="9" fill="#546E7A">Paciente</text>
+  
+  <!-- T1: Cadastro -->
+  <rect x="160" y="97" width="130" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="225" y="112" text-anchor="middle" font-size="10" fill="#0F1C2E">Realizar</text>
+  <text x="225" y="126" text-anchor="middle" font-size="10" fill="#0F1C2E">Cadastro</text>
+  <line x1="116" y1="115" x2="155" y2="115" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T2: Verificar Convênio -->
+  <rect x="310" y="97" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="380" y="112" text-anchor="middle" font-size="10" fill="#0F1C2E">Verificar</text>
+  <text x="380" y="126" text-anchor="middle" font-size="10" fill="#0F1C2E">Convênio/SUS</text>
+  <line x1="290" y1="115" x2="305" y2="115" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- Flow to Triage -->
+  <line x1="450" y1="115" x2="470" y2="115" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="470" y1="115" x2="470" y2="210" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T3: Triagem Manchester -->
+  <rect x="390" y="192" width="160" height="36" rx="5" fill="#FFF3E0" stroke="#FB8C00" stroke-width="1.5"/>
+  <text x="470" y="207" text-anchor="middle" font-size="10" fill="#E65100">Classificação de</text>
+  <text x="470" y="221" text-anchor="middle" font-size="10" fill="#E65100">Risco (Manchester)</text>
+  
+  <!-- GW1: Nível de Urgência -->
+  <polygon points="620,202 650,230 620,258 590,230" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="620" y="225" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">Urgên-</text>
+  <text x="620" y="238" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">cia?</text>
+  <line x1="550" y1="210" x2="585" y2="230" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- Vermelho/Amarelo -->
+  <line x1="650" y1="230" x2="680" y2="230" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrE)"/>
+  <text x="670" y="220" font-size="9" fill="#C62828" font-weight="600">Verm/Am</text>
+  
+  <!-- T4: Atendimento Imediato -->
+  <rect x="700" y="212" width="160" height="36" rx="5" fill="#FFEBEE" stroke="#E57373" stroke-width="1.5"/>
+  <text x="780" y="227" text-anchor="middle" font-size="10" fill="#C62828">Atendimento</text>
+  <text x="780" y="241" text-anchor="middle" font-size="10" fill="#C62828">Imediato</text>
+  
+  <!-- Verde/Azul -->
+  <line x1="620" y1="258" x2="620" y2="290" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  <text x="630" y="280" font-size="9" fill="#2E7D32" font-weight="600">Verde/Azul</text>
+  
+  <!-- T5: Aguardar Sala de Espera -->
+  <rect x="540" y="292" width="160" height="36" rx="5" fill="#E3F2FD" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="620" y="307" text-anchor="middle" font-size="10" fill="#1565C0">Aguardar na Sala</text>
+  <text x="620" y="321" text-anchor="middle" font-size="10" fill="#1565C0">de Espera</text>
+  
+  <!-- Flow from both to Doctor -->
+  <path d="M 860 230 Q 900 230, 900 330 L 920 330" fill="none" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  <line x1="700" y1="310" x2="720" y2="310" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="720" y1="310" x2="720" y2="330" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="720" y1="330" x2="915" y2="330" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T6: Avaliação Médica -->
+  <rect x="940" y="312" width="150" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1015" y="327" text-anchor="middle" font-size="10" fill="#0F1C2E">Avaliação e</text>
+  <text x="1015" y="341" text-anchor="middle" font-size="10" fill="#0F1C2E">Anamnese</text>
+  
+  <!-- GW2: Solicitar Exames? -->
+  <polygon points="1160,322 1190,350 1160,378 1130,350" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="1160" y="345" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">Exames?</text>
+  <line x1="1090" y1="330" x2="1125" y2="350" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- Sim -->
+  <line x1="1190" y1="350" x2="1210" y2="350" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  <text x="1205" y="340" font-size="9" fill="#2E7D32" font-weight="600">Sim</text>
+  
+  <!-- T7: Coletar Exames -->
+  <rect x="1230" y="332" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1300" y="347" text-anchor="middle" font-size="10" fill="#0F1C2E">Coleta e</text>
+  <text x="1300" y="361" text-anchor="middle" font-size="10" fill="#0F1C2E">Análise</text>
+  
+  <!-- Não -->
+  <line x1="1160" y1="378" x2="1160" y2="410" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  <text x="1170" y="400" font-size="9" fill="#546E7A" font-weight="600">Não</text>
+  
+  <!-- Merge point -->
+  <line x1="1370" y1="350" x2="1390" y2="350" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1390" y1="350" x2="1390" y2="450" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1160" y1="410" x2="1160" y2="450" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1160" y1="450" x2="1385" y2="450" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T8: Prescrição -->
+  <rect x="1410" y="432" width="140" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1480" y="447" text-anchor="middle" font-size="10" fill="#0F1C2E">Prescrição</text>
+  <text x="1480" y="461" text-anchor="middle" font-size="10" fill="#0F1C2E">Médica</text>
+  
+  <!-- Flow to Pharmacy -->
+  <line x1="1550" y1="450" x2="1570" y2="450" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1570" y1="450" x2="1570" y2="530" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="1570" y1="530" x2="1200" y2="530" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T9: Dispensar Medicamentos -->
+  <rect x="1050" y="512" width="160" height="36" rx="5" fill="#E8F5E9" stroke="#81C784" stroke-width="1.5"/>
+  <text x="1130" y="527" text-anchor="middle" font-size="10" fill="#2E7D32">Dispensar</text>
+  <text x="1130" y="541" text-anchor="middle" font-size="10" fill="#2E7D32">Medicamentos</text>
+  
+  <!-- GW3: Internar? -->
+  <polygon points="1280,522 1310,550 1280,578 1250,550" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="1280" y="545" text-anchor="middle" font-size="9" font-weight="600" fill="#1B2A3D">Internar?</text>
+  <line x1="1210" y1="530" x2="1245" y2="550" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- Sim -->
+  <line x1="1310" y1="550" x2="1330" y2="550" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrE)"/>
+  <text x="1325" y="540" font-size="9" fill="#C62828" font-weight="600">Sim</text>
+  
+  <!-- T10: Encaminhar para Internação -->
+  <rect x="1350" y="532" width="160" height="36" rx="5" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="1430" y="547" text-anchor="middle" font-size="10" fill="#E65100">Encaminhar para</text>
+  <text x="1430" y="561" text-anchor="middle" font-size="10" fill="#E65100">Enfermaria/UTI</text>
+  
+  <!-- Não -->
+  <line x1="1280" y1="578" x2="1280" y2="610" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  <text x="1290" y="600" font-size="9" fill="#546E7A" font-weight="600">Não</text>
+  
+  <!-- T11: Observação ou Alta -->
+  <rect x="1200" y="612" width="160" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="1280" y="627" text-anchor="middle" font-size="10" fill="#0F1C2E">Período de</text>
+  <text x="1280" y="641" text-anchor="middle" font-size="10" fill="#0F1C2E">Observação</text>
+  
+  <!-- Flow to Admin -->
+  <line x1="1360" y1="630" x2="1380" y2="630" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- T12: Processar Alta -->
+  <rect x="1400" y="612" width="140" height="36" rx="5" fill="#E3F2FD" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="1470" y="627" text-anchor="middle" font-size="10" fill="#1565C0">Emitir</text>
+  <text x="1470" y="641" text-anchor="middle" font-size="10" fill="#1565C0">Documentos</text>
+  
+  <!-- END -->
+  <circle cx="1570" cy="630" r="18" fill="none" stroke="#B71C1C" stroke-width="5"/>
+  <text x="1570" y="660" text-anchor="middle" font-size="9" fill="#546E7A">Paciente</text>
+  <text x="1570" y="672" text-anchor="middle" font-size="9" fill="#546E7A">Liberado</text>
+  <line x1="1540" y1="630" x2="1550" y2="630" stroke="#546E7A" stroke-width="1.5" marker-end="url(#arrN)"/>
+  
+  <!-- Legend -->
+  <rect x="20" y="715" width="450" height="25" fill="#FAFAFA" stroke="#CFD8DC" stroke-width="1" rx="4"/>
+  <text x="35" y="732" font-size="10" fill="#546E7A" font-weight="600">Legenda:</text>
+  <circle cx="110" cy="728" r="6" fill="none" stroke="#2E7D32" stroke-width="2"/>
+  <text x="125" y="732" font-size="9" fill="#546E7A">Início</text>
+  <rect x="180" y="723" width="20" height="10" fill="#fff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="208" y="732" font-size="9" fill="#546E7A">Tarefa</text>
+  <polygon points="250,728 256,728 253,733" fill="#FDD835" stroke="#F57F17" stroke-width="1"/>
+  <text x="265" y="732" font-size="9" fill="#546E7A">Decisão</text>
+  <circle cx="320" cy="728" r="6" fill="none" stroke="#B71C1C" stroke-width="3"/>
+  <text x="335" y="732" font-size="9" fill="#546E7A">Fim</text>
+  <rect x="380" y="723" width="20" height="10" fill="#FFEBEE" stroke="#E57373" stroke-width="1.5"/>
+  <text x="408" y="732" font-size="9" fill="#546E7A">Emergência</text>
+</svg>
