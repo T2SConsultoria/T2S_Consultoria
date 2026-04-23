@@ -107,16 +107,16 @@ nav .container{display:flex;justify-content:space-between;align-items:center}
 .proof-item .ic{color:var(--gold);font-size:15px}
 .proof-sep{width:1px;height:16px;background:rgba(200,150,62,.2);flex-shrink:0}
 /* Belt Badges - Estilo Faixa de Artes Marciais */
-.belt-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:4px;font-size:12px;font-weight:600;letter-spacing:.5px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.belt-badge::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.3)}
-.belt-badge::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(0,0,0,.2)}
-.belt-yellow{background:linear-gradient(135deg,#F4D03F 0%,#B7950B 100%);color:#1a1a1a;border:1px solid #9A7D0A}
-.belt-green{background:linear-gradient(135deg,#2ECC71 0%,#1E8449 100%);color:#fff;border:1px solid #145A32}
-.belt-black{background:linear-gradient(135deg,#34495E 0%,#1a252f 100%);color:#fff;border:1px solid #0E1A22;position:relative}
-.belt-black::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(212,153,63,.4);transform:translateY(-50%)}
-.belt-master{background:linear-gradient(135deg,#D4993F 0%,#9A6E24 50%,#D4993F 100%);color:#0B1929;border:1px solid #7D5A1A;position:relative}
-.belt-master::before{content:'';position:absolute;top:3px;left:0;right:0;height:2px;background:rgba(255,255,255,.5)}
-.belt-icon{font-size:14px}
+.belt-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.5px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3);min-width:140px;justify-content:center}
+.belt-badge::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.4)}
+.belt-badge::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(0,0,0,.3)}
+.belt-yellow{background:linear-gradient(180deg,#F4D03F 0%,#B7950B 100%);color:#1a1a1a;border:2px solid #9A7D0A;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.belt-green{background:linear-gradient(180deg,#2ECC71 0%,#1E8449 100%);color:#fff;border:2px solid #145A32;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.belt-black{background:linear-gradient(180deg,#4a5568 0%,#1a252f 100%);color:#fff;border:2px solid #0E1A22;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.belt-black::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(212,153,63,.6),transparent);transform:translateY(-50%)}
+.belt-master{background:linear-gradient(180deg,#E8B85C 0%,#D4993F 30%,#9A6E24 70%,#E8B85C 100%);color:#0B1929;border:2px solid #7D5A1A;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.2);font-weight:700}
+.belt-master::before{content:'';position:absolute;top:4px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)}
+.belt-icon{font-size:14px;flex-shrink:0}
 
 /* SECTIONS */
 section{padding:var(--sp)}
@@ -288,7 +288,7 @@ footer p{font-size:13px;color:var(--gray-500)}
 @media(max-width:768px){.dep-card{min-width:100%}}
 .dep-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
 .dep-stars{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:16px}
-.dep-text{font-size:15px;color:var(--gray-300);line-height:1.75;font-style:italic;margin-bottom:24px;flex:1}
+.dep-text{font-size:15px;color:var(--gray-300);line-height:1.7;font-style:italic;margin-bottom:24px}
 .dep-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(212,153,63,.08);padding-top:20px;margin-top:auto}
 .dep-avatar{width:42px;height:42px;border-radius:50%;border:1px solid;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;flex-shrink:0;font-size:16px}
 .dep-name{font-size:14px;font-weight:600;color:var(--white)}
@@ -1794,20 +1794,32 @@ function shareResult(platform){
 // ── Carrossel de Depoimentos ────────────────────────────────────────
 let currentSlide=0;
 const totalSlides=10;
-const slidesPerView=window.innerWidth<=768?1:(window.innerWidth<=992?2:3);
-const maxSlide=totalSlides-slidesPerView;
+
+function getSlidesPerView(){
+  return window.innerWidth<=768?1:(window.innerWidth<=992?2:3);
+}
+
+function getMaxSlide(){
+  return totalSlides-getSlidesPerView();
+}
 
 function initCarousel(){
   const dotsContainer=document.getElementById('carouselDots');
   if(!dotsContainer)return;
   
+  // Limpar dots existentes
+  dotsContainer.innerHTML='';
+  
   // Criar dots
+  const maxSlide=getMaxSlide();
   for(let i=0;i<=maxSlide;i++){
     const dot=document.createElement('div');
     dot.className='dep-dot'+(i===0?' active':'');
     dot.onclick=()=>goToSlide(i);
     dotsContainer.appendChild(dot);
   }
+  
+  updateCarousel();
   
   // Auto-play
   setInterval(()=>{
@@ -1819,6 +1831,7 @@ function moveCarousel(direction){
   const carousel=document.getElementById('testimonialCarousel');
   if(!carousel)return;
   
+  const maxSlide=getMaxSlide();
   currentSlide+=direction;
   
   // Loop infinito
@@ -1841,7 +1854,8 @@ function updateCarousel(){
   const cardWidth=carousel.querySelector('.dep-card').offsetWidth+24; // gap
   carousel.style.transform=`translateX(-${currentSlide*cardWidth}px)`;
   
-  // Atualizar dots
+  // Atualizar dots - recalcula maxSlide para garantir consistência
+  const maxSlide=getMaxSlide();
   dots.forEach((dot,i)=>{
     dot.classList.toggle('active',i===currentSlide);
   });
