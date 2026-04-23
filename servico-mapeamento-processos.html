@@ -198,7 +198,7 @@ section{padding:56px 0}
 <div class="container">
 <span class="s-label">Exemplos de Entregáveis</span>
 <h2 class="s-title">Fluxogramas BPMN — Padrão Internacional Bizagi</h2>
-<p style="font-size:15px;color:var(--gray-400);margin-bottom:36px;max-width:680px;line-height:1.8">Cada entregável é produzido no padrão internacional BPMN com o estilo visual do Bizagi: tarefas a branco, gateways a amarelo, eventos de início a verde e de fim a vermelho. Os ficheiros são fornecidos em formatos editáveis (Visio, Bizagi, SVG).</p>
+<p style="font-size:15px;color:var(--gray-400);margin-bottom:36px;max-width:680px;line-height:1.8">Cada entregável é produzido no padrão internacional BPMN 2.0 com o estilo visual característico do Bizagi: tarefas em branco com bordas cinzas, gateways em amarelo, eventos de início em verde e eventos de fim em vermelho. Documentação clara, auditável e pronta para automação ou certificação ISO.</p>
 
 <div class="tab-nav">
 <button class="tab-btn active" onclick="showTab(0,this)">🏭 Produção Industrial</button>
@@ -214,10 +214,10 @@ section{padding:56px 0}
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
 <span>fluxo-producao-industrial.bpmn</span>
 </div>
-<img src="cases/fluxo-producao-industrial.svg" alt="Fluxograma BPMN — Linha de Envase" loading="lazy"/>
+<img src="cases/fluxo-producao-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Linha de Envase com Recebimento, Inspeção, Produção e Controle de Qualidade" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Linha de Envase · 4 Tarefas · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0</span>
+<span class="meta-label">Linha de Envase · 4 Tarefas · 1 Gateway Exclusivo</span>
+<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
 </div>
 </div>
 </div>
@@ -228,10 +228,10 @@ section{padding:56px 0}
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
 <span>fluxo-manutencao-industrial.bpmn</span>
 </div>
-<img src="cases/fluxo-manutencao-industrial.svg" alt="Fluxograma BPMN — Manutenção Industrial" loading="lazy"/>
+<img src="cases/fluxo-manutencao-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Manutenção Corretiva e Preventiva com Ordens de Serviço" loading="lazy"/>
 <div class="diagram-meta">
 <span class="meta-label">Ordens de Serviço · Corretiva & Preventiva · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0</span>
+<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
 </div>
 </div>
 </div>
@@ -242,10 +242,10 @@ section{padding:56px 0}
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
 <span>fluxo-pronto-socorro-triagem.bpmn</span>
 </div>
-<img src="cases/fluxo-atendimento-hospitalar.svg" alt="Fluxograma BPMN — Triagem de Manchester" loading="lazy"/>
+<img src="cases/fluxo-atendimento-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Triagem de Manchester em Pronto Socorro" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Triagem de Manchester · 4 Tarefas · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0</span>
+<span class="meta-label">Triagem de Manchester · 3 Tarefas · 1 Gateway</span>
+<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
 </div>
 </div>
 </div>
@@ -256,10 +256,10 @@ section{padding:56px 0}
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
 <span>fluxo-logistica-distribuicao.bpmn</span>
 </div>
-<img src="cases/fluxo-logistica-distribuicao.svg" alt="Fluxograma BPMN — Logística de Distribuição" loading="lazy"/>
+<img src="cases/fluxo-logistica-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Gestão de Pedidos e Distribuição Logística" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Gestão de Pedidos · 4 Tarefas · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0</span>
+<span class="meta-label">Gestão de Pedidos · 3 Tarefas · 1 Gateway</span>
+<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
 </div>
 </div>
 </div>
@@ -270,10 +270,10 @@ section{padding:56px 0}
 <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
 <span>fluxo-onboarding-colaboradores.bpmn</span>
 </div>
-<img src="cases/fluxo-onboarding-rh.svg" alt="Fluxograma BPMN — Onboarding RH" loading="lazy"/>
+<img src="cases/fluxo-onboarding-bizagi.svg" alt="Fluxograma BPMN estilo Bizagi — Onboarding de Colaboradores no RH" loading="lazy"/>
 <div class="diagram-meta">
-<span class="meta-label">Integração de Colaboradores · 4 Tarefas · 1 Gateway</span>
-<span class="meta-badge">BPMN 2.0</span>
+<span class="meta-label">Onboarding RH · 3 Tarefas · 1 Gateway</span>
+<span class="meta-badge">BPMN 2.0 · Bizagi Style</span>
 </div>
 </div>
 </div>
@@ -355,6 +355,15 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.content-block, .cream-card, .pattern-interrupt').forEach(el => {
   observer.observe(el);
 });
+
+// Auto-rotate tabs every 8 seconds
+let currentTab = 0;
+const totalTabs = 5;
+setInterval(() => {
+  currentTab = (currentTab + 1) % totalTabs;
+  const buttons = document.querySelectorAll('.tab-btn');
+  showTab(currentTab, buttons[currentTab]);
+}, 8000);
 </script>
 </body>
 </html>
