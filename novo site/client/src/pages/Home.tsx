@@ -12,6 +12,9 @@ import {
   Lightbulb,
   Target,
   Phone,
+  Award,
+  Shield,
+  Clock,
 } from "lucide-react";
 
 /* ─── Helpers ──────────────────────────────────────────────────────── */
@@ -69,24 +72,41 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-3 mb-12">
                   <a
-                    href="/#contato"
+                    href="https://wa.me/5514991175103"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white
                                font-semibold text-sm px-7 py-3.5 rounded-sm transition-all duration-200
                                shadow-lg shadow-accent/20 hover:shadow-accent/30"
                   >
+                    <Phone className="w-4 h-4" />
                     Agendar Diagnóstico Gratuito
                     <ArrowRight className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://wa.me/5514991175103"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/servicos"
                     className="inline-flex items-center justify-center gap-2 border border-white/25
                                text-white hover:bg-white/10 text-sm font-medium px-7 py-3.5
                                rounded-sm transition-all duration-200"
                   >
-                    Fale no WhatsApp
+                    Conhecer Serviços
                   </a>
+                </div>
+
+                {/* Trust badges */}
+                <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-white/10 mb-8">
+                  <div className="flex items-center gap-2 text-white/60 text-xs">
+                    <Shield className="w-4 h-4 text-accent" />
+                    <span>Método Validado</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/60 text-xs">
+                    <Award className="w-4 h-4 text-accent" />
+                    <span>Certificação Lean Six Sigma</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/60 text-xs">
+                    <Clock className="w-4 h-4 text-accent" />
+                    <span>Resultados em 30 dias</span>
+                  </div>
                 </div>
 
                 {/* Stats strip */}
@@ -462,7 +482,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════
-            TESTIMONIAL TEASER — White, social proof
+            TESTIMONIAL TEASER — White, social proof with client logos
         ═══════════════════════════════════════════════════════════ */}
         <section className="py-20 md:py-28 bg-white">
           <div className="container">
@@ -480,13 +500,33 @@ export default function Home() {
                   T2S — com resultados mensuráveis em produtividade, redução de custos
                   e satisfação das equipes.
                 </p>
-                <a
-                  href="/cases"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-4 transition-all duration-200"
-                >
-                  Ver cases e resultados
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <a
+                    href="/cases"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-4 transition-all duration-200"
+                  >
+                    Ver cases e resultados
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="/depoimentos"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-4 transition-all duration-200"
+                  >
+                    Ler depoimentos
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+                {/* Client sectors */}
+                <div className="pt-6 border-t border-border">
+                  <p className="text-xs text-muted-foreground uppercase tracking-[0.1em] mb-4">Setores atendidos</p>
+                  <div className="flex flex-wrap gap-3">
+                    {["Manufatura", "Saúde", "Logística", "Varejo", "Construção", "Tecnologia"].map((sector) => (
+                      <span key={sector} className="px-3 py-1.5 bg-muted rounded-sm text-xs font-medium text-foreground">
+                        {sector}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -515,10 +555,22 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════
-            CTA — Gold accent background
+            CTA — Gold accent background with urgency
         ═══════════════════════════════════════════════════════════ */}
-        <section id="contato" className="py-16 md:py-20 bg-accent">
-          <div className="container text-center">
+        <section id="contato" className="py-16 md:py-20 bg-accent relative overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+          </div>
+          
+          <div className="container text-center relative z-10">
             <p className="text-white/75 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
               Próximo passo
             </p>
@@ -532,7 +584,7 @@ export default function Home() {
               Comece com um diagnóstico gratuito e sem compromisso.
               Identifique as oportunidades na sua empresa em menos de 2 semanas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a
                 href="https://wa.me/5514991175103"
                 target="_blank"
@@ -555,12 +607,18 @@ export default function Home() {
               </a>
             </div>
 
+            {/* Urgency message */}
+            <p className="text-white/60 text-xs italic mb-6">
+              ⏱️ Vagas limitadas para diagnósticos gratuitos este mês
+            </p>
+
             {/* Trust chips */}
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-10 pt-8 border-t border-white/20">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 pt-8 border-t border-white/20">
               {[
                 "✓ Método rigoroso baseado em dados",
                 "✓ Resultados comprovados",
                 "✓ Implementação lado a lado",
+                "✓ Sem compromisso",
               ].map((item, i) => (
                 <span key={i} className="text-white/70 text-xs">{item}</span>
               ))}

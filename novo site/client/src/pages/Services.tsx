@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, CheckCircle, Clock, Target, Users, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, Target, Users, TrendingUp, Zap, Shield, Award, BarChart3 } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -24,10 +24,11 @@ export default function Services() {
       ],
       ideal: "Empresas que querem entender melhor seus gargalos operacionais antes de investir em consultoria completa.",
       price: "Gratuito",
+      whyChoose: "Ideal para quem busca uma visão clara e objetiva antes de tomar decisões.",
     },
     {
       id: 2,
-      badge: "COMPLETO",
+      badge: "MAIS PROCURADO",
       badgeColor: "bg-blue-100 text-blue-800",
       title: "Diagnóstico Completo de Maturidade Organizacional (DCMO)",
       subtitle: "Análise aprofundada com implementação",
@@ -46,6 +47,7 @@ export default function Services() {
       ideal:
         "Empresas que buscam transformação operacional completa com suporte especializado durante toda a jornada.",
       price: "Sob consulta",
+      whyChoose: "O pacote mais completo — transforma sua operação de ponta a ponta.",
     },
     {
       id: 3,
@@ -68,6 +70,7 @@ export default function Services() {
       ideal:
         "Empresas que precisam documentar processos para ISO, automação, ou preparação para consultoria completa.",
       price: "A partir de R$ 3.000",
+      whyChoose: "Documentação profissional que facilita auditorias e treinamentos.",
     },
   ];
 
@@ -76,26 +79,31 @@ export default function Services() {
       src: "/fluxo-producao-bizagi.svg",
       alt: "Fluxo de Produção Industrial",
       title: "Produção Industrial",
+      description: "Mapeamento completo de linha de manufatura com pontos de controle de qualidade",
     },
     {
       src: "/fluxo-atendimento-bizagi.svg",
       alt: "Fluxo de Atendimento ao Cliente",
       title: "Atendimento ao Cliente",
+      description: "Jornada do cliente desde o primeiro contato até a resolução",
     },
     {
       src: "/fluxo-logistica-bizagi.svg",
       alt: "Fluxo de Logística e Distribuição",
       title: "Logística e Distribuição",
+      description: "Processo de fulfillment com gestão de exceções",
     },
     {
       src: "/fluxo-manutencao-bizagi.svg",
       alt: "Fluxo de Manutenção Industrial",
       title: "Manutenção Industrial",
+      description: "Fluxo de manutenção preventiva e corretiva com classificação por criticidade",
     },
     {
       src: "/fluxo-onboarding-bizagi.svg",
       alt: "Fluxo de Onboarding de Colaboradores",
       title: "Onboarding RH",
+      description: "Jornada completa de integração de novos colaboradores",
     },
   ];
 
@@ -161,6 +169,12 @@ export default function Services() {
                             <strong>Ideal para:</strong>
                           </p>
                           <p className="text-foreground">{service.ideal}</p>
+                        </div>
+
+                        {/* Why choose this service */}
+                        <div className="border-l-4 border-accent pl-4 py-2">
+                          <p className="text-sm font-semibold text-primary">Por que escolher:</p>
+                          <p className="text-sm text-foreground italic">{service.whyChoose}</p>
                         </div>
                       </div>
 
@@ -241,8 +255,8 @@ export default function Services() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {processMaps.map((map, idx) => (
-                <Card key={idx} className="overflow-hidden border-border hover:shadow-lg transition-shadow">
-                  <div className="aspect-video bg-muted/50 flex items-center justify-center p-4">
+                <Card key={idx} className="overflow-hidden border-border hover:shadow-lg transition-shadow group">
+                  <div className="aspect-video bg-muted/50 flex items-center justify-center p-4 group-hover:bg-accent/5 transition-colors">
                     <img
                       src={map.src}
                       alt={map.alt}
@@ -250,27 +264,69 @@ export default function Services() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-primary text-center">{map.title}</h3>
+                  <div className="p-5">
+                    <h3 className="font-bold text-primary mb-2">{map.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{map.description}</p>
                   </div>
                 </Card>
               ))}
             </div>
+
+            {/* CTA for process mapping */}
+            <div className="mt-12 text-center">
+              <div className="inline-block border-l-4 border-accent pl-6 py-2 text-left">
+                <p className="text-sm font-semibold text-primary mb-1">Precisa documentar seus processos?</p>
+                <p className="text-sm text-muted-foreground">
+                  Oferecemos mapeamento profissional em padrão BPMN.{" "}
+                  <a href="https://wa.me/5514991175103" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
+                    Solicite um orçamento →
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-primary text-white">
-          <div className="container text-center">
+        {/* CTA Section with urgency */}
+        <section className="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <pattern id="ctaGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100" height="100" fill="url(#ctaGrid)"/>
+            </svg>
+          </div>
+          
+          <div className="container text-center relative z-10">
             <h2 className="text-white mb-6">Qual Serviço é Ideal para Sua Empresa?</h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Comece com um diagnóstico gratuito e sem compromisso. Vamos identificar as melhores
               oportunidades para sua operação.
             </p>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-semibold">
-              Agendar Diagnóstico Gratuito
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+              <a
+                href="https://wa.me/5514991175103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-sm transition-all duration-200 shadow-lg"
+              >
+                Agendar Diagnóstico Gratuito
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="/cases"
+                className="inline-flex items-center gap-2 border border-white/30 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-sm transition-all duration-200"
+              >
+                Ver Cases de Sucesso
+              </a>
+            </div>
+            <p className="text-white/50 text-xs italic">
+              ⏱️ Retornamos em até 24 horas úteis
+            </p>
           </div>
         </section>
       </main>
