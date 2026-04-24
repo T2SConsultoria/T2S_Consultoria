@@ -113,7 +113,6 @@ export default function Home() {
                 <div className="flex items-center gap-0 pt-8 border-t border-white/10">
                   {[
                     { n: "100+", label: "Processos Mapeados" },
-                    { n: "50+",  label: "Empresas Atendidas" },
                     { n: "30%",  label: "Redução de Custos" },
                     { n: "98%",  label: "Satisfação" },
                   ].map((stat, i) => (
@@ -126,7 +125,7 @@ export default function Home() {
                           {stat.label}
                         </div>
                       </div>
-                      {i < 3 && <div className="w-px h-8 bg-white/15 flex-shrink-0" />}
+                      {i < 2 && <div className="w-px h-8 bg-white/15 flex-shrink-0" />}
                     </div>
                   ))}
                 </div>
@@ -496,7 +495,7 @@ export default function Home() {
                   suas operações
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  Mais de 50 empresas em diferentes setores já experimentaram a metodologia
+                  Empresas em diferentes setores já experimentaram a metodologia
                   T2S — com resultados mensuráveis em produtividade, redução de custos
                   e satisfação das equipes.
                 </p>
@@ -529,10 +528,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {[
                   { number: "100+", label: "Processos Mapeados", color: "bg-cream border-accent/20" },
-                  { number: "50+",  label: "Empresas Atendidas", color: "bg-primary/5 border-primary/15" },
                   { number: "30%",  label: "Redução Média de Custos", color: "bg-primary/5 border-primary/15" },
                   { number: "98%",  label: "Taxa de Satisfação", color: "bg-cream border-accent/20" },
                 ].map((stat, idx) => (

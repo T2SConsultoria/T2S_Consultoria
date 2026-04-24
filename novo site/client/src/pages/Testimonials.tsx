@@ -118,9 +118,8 @@ export default function Testimonials() {
         <section className="py-16 md:py-24 bg-muted/30">
           <div className="container">
             <h2 className="text-primary mb-12 text-center">Resultados Agregados</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               {[
-                { number: "50+", label: "Empresas Transformadas" },
                 { number: "400+", label: "Colaboradores Capacitados" },
                 { number: "R$ 3,2M+", label: "Em Savings Gerados" },
                 { number: "98%", label: "Taxa de Satisfação" },
