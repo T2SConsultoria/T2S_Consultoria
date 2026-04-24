@@ -1,8 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Factory, Heart, Truck, Users, Building2 } from "lucide-react";
+import { ArrowRight, Factory, Heart, Truck, Users, Building2, Phone } from "lucide-react";
 
 export default function Cases() {
   const casesByCategory = {
@@ -150,17 +149,25 @@ export default function Cases() {
               contextos operacionais. Fale conosco para discutir como podemos ajudar sua empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-semibold">
+              <a
+                href="https://wa.me/5514991175103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-sm transition-all duration-200 shadow-lg"
+              >
+                <Phone className="w-5 h-5" />
                 Agendar Diagnóstico Gratuito
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white"
+              </a>
+              <a
+                href="https://wa.me/5514991175103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-primary text-primary hover:bg-primary hover:text-white font-medium px-8 py-4 rounded-sm transition-all duration-200"
               >
+                <Phone className="w-5 h-5" />
                 Fale Conosco no WhatsApp
-              </Button>
+              </a>
             </div>
           </div>
         </section>
