@@ -71,6 +71,34 @@ export default function Services() {
     },
   ];
 
+  const processMaps = [
+    {
+      src: "/fluxo-producao-bizagi.svg",
+      alt: "Fluxo de Produção Industrial",
+      title: "Produção Industrial",
+    },
+    {
+      src: "/fluxo-atendimento-bizagi.svg",
+      alt: "Fluxo de Atendimento ao Cliente",
+      title: "Atendimento ao Cliente",
+    },
+    {
+      src: "/fluxo-logistica-bizagi.svg",
+      alt: "Fluxo de Logística e Distribuição",
+      title: "Logística e Distribuição",
+    },
+    {
+      src: "/fluxo-manutencao-bizagi.svg",
+      alt: "Fluxo de Manutenção Industrial",
+      title: "Manutenção Industrial",
+    },
+    {
+      src: "/fluxo-onboarding-bizagi.svg",
+      alt: "Fluxo de Onboarding de Colaboradores",
+      title: "Onboarding RH",
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -198,6 +226,35 @@ export default function Services() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Mapping Gallery */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container">
+            <h2 className="text-primary mb-4 text-center">Exemplos de Mapeamento de Processos</h2>
+            <p className="text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
+              Veja alguns exemplos de fluxogramas profissionais desenvolvidos no padrão BPMN 
+              para diferentes áreas e setores.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {processMaps.map((map, idx) => (
+                <Card key={idx} className="overflow-hidden border-border hover:shadow-lg transition-shadow">
+                  <div className="aspect-video bg-muted/50 flex items-center justify-center p-4">
+                    <img
+                      src={map.src}
+                      alt={map.alt}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-primary text-center">{map.title}</h3>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
