@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapeamento de Processos (Avulso) | TF Consultoria — Excelência Operacional</title>
+<meta name="description" content="Mapeamento de Processos avulso. Fluxogramas BPMN, AS-IS/TO-BE, SIPOC, VSM. A partir de R$ 3.000. Processos documentados e otimizados.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1929;--navy-light:#132035;--navy-lighter:#1B2D42;--gold:#C8963E;--gold-light:#D4A84F;--gold-dark:#B8832A;--cream:#F9F4EC;--white:#FFF;--gray-100:#F7F8FA;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:9999}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(11,25,41,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,150,62,.1)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:2px}
+.back{color:var(--gray-300);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:.3s}
+.back:hover{color:var(--gold)}
+
+/* SCROLL PROGRESS */
+#progress-bar{position:fixed;top:3px;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0;z-index:9998;transition:width .1s ease}
+
+/* HERO */
+.hero-srv{padding:140px 0 80px;background:linear-gradient(135deg,var(--navy),var(--navy-light))}
+.hero-srv .container{position:relative}
+.breadcrumb{font-size:13px;color:var(--gray-400);margin-bottom:24px}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.eyebrow{display:inline-block;height:2px;width:48px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin-bottom:16px}
+.hero-srv h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.2;margin-bottom:16px}
+.hero-srv h1 .gold{color:var(--gold)}
+.hero-srv .desc{font-size:18px;color:var(--gray-300);max-width:700px;line-height:1.8;margin-bottom:32px}
+.badge-novo{display:inline-block;background:var(--gold);color:var(--navy);font-size:13px;font-weight:700;padding:6px 18px;border-radius:100px;letter-spacing:1px;margin-bottom:20px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:.3s;border:none;cursor:pointer;animation:btn-pulse 2s infinite}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,62,.3);animation:none}
+@keyframes btn-pulse{0%,100%{box-shadow:0 4px 15px rgba(200,150,62,.2)}50%{box-shadow:0 4px 25px rgba(200,150,62,.4)}}
+
+/* SECTIONS */
+section{padding:80px 0}
+.s-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative;padding-left:56px}
+.s-label::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:24px;line-height:1.3}
+
+/* CONTENT BLOCKS */
+.content-block{background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:40px;margin-bottom:32px;opacity:0;animation:fadeUp .6s ease forwards .4s}
+.content-block h3{font-size:20px;font-weight:600;color:var(--white);margin-bottom:16px}
+.content-block p{font-size:15px;color:var(--gray-300);line-height:1.8;margin-bottom:16px}
+.content-block p:last-child{margin-bottom:0}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.feat{background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:28px;transition:.3s;opacity:0;animation:fadeUp .6s ease forwards}
+.feat:nth-child(1){animation-delay:.5s}
+.feat:nth-child(2){animation-delay:.6s}
+.feat:nth-child(3){animation-delay:.7s}
+.feat:nth-child(4){animation-delay:.8s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.feat:hover{border-color:rgba(200,150,62,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.feat-ic{font-size:28px;margin-bottom:12px}
+.feat h4{font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px}
+.feat p{font-size:14px;color:var(--gray-400);line-height:1.6}
+
+/* GALLERY */
+.gallery-section{padding:80px 0;background:linear-gradient(180deg,var(--navy-light) 0%,var(--navy) 100%)}
+.tab-nav{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.tab-btn{background:transparent;border:1px solid rgba(200,150,62,.2);color:var(--gray-400);font-family:'Inter',sans-serif;font-size:13px;font-weight:500;padding:10px 18px;border-radius:6px;cursor:pointer;transition:.25s;white-space:nowrap}
+.tab-btn:hover{border-color:rgba(200,150,62,.5);color:var(--gray-300)}
+.tab-btn.active{background:rgba(200,150,62,.12);border-color:var(--gold);color:var(--gold);font-weight:600}
+.tab-pane{display:none;opacity:0;animation:fadeIn .4s ease forwards}
+.tab-pane.active{display:block;opacity:1}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.diagram-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.diagram-header{background:#f5f7fa;padding:14px 20px;border-bottom:1px solid #e0e7ef;display:flex;align-items:center;gap:12px}
+.diagram-header .dot{width:10px;height:10px;border-radius:50%}
+.diagram-header .dot-r{background:#ef5350}
+.diagram-header .dot-y{background:#fdd835}
+.diagram-header .dot-g{background:#43a047}
+.diagram-header span{font-size:12px;color:#546e7a;font-family:'Inter',sans-serif;font-weight:500;margin-left:6px}
+.diagram-card img{width:100%;height:auto;display:block;padding:24px;background:#fafbfc}
+.diagram-meta{padding:16px 20px;background:#f5f7fa;border-top:1px solid #e0e7ef;display:flex;justify-content:space-between;align-items:center}
+.diagram-meta .meta-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#90a4ae;font-family:'Inter',sans-serif}
+.diagram-meta .meta-badge{font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;background:rgba(200,150,62,.15);color:#C8963E;font-family:'Inter',sans-serif;letter-spacing:1px}
+
+/* PATTERN INTERRUPT */
+.pattern-interrupt{background:linear-gradient(135deg,var(--navy-lighter),var(--navy-light));padding:60px 40px;border-radius:16px;text-align:center;margin:60px 0;border:1px solid rgba(200,150,62,.12);position:relative;overflow:hidden;opacity:0;animation:fadeUp .6s ease forwards .9s}
+.pattern-interrupt::before{content:'';position:absolute;top:-50%;right:-50%;width:400px;height:400px;background:radial-gradient(circle,rgba(200,150,62,.05),transparent 70%);border-radius:50%}
+.pattern-interrupt .container{position:relative;z-index:1}
+.pattern-interrupt h2{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);color:var(--white);margin-bottom:20px;font-weight:700;line-height:1.4}
+.pattern-interrupt .gold{color:var(--gold)}
+
+/* CREAM SECTION */
+.cream-section{background:var(--cream);padding:60px 0}
+.cream-section .container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.cream-card{background:var(--white);border-radius:16px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,.08);border:1px solid rgba(200,150,62,.05);opacity:0;animation:fadeUp .6s ease forwards}
+.cream-card:nth-child(1){animation-delay:1s}
+.cream-card:nth-child(2){animation-delay:1.1s}
+.cream-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:16px}
+.cream-card p{color:var(--navy-light);font-size:15px;line-height:1.8}
+
+/* CTA SECTION */
+.cta-sec{padding:80px 0;text-align:center;background:linear-gradient(135deg,var(--navy-light),#1D2D44)}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:16px;opacity:0;animation:fadeUp .6s ease forwards 1.2s}
+.cta-sec p{font-size:16px;color:var(--gray-400);max-width:500px;margin:0 auto 32px;line-height:1.7;opacity:0;animation:fadeUp .6s ease forwards 1.3s}
+.cta-sec .cta-btn{opacity:0;animation:fadeUp .6s ease forwards 1.4s}
+.cta-sec .subtext{font-size:14px;color:var(--gray-400);margin-top:20px;font-style:italic;opacity:0;animation:fadeUp .6s ease forwards 1.5s}
+
+/* FOOTER */
+footer{background:var(--navy-light);padding:32px 0;border-top:1px solid rgba(200,150,62,.08);text-align:center}
+footer p{font-size:13px;color:var(--gray-500)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+html,body{overflow-x:hidden}
+.hero-srv{padding:100px 0 56px}
+.hero-srv .desc{font-size:16px}
+.cta-btn{width:100%;justify-content:center;padding:14px 24px}
+.features{grid-template-columns:1fr}
+.content-block{padding:20px}
+.tab-nav{gap:8px}
+.tab-btn{font-size:12px;padding:8px 12px}
+.diagram-meta{flex-direction:column;gap:8px;align-items:flex-start}
+section{padding:56px 0}
+.gallery-section{padding:56px 0}
+.cta-sec{padding:56px 0}
+.s-label{padding-left:56px}
+.cream-section .container{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.hero-srv h1{font-size:clamp(24px,8vw,36px)}
+.breadcrumb{font-size:12px}
+.tab-btn{padding:7px 10px;font-size:11px}
+.content-block{padding:16px}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav><div class="container"><a href="index.html" class="logo">TF</a><a href="index.html#servicos" class="back">← Todos os Serviços</a></div></nav>
+
+<section class="hero-srv">
+<div class="container">
+<div class="breadcrumb"><a href="index.html">Início</a> / <a href="index.html#servicos">Serviços</a> / Mapeamento de Processos</div>
+<div class="eyebrow"></div>
+<span class="badge-novo">NOVO</span>
+<h1>Mapeamento de <span class="gold">Processos</span></h1>
+<p class="desc">Desenho profissional de fluxogramas no padrão BPMN, mapeamento AS-IS/TO-BE, SIPOC e VSM. Você pode sentir que algo trava na operação, mas sem ver o processo documentado é impossível saber onde agir. Terceirize a modelagem com confiança.</p>
+<a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="cta-btn">Solicitar Orçamento →</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<span class="s-label">O Que Oferecemos</span>
+<h2 class="s-title">Documentação profissional dos seus processos</h2>
+
+<div class="content-block">
+<h3>Por que mapear processos?</h3>
+<p>Antes de melhorar qualquer processo, é preciso enxergá-lo. O mapeamento revela gargalos invisíveis, retrabalhos estruturais, handoffs desnecessários e oportunidades de melhoria que nenhuma planilha ou relatório consegue mostrar de forma clara.</p>
+<p>Utilizamos o padrão BPMN (Business Process Model and Notation), referência internacional para modelagem de processos de negócio, garantindo documentação padronizada, compreensível, auditável e pronta para automação ou certificação ISO.</p>
+</div>
+
+<span class="s-label">Ferramentas</span>
+<h2 class="s-title">Abordagens sob medida para cada necessidade</h2>
+
+<div class="features">
+<div class="feat">
+<div class="feat-ic">📊</div>
+<h4>Fluxogramas BPMN</h4>
+<p>Diagramas de processos no padrão internacional com swimlanes, gateways, eventos e fluxos de mensagem completos e auditáveis.</p>
+</div>
+
+<div class="feat">
+<div class="feat-ic">🔄</div>
+<h4>AS-IS / TO-BE</h4>
+<p>Mapeamento do estado atual e desenho do estado futuro desejado, identificando gaps, pontos de melhoria e oportunidades de otimização.</p>
+</div>
+
+<div class="feat">
+<div class="feat-ic">🎯</div>
+<h4>SIPOC</h4>
+<p>Visão macro do processo: Fornecedores, Entradas, Processo, Saídas e Clientes em uma única página clara e executiva.</p>
+</div>
+
+<div class="feat">
+<div class="feat-ic">⏱️</div>
+<h4>VSM — Value Stream Mapping</h4>
+<p>Mapeamento do fluxo de valor completo, identificando lead times, estoques intermediários, desperdícios e ciclos que não agregam valor.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="gallery-section">
+<div class="container">
+<span class="s-label">Exemplos de Entregáveis</span>
+<h2 class="s-title">Fluxogramas BPMN — Padrão Internacional</h2>
+<p style="font-size:15px;color:var(--gray-400);margin-bottom:36px;max-width:780px;line-height:1.8">Cada entregável é produzido no padrão internacional BPMN 2.0 com swimlanes (raias) que definem claramente os responsáveis por cada atividade, gateways para decisões complexas, eventos de início/fim padronizados e tratamento completo de exceções. Documentação clara, auditável e pronta para automação ou certificação ISO.</p>
+
+<div class="tab-nav">
+<button class="tab-btn active" onclick="showTab(0,this)">🏭 Produção Industrial</button>
+<button class="tab-btn" onclick="showTab(1,this)">🔧 Manutenção Industrial</button>
+<button class="tab-btn" onclick="showTab(2,this)">🏥 Pronto Socorro</button>
+<button class="tab-btn" onclick="showTab(3,this)">📦 Logística Completa</button>
+<button class="tab-btn" onclick="showTab(4,this)">👥 Onboarding RH</button>
+</div>
+
+<div class="tab-pane active" id="tab-0">
+<div class="diagram-card">
+<div class="diagram-header">
+<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+<span>fluxo-producao-industrial-complexo.bpmn</span>
+</div>
+<img src="cases/fluxo-producao-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Linha de Envase com 4 swimlanes (Almoxarifado, Qualidade, Produção, Logística), múltiplas tarefas, gateways de decisão e tratamento de não conformidades" loading="lazy"/>
+<div class="diagram-meta">
+<span class="meta-label">4 Swimlanes · 14 Atividades · 2 Gateways · Tratamento de Exceções</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-1">
+<div class="diagram-card">
+<div class="diagram-header">
+<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+<span>fluxo-manutencao-corretiva-preventiva.bpmn</span>
+</div>
+<img src="cases/fluxo-manutencao-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Manutenção Corretiva e Preventiva com 5 swimlanes, análise de criticidade, gestão de peças e comissionamento" loading="lazy"/>
+<div class="diagram-meta">
+<span class="meta-label">5 Swimlanes · 12 Atividades · 3 Gateways · Fluxos Paralelos</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-2">
+<div class="diagram-card">
+<div class="diagram-header">
+<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+<span>fluxo-atendimento-pronto-socorro.bpmn</span>
+</div>
+<img src="cases/fluxo-atendimento-complexo.svg" alt="Fluxograma BPMN 2.0 complexo — Atendimento Hospitalar com Triagem Manchester, 7 swimlanes, protocolos de emergência e múltiplas especialidades" loading="lazy"/>
+<div class="diagram-meta">
+<span class="meta-label">7 Swimlanes · 12 Atividades · 3 Gateways · Protocolos de Emergência</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-3">
+<div class="diagram-card">
+<div class="diagram-header">
+<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+<span>fluxo-logistica-distribuicao.bpmn</span>
+</div>
+<img src="cases/fluxo-logistica-distribuicao.svg" alt="Fluxograma BPMN 2.0 complexo — Logística e Distribuição com múltiplas etapas, conferência, separação e expedição" loading="lazy"/>
+<div class="diagram-meta">
+<span class="meta-label">Múltiplas Etapas · Conferência · Separação · Expedição</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="tab-4">
+<div class="diagram-card">
+<div class="diagram-header">
+<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+<span>fluxo-onboarding-rh.bpmn</span>
+</div>
+<img src="cases/fluxo-onboarding-rh.svg" alt="Fluxograma BPMN 2.0 complexo — Onboarding de Colaboradores com integração entre RH, TI, Gestor e Almoxarifado" loading="lazy"/>
+<div class="diagram-meta">
+<span class="meta-label">RH · TI · Gestor · Almoxarifado · Integração Completa</span>
+<span class="meta-badge">BPMN 2.0 · Multi-Responsável</span>
+</div>
+</div>
+</div>
+
+<!-- Tabs adicionais para fluxos complexos futuros -->
+<div class="tab-pane" id="tab-5" style="display:none"></div>
+<div class="tab-pane" id="tab-6" style="display:none"></div>
+</div>
+</section>
+
+<div class="pattern-interrupt">
+<div class="container">
+<h2>Processos <span class="gold">invisíveis</span> são processos <span class="gold">incontroláveis</span>.</h2>
+</div>
+</div>
+
+<section class="cream-section">
+<div class="container">
+<div class="cream-card">
+<h3>Para quem é?</h3>
+<p>Empresas que precisam documentar processos para certificações (ISO 9001, por exemplo), organizações em fase de transformação digital que precisam mapear antes de automatizar, consultoras que precisam de mapeamentos ágeis para clientes, ou qualquer empresa que queira terceirizar o desenho profissional de fluxogramas sem precisar montar uma equipe interna.</p>
+</div>
+
+<div class="cream-card">
+<h3>Investimento</h3>
+<p>Cada mapeamento começa a partir de R$ 3.000, conforme a complexidade do processo, número de swimlanes, gateways e o escopo dos entregáveis (BPMN + VSM + SIPOC, por exemplo). Envie os detalhes do seu processo para um orçamento preciso e sem compromisso.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="content-block">
+<h3>O que você recebe</h3>
+<p>Mapeamentos em formatos editáveis (Visio, Bizagi XML, SVG) para que sua equipe possa atualizar conforme necessário. Documentação clara e profissional. Relatório explicativo com as principais constatações e oportunidades de otimização identificadas durante o mapeamento.</p>
+</div>
+</div>
+</section>
+
+<section class="cta-sec">
+<div class="container">
+<span class="s-label">Próximo Passo</span>
+<h2>Precisa documentar seus processos?</h2>
+<p>Entre em contato para um orçamento personalizado ou comece pelo Diagnóstico Gratuito para entender o potencial de melhoria da sua operação.</p>
+<a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="cta-btn" style="font-size:17px;padding:18px 40px">Solicitar Orçamento →</a>
+<p class="subtext">Responda algumas perguntas rápidas sobre seu processo e receba um orçamento em 24 horas.</p>
+</div>
+</section>
+
+<footer><div class="container"><p>&copy; 2026 Tiago Teles Fernandes · Consultoria em Excelência Operacional</p></div></footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', function() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+});
+
+// Tab switching
+function showTab(idx, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + idx).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Fade animations on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.content-block, .cream-card, .pattern-interrupt').forEach(el => {
+  observer.observe(el);
+});
+
+// Auto-rotate tabs every 8 seconds
+let currentTab = 0;
+const totalTabs = 5;
+setInterval(() => {
+  currentTab = (currentTab + 1) % totalTabs;
+  const buttons = document.querySelectorAll('.tab-btn');
+  showTab(currentTab, buttons[currentTab]);
+}, 8000);
+</script>
+</body>
+</html>

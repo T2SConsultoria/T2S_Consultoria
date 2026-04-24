@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O custo invisível da Não-Qualidade | Tiago Fernandes</title>
+<meta name="description" content="Os impactos mais silenciosos da não-qualidade corroem a saúde do negócio: reputação, motivação da equipe e oportunidades perdidas. Descubra os três fantasmas da Não-Qualidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1929;--navy-light:#132035;--navy-lighter:#1B2D42;--gold:#C8963E;--gold-light:#D4A84F;--gold-dark:#B8832A;--cream:#F9F4EC;--white:#FFF;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71;--heading-dark:#1A2C3D;--body-dark:#3A4A5C}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light),var(--gold-dark));z-index:9999;pointer-events:none}
+
+.progress-bar{position:fixed;top:3px;left:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));width:0%;z-index:9998;transition:width .15s ease-out}
+
+.container{max-width:740px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:8px;left:0;right:0;z-index:1000;padding:12px 0;backdrop-filter:blur(20px)}
+nav .container{max-width:960px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:2px}
+.back{color:var(--body-dark);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:.3s}.back:hover{color:var(--gold)}
+
+.art-hero{padding:100px 0 60px;background:var(--cream)}
+.art-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:28px}
+.art-tag{display:inline-block;font-size:11px;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase}
+.tag-quality{background:rgba(200,150,62,.12);color:var(--gold-dark);border:1px solid var(--gold);font-weight:700}
+.art-date{font-size:13px;color:var(--body-dark);font-weight:500}
+.art-reading{font-size:13px;color:var(--gray-500);font-weight:500}
+.art-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.15;margin-bottom:24px;color:var(--heading-dark)}
+.art-hero h1 .gold{color:var(--gold-dark)}
+.art-lead{font-size:18px;color:var(--body-dark);line-height:1.8;max-width:680px;font-style:italic;border-left:4px solid var(--gold);padding-left:20px;margin-top:24px;font-weight:500}
+
+.art-card{background:var(--white);border-radius:8px;padding:48px;margin:40px 0;box-shadow:0 2px 8px rgba(27,45,66,.08)}
+
+.author-bar{background:var(--white);border:1px solid rgba(200,150,62,.12);border-radius:12px;padding:24px;margin:40px 0;display:flex;align-items:center;gap:16px;box-shadow:0 2px 8px rgba(27,45,66,.06)}
+.author-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);flex-shrink:0}
+.author-info h4{font-size:15px;font-weight:700;color:var(--heading-dark);margin-bottom:2px}
+.author-info p{font-size:13px;color:var(--body-dark);font-weight:500}
+
+.art-body{padding:0;animation:fadeIn .6s ease-out}
+.art-body h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,32px);font-weight:700;color:var(--heading-dark);margin:48px 0 20px;line-height:1.2}
+.art-body h3{font-size:19px;font-weight:700;color:var(--heading-dark);margin:32px 0 12px}
+.art-body p{font-size:16px;color:var(--body-dark);line-height:1.85;margin-bottom:20px;font-weight:400}
+.art-body strong{color:var(--heading-dark);font-weight:700}
+.art-body ul,.art-body ol{margin:0 0 20px 24px}
+.art-body li{font-size:16px;color:var(--body-dark);line-height:1.85;margin-bottom:10px}
+
+.section-divider{text-align:center;margin:40px 0;font-size:24px;color:var(--gold);opacity:.6;letter-spacing:8px}
+
+.pull-quote{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-style:italic;color:var(--heading-dark);line-height:1.4;margin:48px 0;padding:0;text-align:center;font-weight:600}
+.pull-quote::before,.pull-quote::after{color:var(--gold);font-size:32px}
+.pull-quote::before{content:'"';margin-right:8px}
+.pull-quote::after{content:'"';margin-left:8px}
+
+.highlight-box{background:rgba(200,150,62,.08);border-left:4px solid var(--gold);border-radius:4px;padding:24px;margin:32px 0;font-style:italic;color:var(--body-dark);font-size:16px;line-height:1.85}
+.highlight-box::before{content:'';display:block;position:absolute;width:3px;height:100%;background:var(--gold);margin-left:-27px}
+
+.cta-box{background:linear-gradient(135deg,rgba(200,150,62,.1) 0%,rgba(200,150,62,.05) 100%);border:1px solid var(--gold);border-radius:12px;padding:36px;text-align:center;margin:48px 0}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--heading-dark);margin-bottom:12px}
+.cta-box p{font-size:15px;color:var(--body-dark);margin-bottom:20px;line-height:1.7}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:.3s;letter-spacing:.5px;border:none;cursor:pointer}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,150,62,.25)}
+
+.share-section{border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:32px 0;margin:48px 0;text-align:center}
+.share-section h3{font-size:16px;font-weight:700;color:var(--heading-dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+.share-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--gold);color:var(--navy);text-decoration:none;transition:.3s;font-weight:700;font-size:18px}
+.share-btn:hover{background:var(--gold-light);transform:scale(1.1)}
+
+.related{border-top:2px solid var(--gold);padding:48px 0;margin:48px 0}
+.related h3{font-size:14px;font-weight:700;color:var(--body-dark);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rel-card{background:var(--white);border:1px solid rgba(200,150,62,.12);border-radius:8px;padding:24px;text-decoration:none;transition:.3s;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(27,45,66,.06)}
+.rel-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 8px 20px rgba(200,150,62,.12)}
+.rel-card .rel-tag{font-size:10px;font-weight:700;color:var(--gold-dark);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.rel-card h4{font-size:15px;font-weight:700;color:var(--heading-dark);line-height:1.5;flex-grow:1}
+
+footer{background:var(--navy);color:var(--text);padding:40px 0;border-top:2px solid var(--gold);text-align:center}
+footer p{font-size:13px;color:var(--gray-400);font-weight:500}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.fade-in{animation:fadeInUp .6s ease-out}
+
+@media(max-width:768px){
+html,body{overflow-x:hidden}
+.related-grid{grid-template-columns:1fr}
+.art-hero{padding:80px 0 48px}
+.art-lead{font-size:16px;padding-left:16px}
+.art-card{padding:28px 20px}
+.cta-box{padding:24px 16px}
+.author-bar{flex-direction:column;align-items:flex-start;gap:12px}
+.share-buttons{gap:12px}
+}
+@media(max-width:480px){
+.art-hero h1{font-size:clamp(24px,6vw,32px)}
+.art-lead{font-size:15px;padding-left:12px}
+.cta-box h3{font-size:18px}
+.cta-btn{width:100%;justify-content:center;padding:14px}
+.art-body p,.art-body li{font-size:15px}
+.art-body h2{font-size:24px;margin:36px 0 12px}
+.art-meta{flex-direction:column;align-items:flex-start;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar"></div>
+<nav><div class="container"><a href="index.html" class="logo">TF</a><a href="index.html#artigos" class="back">&larr; Voltar</a></div></nav>
+
+<section class="art-hero">
+<div class="container">
+  <div class="art-meta">
+    <span class="art-tag tag-quality">Qualidade</span>
+    <span class="art-date">12 de Agosto de 2025</span>
+    <span class="art-reading">· 6 min de leitura</span>
+  </div>
+  <h1>O custo invisível da <span class="gold">Não-Qualidade</span>:<br>Quando os impactos vão muito além do retrabalho</h1>
+  <p class="art-lead">Os impactos mais silenciosos da não-qualidade corroem a saúde do negócio: reputação, motivação da equipe e oportunidades perdidas. Descubra os três fantasmas da Não-Qualidade.</p>
+</div>
+</section>
+
+<div class="container">
+<div class="art-card">
+<div class="author-bar">
+  <div class="author-avatar">T</div>
+  <div class="author-info">
+    <h4>Tiago Fernandes</h4>
+    <p>Master Black Belt</p>
+  </div>
+</div>
+
+<article class="art-body">
+
+<p>Quando falamos em Não-Qualidade, a maioria dos gestores pensa imediatamente em retrabalho, sucata e custos de garantia. São impactos visíveis, mensuráveis, que aparecem nos relatórios. Mas existe uma segunda camada de custos — mais profunda, mais silenciosa e, paradoxalmente, muito mais devastadora para os negócios.</p>
+
+<p>Chamo-os de <strong>os três fantasmas da Não-Qualidade</strong>: impactos que raramente aparecem numa planilha de custos, mas que são responsáveis pela erosão lenta da competitividade de inúmeras empresas.</p>
+
+<div class="section-divider">·  ·  ·</div>
+
+<h2>Fantasma 1 — A Reputação que se perde em silêncio</h2>
+
+<p>Um cliente insatisfeito não precisa de publicar uma crítica online para fazer estrago. Na maior parte dos casos, ele simplesmente... desaparece. E quando vai embora, leva consigo o negócio que poderia ter feito nos próximos 5, 10 ou 20 anos.</p>
+
+<p>Os estudos sobre comportamento do consumidor são consistentes: um cliente que vive uma má experiência conta-a, em média, a 9 a 15 pessoas. No mundo digital, esse número pode ser amplificado de forma exponencial. Mas o custo mais real não está na crítica pública — está na perda silenciosa de lealdade que nenhum relatório de produção consegue capturar.</p>
+
+<p class="pull-quote">Não é o erro que define a relação com o cliente — é a forma como a empresa responde ao erro. Mas a melhor resposta é, sempre, nunca ter falhado.</p>
+
+<h2>Fantasma 2 — A Motivação da equipa que se esvai</h2>
+
+<p>Imagine trabalhar todos os dias num ambiente onde os problemas se repetem, onde o retrabalho é a norma, onde as reclamações dos clientes chegam com regularidade. O que acontece com a motivação das pessoas expostas a este ambiente durante meses, ou anos?</p>
+
+<p>A resposta é previsível: resignação. As equipas param de apontar problemas porque percebem que ninguém os resolve. A iniciativa morre. O talento vai procurar outro ambiente. E a empresa fica com quem ficou — muitas vezes, os que já desistiram de mudar.</p>
+
+<p>O custo do turnover raramente é atribuído à qualidade dos processos. Mas é precisamente aí que reside uma parte significativa da causa raiz.</p>
+
+<div class="section-divider">·  ·  ·</div>
+
+<h2>Fantasma 3 — As Oportunidades que nunca chegaram</h2>
+
+<p>Este é o mais difícil de quantificar e, por isso mesmo, o mais ignorado. São os contratos que não foram renovados. As referências que nunca foram dadas. As parcerias que não se formaram porque a reputação chegou antes — e chegou com uma advertência.</p>
+
+<p>Numa economia onde a diferenciação é cada vez mais difícil e onde o produto "bom o suficiente" já não é suficiente, a qualidade deixou de ser um diferencial para se tornar o bilhete de entrada no mercado. Quem não consegue entrar pelo bilhete certo, fica de fora — sem saber exatamente porquê.</p>
+
+<div class="section-divider">·  ·  ·</div>
+
+<h3>Como tornar o invisível visível?</h3>
+
+<p>O primeiro passo é alargar o conceito de "custo da qualidade" para além do que é tangível. Ferramentas como a <strong>análise do custo total da qualidade (CoQ)</strong> já existem para isso — e incluem categorias de custos de falhas externas que vão além do custo direto de devolução ou garantia.</p>
+
+<p>O segundo passo é criar métricas que capturem os sinais antecedentes: índices de satisfação do cliente (NPS), taxas de renovação, absentismo, turnover, tempo de resposta a reclamações. São os dados que, analisados em conjunto, revelam onde os fantasmas se escondem.</p>
+
+<div class="cta-box">
+  <h3>Aprofunde este tema no LinkedIn</h3>
+  <p>Este artigo foi originalmente publicado na newsletter "Rumo à Excelência".<br>Aceda ao texto integral, exemplos e análise completa clicando abaixo.</p>
+  <a href="https://www.linkedin.com/pulse/o-custo-invis%C3%ADvel-da-n%C3%A3o-qualidade-quando-os-impactos-tiago-vhcif" target="_blank" rel="noopener" class="cta-btn">
+    Ler artigo completo →
+  </a>
+</div>
+
+</article>
+
+<div class="share-section">
+  <h3>Partilhe este artigo</h3>
+  <div class="share-buttons">
+    <a href="https://wa.me/?text=Acabei%20de%20ler%20um%20artigo%20excelente%20sobre%20os%20custos%20invisíveis%20da%20não-qualidade%20-%20confira:%20https://[seu-dominio]/artigo-custo-nao-qualidade.html" target="_blank" rel="noopener" class="share-btn" title="Partilhar no WhatsApp" style="background:#25D366">W</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://[seu-dominio]/artigo-custo-nao-qualidade.html" target="_blank" rel="noopener" class="share-btn" title="Partilhar no LinkedIn" style="background:#0A66C2">in</a>
+  </div>
+</div>
+
+<div class="related">
+  <h3>Leia Mais Artigos</h3>
+  <div class="related-grid">
+    <a href="artigo-arte-despadronizacao.html" class="rel-card">
+      <div class="rel-tag">Lean</div>
+      <h4>A Arte da "Despadronização": Quando quebrar regras impulsiona a inovação Lean</h4>
+    </a>
+    <a href="artigo-desmistificando-qualidade.html" class="rel-card">
+      <div class="rel-tag">Qualidade · Clássico</div>
+      <h4>Desmistificando a Qualidade: Como transformar a cultura em diferencial</h4>
+    </a>
+  </div>
+</div>
+</div>
+
+<footer><div class="container"><p>&copy; 2026 Tiago Fernandes &middot; Consultoria em Excelência Operacional</p></div></footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+});
+
+// Fade-up animations on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('h2, h3, .pull-quote, .highlight-box, .cta-box').forEach(el => {
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

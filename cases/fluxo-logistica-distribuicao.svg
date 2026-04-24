@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" font-family="Inter,Segoe UI,Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#6B7280"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#C62828"/></marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".08"/></filter>
+  </defs>
+
+  <rect width="1200" height="440" fill="#FAFAF8" rx="6"/>
+  <rect width="1200" height="3" fill="#C8963E" rx="1"/>
+
+  <text x="600" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#0B1929" letter-spacing=".5">Gestão de Pedidos e Distribuição</text>
+
+  <!-- Pool border -->
+  <rect x="2" y="34" width="1196" height="400" fill="none" stroke="#D5CFC5" stroke-width="1" rx="4"/>
+  <rect x="2" y="34" width="30" height="400" fill="#0B1929" rx="4"/>
+  <rect x="6" y="34" width="26" height="400" fill="#0B1929"/>
+  <text x="17" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#F5F0E8" letter-spacing="2" transform="rotate(-90,17,236)">LOGÍSTICA &amp; DISTRIBUIÇÃO</text>
+
+  <!-- Lane 1: Recebimento de Pedidos — y=34-164, cy=99 -->
+  <rect x="32" y="34" width="52" height="130" fill="#F3F0EA"/>
+  <text x="58" y="103" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,103)">Recebimento de Pedidos</text>
+  <line x1="32" y1="164" x2="1198" y2="164" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 2: Separação & Embalagem — y=164-294, cy=229 -->
+  <rect x="32" y="164" width="52" height="130" fill="#F3F0EA"/>
+  <text x="58" y="232" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,232)">Separação &amp; Embalagem</text>
+  <line x1="32" y1="294" x2="1198" y2="294" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 3: Expedição & Entrega — y=294-434, cy=364 -->
+  <rect x="32" y="294" width="52" height="140" fill="#F3F0EA"/>
+  <text x="58" y="367" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,367)">Expedição &amp; Entrega</text>
+
+  <line x1="84" y1="34" x2="84" y2="434" stroke="#D5CFC5" stroke-width=".6"/>
+
+  <!-- ===== LANE 1 — cy=99 ===== -->
+  <circle cx="112" cy="99" r="12" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="112" cy="99" r="4.5" fill="#43A047"/>
+  <line x1="124" y1="99" x2="143" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Receber Pedido -->
+  <rect x="147" y="81" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="207" y="103" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Receber Pedido</text>
+  <line x1="267" y1="99" x2="289" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Validar Pedido -->
+  <rect x="293" y="81" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="353" y="103" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Validar Pedido</text>
+  <line x1="413" y1="99" x2="432" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Pedido Válido? -->
+  <polygon points="455,77 477,99 455,121 433,99" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="455" y="96" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1E3A5F">Válido</text>
+  <text x="455" y="106" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1E3A5F">?</text>
+
+  <!-- Não → Notificar Cliente → End -->
+  <line x1="477" y1="99" x2="505" y2="99" stroke="#C62828" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="490" y="93" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+  <rect x="509" y="81" width="126" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="572" y="103" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Notificar Cliente</text>
+  <line x1="635" y1="99" x2="653" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <circle cx="667" cy="99" r="11" fill="none" stroke="#C62828" stroke-width="3.5"/>
+  <text x="667" y="122" text-anchor="middle" font-size="7" fill="#9CA3AF">Fim</text>
+
+  <!-- Sim ↓ Lane 2 -->
+  <path d="M455,121 L455,211" stroke="#2E7D32" stroke-width="1.5" fill="none" marker-end="url(#ag)"/>
+  <text x="465" y="148" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- ===== LANE 2 — cy=229 ===== -->
+
+  <!-- T3 Reservar Estoque -->
+  <rect x="395" y="211" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="455" y="233" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Reservar Estoque</text>
+  <line x1="515" y1="229" x2="534" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Estoque Disponível? -->
+  <polygon points="557,207 579,229 557,251 535,229" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="557" y="226" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Estoq.</text>
+  <text x="557" y="236" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">?</text>
+
+  <!-- Não → Reposição (loop up) -->
+  <path d="M557,207 L557,185 L700,185" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#ar)"/>
+  <text x="567" y="182" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+  <rect x="704" y="170" width="110" height="30" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="759" y="189" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1E3A5F">Solicitar Reposição</text>
+  <path d="M759,200 L759,215 L515,215 L515,229" stroke="#6B7280" stroke-width="1.2" fill="none" stroke-dasharray="4,3" marker-end="url(#a)"/>
+
+  <!-- Sim → Picking -->
+  <line x1="579" y1="229" x2="608" y2="229" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="593" y="223" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T4 Picking / Separação -->
+  <rect x="612" y="211" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="672" y="226" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Picking /</text>
+  <text x="672" y="238" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Separação</text>
+  <line x1="732" y1="229" x2="754" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T5 Conferência -->
+  <rect x="758" y="211" width="110" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="813" y="233" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Conferência</text>
+  <line x1="868" y1="229" x2="887" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW3 Itens Corretos? -->
+  <polygon points="910,207 932,229 910,251 888,229" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="910" y="226" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Itens</text>
+  <text x="910" y="236" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">OK?</text>
+
+  <!-- Não → dashed rework to Picking -->
+  <path d="M910,251 L910,270 L672,270 L672,247" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="900" y="267" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+
+  <!-- Sim → Embalar -->
+  <line x1="932" y1="229" x2="958" y2="229" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="944" y="223" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T6 Embalar Pedido -->
+  <rect x="962" y="211" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="1022" y="233" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Embalar Pedido</text>
+
+  <!-- ↓ Lane 3 -->
+  <path d="M1022,247 L1022,346" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 3 — cy=364 ===== -->
+
+  <!-- T7 Gerar Nota Fiscal -->
+  <rect x="110" y="346" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="170" y="361" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Gerar</text>
+  <text x="170" y="373" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Nota Fiscal</text>
+  <line x1="230" y1="364" x2="252" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Connect Embalar ↓ → left to Nota Fiscal -->
+  <path d="M1022,364 L1040,364 L1040,410 L100,410 L100,364 L106,364" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- T8 Despachar Transportadora -->
+  <rect x="256" y="346" width="140" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="326" y="361" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Despachar p/</text>
+  <text x="326" y="373" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Transportadora</text>
+  <line x1="396" y1="364" x2="418" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T9 Rastreamento -->
+  <rect x="422" y="346" width="110" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="477" y="368" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Rastreamento</text>
+  <line x1="532" y1="364" x2="551" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW4 Entrega Confirmada? -->
+  <polygon points="574,342 596,364 574,386 552,364" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="574" y="361" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Entr.</text>
+  <text x="574" y="371" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">OK?</text>
+
+  <!-- Não → Tratar Ocorrência (loop) -->
+  <path d="M574,342 L574,316 L477,316 L477,346" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="530" y="312" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+
+  <!-- Sim → Confirmar Entrega → End -->
+  <line x1="596" y1="364" x2="622" y2="364" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="608" y="358" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <rect x="626" y="346" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="691" y="368" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Confirmar Entrega</text>
+  <line x1="756" y1="364" x2="774" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <circle cx="788" cy="364" r="11" fill="none" stroke="#C62828" stroke-width="3.5"/>
+  <text x="788" y="387" text-anchor="middle" font-size="7" fill="#9CA3AF">Fim</text>
+
+  <rect y="437" width="1200" height="3" fill="#C8963E" rx="1"/>
+</svg>

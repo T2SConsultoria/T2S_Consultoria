@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" font-family="Inter,Segoe UI,Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#6B7280"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#C62828"/></marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".08"/></filter>
+  </defs>
+
+  <rect width="1200" height="440" fill="#FAFAF8" rx="6"/>
+  <rect width="1200" height="3" fill="#C8963E" rx="1"/>
+
+  <text x="600" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#0B1929" letter-spacing=".5">Onboarding de Colaboradores</text>
+
+  <!-- Pool border -->
+  <rect x="2" y="34" width="1196" height="400" fill="none" stroke="#D5CFC5" stroke-width="1" rx="4"/>
+  <rect x="2" y="34" width="30" height="400" fill="#0B1929" rx="4"/>
+  <rect x="6" y="34" width="26" height="400" fill="#0B1929"/>
+  <text x="17" y="236" text-anchor="middle" font-size="10" font-weight="700" fill="#F5F0E8" letter-spacing="2" transform="rotate(-90,17,236)">GESTÃO DE PESSOAS</text>
+
+  <!-- Lane 1: RH / Admissão — y=34-164, cy=99 -->
+  <rect x="32" y="34" width="52" height="130" fill="#F3F0EA"/>
+  <text x="58" y="103" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,103)">RH / Admissão</text>
+  <line x1="32" y1="164" x2="1198" y2="164" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 2: Integração & Treinamento — y=164-294, cy=229 -->
+  <rect x="32" y="164" width="52" height="130" fill="#F3F0EA"/>
+  <text x="58" y="232" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,232)">Integração &amp; Treinamento</text>
+  <line x1="32" y1="294" x2="1198" y2="294" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 3: Acompanhamento — y=294-434, cy=364 -->
+  <rect x="32" y="294" width="52" height="140" fill="#F3F0EA"/>
+  <text x="58" y="367" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,367)">Acompanhamento</text>
+
+  <line x1="84" y1="34" x2="84" y2="434" stroke="#D5CFC5" stroke-width=".6"/>
+
+  <!-- ===== LANE 1 — cy=99 ===== -->
+  <circle cx="112" cy="99" r="12" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="112" cy="99" r="4.5" fill="#43A047"/>
+  <line x1="124" y1="99" x2="143" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Aprovar Contratação -->
+  <rect x="147" y="81" width="126" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="210" y="96" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Aprovar</text>
+  <text x="210" y="108" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Contratação</text>
+  <line x1="273" y1="99" x2="292" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Coletar Documentos -->
+  <rect x="296" y="81" width="126" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="359" y="96" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Coletar</text>
+  <text x="359" y="108" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Documentos</text>
+  <line x1="422" y1="99" x2="441" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Docs Completos? -->
+  <polygon points="464,77 486,99 464,121 442,99" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="464" y="96" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Docs</text>
+  <text x="464" y="106" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">OK?</text>
+
+  <!-- Não → loop back (solicitar pendências) -->
+  <path d="M464,77 L464,55 L359,55 L359,81" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="415" y="51" font-size="7.5" font-weight="600" fill="#C62828">Não — Solicitar Pendências</text>
+
+  <!-- Sim → Cadastrar -->
+  <line x1="486" y1="99" x2="515" y2="99" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="500" y="93" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T3 Cadastrar no Sistema -->
+  <rect x="519" y="81" width="126" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="582" y="96" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Cadastrar</text>
+  <text x="582" y="108" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">no Sistema</text>
+  <line x1="645" y1="99" x2="664" y2="99" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T4 Providenciar Acessos -->
+  <rect x="668" y="81" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="733" y="96" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Providenciar</text>
+  <text x="733" y="108" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Acessos</text>
+
+  <!-- ↓ Lane 2 -->
+  <path d="M733,117 L733,211" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 2 — cy=229 ===== -->
+
+  <!-- T5 Boas-vindas & Kit -->
+  <rect x="120" y="211" width="120" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="180" y="233" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Boas-vindas &amp; Kit</text>
+  <line x1="240" y1="229" x2="262" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Connect from Lane 1 → Boas-vindas -->
+  <path d="M733,229 L750,229 L750,270 L100,270 L100,229 L116,229" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- T6 Apresentação da Empresa -->
+  <rect x="266" y="211" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="331" y="226" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Apresentação</text>
+  <text x="331" y="238" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">da Empresa</text>
+  <line x1="396" y1="229" x2="418" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T7 Treinamento Obrigatório -->
+  <rect x="422" y="211" width="140" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="492" y="226" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Treinamento</text>
+  <text x="492" y="238" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Obrigatório</text>
+  <line x1="562" y1="229" x2="581" y2="229" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Aprovado no Treinamento? -->
+  <polygon points="604,207 626,229 604,251 582,229" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="604" y="226" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Aprov</text>
+  <text x="604" y="236" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">?</text>
+
+  <!-- Não → Retreinamento loop -->
+  <path d="M604,251 L604,275 L492,275 L492,247" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="555" y="272" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+
+  <!-- Sim → Alocação na Equipe -->
+  <line x1="626" y1="229" x2="655" y2="229" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="640" y="223" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T8 Alocação na Equipe -->
+  <rect x="659" y="211" width="126" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="722" y="226" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Alocação</text>
+  <text x="722" y="238" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">na Equipe</text>
+
+  <!-- ↓ Lane 3 -->
+  <path d="M722,247 L722,346" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 3 — cy=364 ===== -->
+
+  <!-- T9 Avaliação 30 dias -->
+  <rect x="120" y="346" width="110" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="175" y="361" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Avaliação</text>
+  <text x="175" y="373" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">30 dias</text>
+  <line x1="230" y1="364" x2="249" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Connect from Lane 2 → Avaliação 30 -->
+  <path d="M722,364 L740,364 L740,410 L100,410 L100,364 L116,364" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- GW3 Performance OK? -->
+  <polygon points="272,342 294,364 272,386 250,364" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="272" y="361" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Perf.</text>
+  <text x="272" y="371" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">OK?</text>
+
+  <!-- Não → Plano de Desenvolvimento → reassess -->
+  <path d="M272,342 L272,316" stroke="#C62828" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="282" y="325" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+  <rect x="215" y="296" width="115" height="20" rx="4" fill="#fff" stroke="#C62828" stroke-width="1" filter="url(#sh)"/>
+  <text x="272" y="310" text-anchor="middle" font-size="7.5" font-weight="500" fill="#C62828">Plano Desenvolvimento</text>
+  <path d="M215,306 L190,306 L190,364 L210,364" stroke="#C62828" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+
+  <!-- Sim → Avaliação 90 dias -->
+  <line x1="294" y1="364" x2="326" y2="364" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="310" y="358" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T10 Avaliação 90 dias -->
+  <rect x="330" y="346" width="110" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="385" y="361" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Avaliação</text>
+  <text x="385" y="373" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">90 dias</text>
+  <line x1="440" y1="364" x2="459" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW4 Efetivação? -->
+  <polygon points="482,342 504,364 482,386 460,364" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="482" y="361" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">Efet.</text>
+  <text x="482" y="371" text-anchor="middle" font-size="7" font-weight="700" fill="#1E3A5F">?</text>
+
+  <!-- Sim → Efetivar → End -->
+  <line x1="504" y1="364" x2="533" y2="364" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="518" y="358" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <rect x="537" y="346" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="602" y="361" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Efetivar</text>
+  <text x="602" y="373" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Colaborador</text>
+  <line x1="667" y1="364" x2="685" y2="364" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <circle cx="699" cy="364" r="11" fill="none" stroke="#2E7D32" stroke-width="3.5"/>
+  <text x="699" y="387" text-anchor="middle" font-size="7" fill="#9CA3AF">Fim</text>
+
+  <!-- Não → Desligamento → End -->
+  <path d="M482,386 L482,420 L560,420" stroke="#C62828" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="492" y="410" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+  <rect x="564" y="404" width="110" height="32" rx="6" fill="#fff" stroke="#C62828" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="619" y="424" text-anchor="middle" font-size="9" font-weight="500" fill="#C62828">Desligamento</text>
+  <line x1="674" y1="420" x2="692" y2="420" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+  <circle cx="706" cy="420" r="11" fill="none" stroke="#C62828" stroke-width="3.5"/>
+
+  <rect y="437" width="1200" height="3" fill="#C8963E" rx="1"/>
+</svg>

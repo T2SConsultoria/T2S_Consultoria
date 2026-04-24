@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 215" font-family="Inter,Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#546E7A"/></marker>
+    <marker id="ar" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#E53935"/></marker>
+    <marker id="ab" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#1976D2"/></marker>
+  </defs>
+  <rect width="800" height="215" fill="#ffffff" rx="6" stroke="#CFD8DC" stroke-width="1.5"/>
+  <text x="400" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#0F1C2E">Pronto Socorro — Triagem de Manchester</text>
+  <text x="400" y="205" text-anchor="middle" font-size="9" fill="#90A4AE">Fluxo BPMN · Estilo Bizagi</text>
+
+  <!-- START -->
+  <circle cx="45" cy="98" r="14" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="45" cy="98" r="5" fill="#43A047"/>
+  <text x="45" y="124" text-anchor="middle" font-size="8" fill="#78909C">Início</text>
+  <line x1="59" y1="98" x2="74" y2="98" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1: Admissão -->
+  <rect x="76" y="80" width="115" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="133" y="96" text-anchor="middle" font-size="10" fill="#0F1C2E">Admissão e</text>
+  <text x="133" y="110" text-anchor="middle" font-size="10" fill="#0F1C2E">Registo</text>
+  <line x1="191" y1="98" x2="209" y2="98" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2: Triagem Manchester -->
+  <rect x="211" y="80" width="130" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="276" y="96" text-anchor="middle" font-size="10" fill="#0F1C2E">Triagem</text>
+  <text x="276" y="110" text-anchor="middle" font-size="10" fill="#0F1C2E">Manchester</text>
+  <line x1="341" y1="98" x2="358" y2="98" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW: Prioridade? -->
+  <polygon points="386,70 414,98 386,126 358,98" fill="#FDD835" stroke="#F57F17" stroke-width="1.5"/>
+  <text x="386" y="92" text-anchor="middle" font-size="8" font-weight="600" fill="#1B2A3D">Priori-</text>
+  <text x="386" y="104" text-anchor="middle" font-size="8" font-weight="600" fill="#1B2A3D">dade?</text>
+
+  <!-- Urgente → T3 -->
+  <line x1="414" y1="98" x2="433" y2="98" stroke="#E53935" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="421" y="92" text-anchor="middle" font-size="8" fill="#E53935">Urgente</text>
+
+  <!-- T3: Atend. Imediato -->
+  <rect x="435" y="80" width="125" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="497" y="96" text-anchor="middle" font-size="10" fill="#0F1C2E">Atend.</text>
+  <text x="497" y="110" text-anchor="middle" font-size="10" fill="#0F1C2E">Imediato</text>
+  <line x1="560" y1="98" x2="578" y2="98" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T4: Estabilizar/Tratar -->
+  <rect x="580" y="80" width="115" height="36" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="637" y="96" text-anchor="middle" font-size="10" fill="#0F1C2E">Tratar e</text>
+  <text x="637" y="110" text-anchor="middle" font-size="10" fill="#0F1C2E">Estabilizar</text>
+  <line x1="695" y1="98" x2="712" y2="98" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- END -->
+  <circle cx="730" cy="98" r="16" fill="none" stroke="#B71C1C" stroke-width="5"/>
+  <text x="730" y="124" text-anchor="middle" font-size="8" fill="#78909C">Alta / Internamento</text>
+
+  <!-- GW → Normal (branch down) -->
+  <line x1="386" y1="126" x2="386" y2="150" stroke="#1976D2" stroke-width="1.5" marker-end="url(#ab)"/>
+  <text x="394" y="143" font-size="8" fill="#1976D2">Normal</text>
+
+  <!-- Branch T: Sala de Espera -->
+  <rect x="318" y="152" width="136" height="34" rx="5" fill="#ffffff" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="386" y="168" text-anchor="middle" font-size="10" fill="#0F1C2E">Sala de</text>
+  <text x="386" y="182" text-anchor="middle" font-size="10" fill="#0F1C2E">Espera</text>
+
+  <!-- Branch → Atend. (T3 route) -->
+  <line x1="454" y1="169" x2="497" y2="169" stroke="#546E7A" stroke-width="1.5"/>
+  <line x1="497" y1="169" x2="497" y2="116" stroke="#546E7A" stroke-width="1.5" marker-end="url(#a)"/>
+</svg>

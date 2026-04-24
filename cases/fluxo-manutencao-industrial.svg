@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="Inter,Segoe UI,Arial,sans-serif">
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#6B7280"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2E7D32"/></marker>
+    <marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#C62828"/></marker>
+    <filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".08"/></filter>
+  </defs>
+
+  <rect width="1200" height="470" fill="#FAFAF8" rx="6"/>
+  <rect width="1200" height="3" fill="#C8963E" rx="1"/>
+
+  <text x="600" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#0B1929" letter-spacing=".5">Manutenção Preventiva e Corretiva</text>
+
+  <!-- Pool border -->
+  <rect x="2" y="34" width="1196" height="428" fill="none" stroke="#D5CFC5" stroke-width="1" rx="4"/>
+  <!-- Pool header -->
+  <rect x="2" y="34" width="30" height="428" fill="#0B1929" rx="4"/>
+  <rect x="6" y="34" width="26" height="428" fill="#0B1929"/>
+  <text x="17" y="252" text-anchor="middle" font-size="10" font-weight="700" fill="#F5F0E8" letter-spacing="2" transform="rotate(-90,17,252)">GESTÃO DE MANUTENÇÃO</text>
+
+  <!-- Lane 1: Solicitação & Triagem — y=34 to y=170, cy=102 -->
+  <rect x="32" y="34" width="52" height="136" fill="#F3F0EA"/>
+  <text x="58" y="106" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,106)">Solicitação &amp; Triagem</text>
+  <line x1="32" y1="170" x2="1198" y2="170" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 2: Execução — y=170 to y=310, cy=240 -->
+  <rect x="32" y="170" width="52" height="140" fill="#F3F0EA"/>
+  <text x="58" y="243" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,243)">Execução</text>
+  <line x1="32" y1="310" x2="1198" y2="310" stroke="#D5CFC5" stroke-width=".8"/>
+
+  <!-- Lane 3: Verificação & Liberação — y=310 to y=462, cy=386 -->
+  <rect x="32" y="310" width="52" height="152" fill="#F3F0EA"/>
+  <text x="58" y="390" text-anchor="middle" font-size="8" font-weight="600" fill="#4A4539" transform="rotate(-90,58,390)">Verificação &amp; Liberação</text>
+
+  <line x1="84" y1="34" x2="84" y2="462" stroke="#D5CFC5" stroke-width=".6"/>
+
+  <!-- ===== LANE 1 — cy=102 ===== -->
+
+  <!-- Start -->
+  <circle cx="112" cy="102" r="12" fill="none" stroke="#2E7D32" stroke-width="2.5"/>
+  <circle cx="112" cy="102" r="4.5" fill="#43A047"/>
+  <line x1="124" y1="102" x2="143" y2="102" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T1 Detectar Falha / Necessidade -->
+  <rect x="147" y="84" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="212" y="99" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Detectar Falha /</text>
+  <text x="212" y="111" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Necessidade</text>
+  <line x1="277" y1="102" x2="299" y2="102" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T2 Registrar Ordem de Serviço -->
+  <rect x="303" y="84" width="140" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="373" y="99" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Registrar Ordem</text>
+  <text x="373" y="111" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">de Serviço</text>
+  <line x1="443" y1="102" x2="462" y2="102" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW1 Tipo? -->
+  <polygon points="485,80 507,102 485,124 463,102" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="485" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#1E3A5F">Tipo?</text>
+
+  <!-- GW1 → Preventiva (down-left to Lane 2) -->
+  <path d="M485,124 L485,145 L310,145 L310,222" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <text x="400" y="141" font-size="7.5" font-weight="500" fill="#6B7280">Preventiva</text>
+
+  <!-- GW1 → Corretiva (down-right to Lane 2) -->
+  <path d="M507,102 L540,102 L540,145 L540,222" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <text x="555" y="141" font-size="7.5" font-weight="500" fill="#6B7280">Corretiva</text>
+
+  <!-- ===== LANE 2 — cy=240 ===== -->
+
+  <!-- T3a Planejamento Preventivo -->
+  <rect x="245" y="222" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="310" y="237" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Planejamento</text>
+  <text x="310" y="249" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Preventivo</text>
+
+  <!-- T3b Diagnóstico de Falha -->
+  <rect x="475" y="222" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="540" y="237" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Diagnóstico</text>
+  <text x="540" y="249" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">de Falha</text>
+
+  <!-- Merge arrows → Executar Manutenção -->
+  <path d="M375,240 L420,240 L420,270 L660,270 L660,240 L680,240" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+  <path d="M605,240 L660,240" stroke="#6B7280" stroke-width="1.5" fill="none"/>
+
+  <!-- T4 Executar Manutenção -->
+  <rect x="684" y="222" width="140" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="754" y="237" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Executar</text>
+  <text x="754" y="249" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Manutenção</text>
+
+  <!-- T4 → down to Lane 3 -->
+  <path d="M754,258 L754,368" stroke="#6B7280" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- ===== LANE 3 — cy=386 ===== -->
+
+  <!-- T5 Teste Funcional -->
+  <rect x="684" y="368" width="140" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="754" y="390" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Teste Funcional</text>
+  <line x1="824" y1="386" x2="845" y2="386" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- GW2 Equipamento OK? -->
+  <polygon points="868,364 890,386 868,408 846,386" fill="#F5E6C8" stroke="#C8963E" stroke-width="1.5"/>
+  <text x="868" y="383" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1E3A5F">Equip.</text>
+  <text x="868" y="393" text-anchor="middle" font-size="7.5" font-weight="700" fill="#1E3A5F">OK?</text>
+
+  <!-- GW2 Não → dashed rework to T4 -->
+  <path d="M868,364 L868,340 L640,340 L640,240 L680,240" stroke="#C62828" stroke-width="1.2" fill="none" stroke-dasharray="5,3" marker-end="url(#ar)"/>
+  <text x="855" y="336" font-size="7.5" font-weight="600" fill="#C62828">Não</text>
+
+  <!-- GW2 Sim → Liberar Equipamento -->
+  <line x1="890" y1="386" x2="915" y2="386" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="902" y="380" text-anchor="middle" font-size="7.5" font-weight="600" fill="#2E7D32">Sim</text>
+
+  <!-- T6 Liberar Equipamento -->
+  <rect x="919" y="368" width="130" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="984" y="390" text-anchor="middle" font-size="9" font-weight="500" fill="#1E3A5F">Liberar Equipamento</text>
+  <line x1="1049" y1="386" x2="1067" y2="386" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- T7 Atualizar Histórico -->
+  <rect x="1071" y="368" width="80" height="36" rx="6" fill="#fff" stroke="#B8B0A4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="1111" y="383" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1E3A5F">Atualizar</text>
+  <text x="1111" y="395" text-anchor="middle" font-size="8.5" font-weight="500" fill="#1E3A5F">Histórico</text>
+  <line x1="1151" y1="386" x2="1164" y2="386" stroke="#6B7280" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- End -->
+  <circle cx="1178" cy="386" r="11" fill="none" stroke="#C62828" stroke-width="3.5"/>
+
+  <rect y="467" width="1200" height="3" fill="#C8963E" rx="1"/>
+</svg>

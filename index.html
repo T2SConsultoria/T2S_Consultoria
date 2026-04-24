@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T2S Consultoria | Excelência Operacional — Lean Six Sigma | Tiago Fernandes</title>
+    <meta name="description" content="Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos e R$3,2M+ em savings gerados. Diagnóstico gratuito para sua empresa.">
+    <meta name="keywords" content="consultoria, lean six sigma, excelência operacional, melhoria contínua, redução de custos, mapeamento de processos, Ribeirão Preto">
+    <meta name="author" content="Tiago Teles Fernandes">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="T2S Consultoria — Excelência Operacional com Lean Six Sigma">
+    <meta property="og:description" content="Master Black Belt com +8 anos e R$3,2M+ em savings. Diagnóstico gratuito para sua empresa.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+:root{--navy:#0B1929;--navy-light:#132035;--navy-lighter:#1B2D42;--gold:#D4993F;--gold-light:#E0AC52;--gold-dark:#B8832A;--gold-pale:rgba(212,153,63,.07);--white:#FFF;--gray-100:#F7F8FA;--gray-200:#E8ECF1;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71;--warm:#F5EDD8;--sp:100px 0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--navy);color:var(--text);line-height:1.7;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+img{max-width:100%;height:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(15,28,46,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,150,62,.1);transition:.3s}
+nav.scrolled{padding:12px 0;box-shadow:0 4px 30px rgba(0,0,0,.3)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:2px}
+.nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+.nav-links a{color:var(--gray-300);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 20px;border-radius:6px;font-weight:600!important;letter-spacing:1px!important;transition:.3s!important}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.mob-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.mob-toggle span{display:block;width:24px;height:2px;background:var(--gold);margin:5px 0;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:linear-gradient(145deg,var(--navy) 0%,#0F2035 55%,#152840 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(212,153,63,.1),transparent 65%);border-radius:50%;animation:orb1 12s ease-in-out infinite}
+.hero::after{content:'';position:absolute;bottom:-15%;left:-5%;width:450px;height:450px;background:radial-gradient(circle,rgba(212,153,63,.06),transparent 65%);border-radius:50%;animation:orb2 16s ease-in-out infinite}
+@keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.05)}}
+@keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-15px) scale(1.08)}}
+/* floating particles */
+.fp{position:absolute;border-radius:50%;background:rgba(212,153,63,.12);border:1px solid rgba(212,153,63,.2)}
+.fp1{width:120px;height:120px;top:15%;left:8%;animation:fp 8s ease-in-out infinite}
+.fp2{width:60px;height:60px;top:65%;left:18%;animation:fp 11s ease-in-out infinite .5s}
+.fp3{width:80px;height:80px;top:25%;right:10%;animation:fp 9s ease-in-out infinite 1s}
+.fp4{width:40px;height:40px;bottom:20%;right:28%;animation:fp 7s ease-in-out infinite 2s}
+@keyframes fp{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-18px);opacity:.9}}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative}
+.hero-content{max-width:580px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,150,62,.1);border:1px solid rgba(200,150,62,.25);padding:8px 16px;border-radius:100px;font-size:13px;color:var(--gold);font-weight:500;margin-bottom:28px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.15;margin-bottom:20px}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{font-size:18px;color:var(--gray-400);line-height:1.7;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:.3s;border:none;cursor:pointer;letter-spacing:.5px}
+.btn-p:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,62,.3)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(200,150,62,.4);transition:.3s}
+.btn-s:hover{border-color:var(--gold);background:rgba(200,150,62,.08)}
+.hero-visual{width:100%;max-width:500px;opacity:.92}
+.hero-visual svg{width:100%;height:auto;filter:drop-shadow(0 20px 60px rgba(200,150,62,.08))}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:40px;background:rgba(22,35,55,.6);border:1px solid rgba(200,150,62,.12);border-radius:16px;backdrop-filter:blur(10px)}
+.stat{text-align:center;padding:20px}
+.stat-v{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.stat-l{font-size:13px;color:var(--gray-400);line-height:1.5}
+.stat:nth-child(even){border-left:1px solid rgba(200,150,62,.15)}
+.stat:nth-child(n+3){border-top:1px solid rgba(200,150,62,.15)}
+
+/* WAVE DIVIDER */
+.wave-div{line-height:0;overflow:hidden;margin-bottom:-2px}
+.wave-div svg{display:block;width:100%}
+
+/* DOT PATTERN */
+.dots-bg{background-image:radial-gradient(rgba(212,153,63,.07) 1.5px,transparent 1.5px);background-size:30px 30px}
+
+/* PROFILE CARD */
+.profile-card{display:flex;flex-direction:column;align-items:center;gap:20px;padding:40px 32px;background:var(--navy-light);border:1px solid rgba(212,153,63,.15);border-radius:20px;text-align:center;position:relative;overflow:hidden}
+.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.profile-mono{width:120px;height:120px;border-radius:50%;background:linear-gradient(145deg,var(--navy-lighter),var(--navy));border:2px solid rgba(212,153,63,.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);letter-spacing:2px;position:relative;box-shadow:0 0 40px rgba(212,153,63,.12)}
+.profile-mono::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(212,153,63,.15);animation:ring-pulse 3s ease-in-out infinite}
+@keyframes ring-pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
+.profile-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white)}
+.profile-title{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:2.5px;text-transform:uppercase;margin-top:-10px}
+.profile-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:4px}
+.profile-tag{font-size:11px;padding:4px 12px;border-radius:100px;background:rgba(212,153,63,.1);border:1px solid rgba(212,153,63,.2);color:var(--gray-300)}
+
+/* TESTIMONIAL */
+.testimonial-stripe{background:linear-gradient(135deg,var(--navy-lighter) 0%,#1a2f48 100%);padding:48px 0;border-top:1px solid rgba(212,153,63,.08);border-bottom:1px solid rgba(212,153,63,.08)}
+.testimonial-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;padding:0 24px}
+.testimonial-inner::before{content:'\201C';font-family:'Playfair Display',serif;font-size:120px;color:rgba(212,153,63,.12);position:absolute;top:-40px;left:24px;line-height:1}
+.testimonial-inner blockquote{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-style:italic;color:var(--gray-200);line-height:1.65;margin-bottom:20px;position:relative}
+.testimonial-inner cite{font-size:14px;color:var(--gold);font-style:normal;font-weight:600;letter-spacing:1px}
+
+/* SECTION ACCENT LINE */
+.s-accent{display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:2px;margin:12px 0 32px}
+.s-accent.ctr{margin-left:auto;margin-right:auto}
+
+/* PROOF BAR */
+.proof-bar{background:var(--navy-light);border-top:1px solid rgba(200,150,62,.08);border-bottom:1px solid rgba(200,150,62,.08);padding:16px 0}
+.proof-bar .container{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray-400);white-space:nowrap}
+.proof-item .ic{color:var(--gold);font-size:15px}
+.proof-sep{width:1px;height:16px;background:rgba(200,150,62,.2);flex-shrink:0}
+/* Belt Badges - Estilo Faixa de Artes Marciais */
+.belt-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.5px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3);min-width:140px;justify-content:center}
+.belt-badge::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.4)}
+.belt-badge::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(0,0,0,.3)}
+.belt-yellow{background:linear-gradient(180deg,#F4D03F 0%,#B7950B 100%);color:#1a1a1a;border:2px solid #9A7D0A;text-shadow:0 1px 2px rgba(0,0,0,.2)}
+.belt-green{background:linear-gradient(180deg,#2ECC71 0%,#1E8449 100%);color:#fff;border:2px solid #145A32;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.belt-black{background:linear-gradient(180deg,#4a5568 0%,#1a252f 100%);color:#fff;border:2px solid #0E1A22;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.belt-black::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(212,153,63,.6),transparent);transform:translateY(-50%)}
+.belt-master{background:linear-gradient(180deg,#E8B85C 0%,#D4993F 30%,#9A6E24 70%,#E8B85C 100%);color:#0B1929;border:2px solid #7D5A1A;position:relative;text-shadow:0 1px 2px rgba(0,0,0,.2);font-weight:700}
+.belt-master::before{content:'';position:absolute;top:4px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)}
+.belt-icon{font-size:14px;flex-shrink:0}
+
+/* SECTIONS */
+section{padding:var(--sp)}
+.s-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:700;margin-bottom:16px;line-height:1.2}
+.s-sub{font-size:17px;color:var(--gray-400);max-width:600px;line-height:1.7;margin-bottom:48px}
+.s-sub.ctr{margin-left:auto;margin-right:auto;text-align:center}
+.tc{text-align:center}
+
+/* RESULTS */
+#resultados{background:linear-gradient(180deg,var(--navy-light) 0%,var(--navy) 100%)}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.res-card{background:var(--navy);border:1px solid rgba(200,150,62,.1);border-radius:12px;padding:32px 24px;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.3s}
+.res-card:hover::before{opacity:1}
+.res-card:hover{border-color:rgba(200,150,62,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.res-icon{font-size:32px;margin-bottom:16px}
+.res-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.res-txt{font-size:14px;color:var(--gray-400);line-height:1.5}
+
+/* SERVICES */
+#servicos{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 100%)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.srv-card{background:var(--navy-lighter);border:1px solid rgba(212,153,63,.1);border-radius:16px;padding:40px 32px;transition:.4s;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));transform:scaleX(0);transition:.4s;transform-origin:left;border-radius:2px 2px 0 0}
+.srv-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(212,153,63,.04),transparent 60%);opacity:0;transition:.4s}
+.srv-card:hover::before{transform:scaleX(1)}
+.srv-card:hover::after{opacity:1}
+.srv-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.srv-icon{width:56px;height:56px;border-radius:14px;background:rgba(212,153,63,.1);border:1px solid rgba(212,153,63,.2);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px;transition:.3s}
+.srv-card:hover .srv-icon{background:rgba(212,153,63,.15);transform:scale(1.05)}
+.srv-card h3{font-size:19px;font-weight:700;margin-bottom:14px;color:var(--white);line-height:1.3}
+.srv-card p{font-size:14px;color:var(--gray-400);line-height:1.75}
+.srv-card .new-badge{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:1px}
+
+/* METHODOLOGY */
+#metodologia{background:var(--navy)}
+.meth-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.meth-step{text-align:center;padding:36px 20px;position:relative;background:var(--navy-light);border-radius:16px;border:1px solid rgba(212,153,63,.08);transition:.3s}
+.meth-step:hover{border-color:rgba(212,153,63,.2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.meth-step::after{content:'\2192';position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:24px}
+.meth-step:last-child::after{display:none}
+.step-num{width:56px;height:56px;border-radius:50%;background:rgba(200,150,62,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin:0 auto 16px}
+.step-badge{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.b-free{background:rgba(46,204,113,.15);color:var(--success)}
+.b-paid{background:rgba(200,150,62,.15);color:var(--gold)}
+.meth-step h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--white)}
+.meth-step p{font-size:13px;color:var(--gray-400);line-height:1.6}
+.meth-hl{margin-top:48px;padding:32px;text-align:center;background:rgba(200,150,62,.06);border:1px solid rgba(200,150,62,.15);border-radius:12px}
+.meth-hl p{font-size:16px;color:var(--gray-300);margin-bottom:20px}
+.hl-t{color:var(--gold);font-weight:600}
+
+/* PORTFOLIO (NEW) */
+#portfolio{background:linear-gradient(180deg,var(--navy-light) 0%,var(--navy) 100%)}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.port-card{background:var(--navy-lighter);border:1px solid rgba(212,153,63,.08);border-radius:16px;overflow:hidden;transition:.4s;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.port-card:hover{border-color:rgba(212,153,63,.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.port-img{width:100%;height:220px;background:linear-gradient(135deg,#f0ede8,#faf8f4);display:flex;align-items:center;justify-content:center;overflow:hidden;padding:16px;position:relative}
+.port-img::after{content:'clique para ampliar';position:absolute;inset:0;background:rgba(212,153,63,.85);color:var(--navy);font-size:12px;font-weight:700;letter-spacing:1px;display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s;text-transform:uppercase}
+.port-card:hover .port-img::after{opacity:1}
+.port-img img,.port-img object{width:100%;height:100%;object-fit:contain;transition:.3s}
+.port-card:hover .port-img img{transform:scale(1.02)}
+.port-info{padding:20px 24px}
+.port-info h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.4}
+.port-info .port-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 12px;border-radius:100px;letter-spacing:.5px;margin-bottom:8px}
+.tag-ind{background:rgba(212,153,63,.15);color:var(--gold);border:1px solid rgba(212,153,63,.2)}
+.tag-srv{background:rgba(46,204,113,.12);color:var(--success);border:1px solid rgba(46,204,113,.2)}
+.tag-rh{background:rgba(52,152,219,.12);color:#5dade2;border:1px solid rgba(52,152,219,.2)}
+.port-info p{font-size:13px;color:var(--gray-400);line-height:1.6}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal-content{background:var(--white);border-radius:12px;max-width:95vw;max-height:90vh;overflow:auto;position:relative;padding:24px}
+.modal-close{position:absolute;top:12px;right:16px;background:var(--navy);color:var(--white);border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10}
+.modal-close:hover{background:var(--gold)}
+
+/* DIFERENCIAL */
+#diferencial{background:var(--navy)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.diff-items{display:flex;flex-direction:column;gap:24px}
+.diff-item{display:flex;gap:16px;padding:24px;background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;transition:.3s}
+.diff-item:hover{border-color:rgba(200,150,62,.25)}
+.diff-ic{width:44px;height:44px;min-width:44px;border-radius:10px;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:20px}
+.diff-item h3{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--white)}
+.diff-item p{font-size:14px;color:var(--gray-400);line-height:1.6}
+.diff-quote{padding:40px;background:var(--navy-light);border-left:3px solid var(--gold);border-radius:0 12px 12px 0}
+.diff-quote blockquote{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--gray-200);line-height:1.6;margin-bottom:20px}
+.diff-quote cite{font-size:14px;color:var(--gold);font-style:normal;font-weight:500}
+
+/* CREDENCIAIS */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.cred-group{padding:28px;background:rgba(200,150,62,.04);border:1px solid rgba(200,150,62,.08);border-radius:12px}
+.cred-group h3{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.cred-list{list-style:none}
+.cred-list li{padding:8px 0;font-size:14px;color:var(--gray-300);border-bottom:1px solid rgba(200,150,62,.06);display:flex;align-items:center;gap:10px}
+.cred-list li:last-child{border-bottom:none}
+.cred-list .ck{color:var(--gold)}
+
+/* ARTIGOS */
+#artigos{background:linear-gradient(180deg,var(--navy-lighter) 0%,var(--navy-light) 100%)}
+.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.art-card{background:var(--navy);border:1px solid rgba(212,153,63,.08);border-radius:16px;overflow:hidden;transition:.4s;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.art-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.art-top{padding:24px 24px 0;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.art-tag{font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
+.art-tag.lean{background:rgba(212,153,63,.15);color:var(--gold);border:1px solid rgba(212,153,63,.2)}
+.art-tag.gest{background:rgba(46,204,113,.12);color:var(--success);border:1px solid rgba(46,204,113,.2)}
+.art-tag.auto{background:rgba(52,152,219,.12);color:#5dade2;border:1px solid rgba(52,152,219,.2)}
+.art-card h3{padding:0 24px;font-size:17px;font-weight:700;color:var(--white);margin-bottom:12px;line-height:1.4}
+.art-card p{padding:0 24px;font-size:14px;color:var(--gray-400);line-height:1.7;margin-bottom:20px}
+.art-card .art-footer{padding:16px 24px;border-top:1px solid rgba(212,153,63,.07);display:flex;justify-content:space-between;align-items:center}
+.art-card .art-date{font-size:12px;color:var(--gray-500)}
+.art-card .art-link{font-size:13px;color:var(--gold);text-decoration:none;font-weight:600;transition:.3s;display:flex;align-items:center;gap:4px}
+.art-card .art-link:hover{color:var(--gold-light);gap:8px}
+
+/* COMO É A CONTRATAÇÃO */
+#contratacao{background:linear-gradient(180deg,var(--navy-lighter) 0%,var(--navy) 100%);padding:var(--sp)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.faq-item{background:rgba(255,255,255,.03);border:1px solid rgba(200,150,62,.12);border-radius:14px;padding:28px 32px;transition:.3s}
+.faq-item:hover{border-color:rgba(212,153,63,.3);background:rgba(212,153,63,.04);transform:translateY(-2px)}
+.faq-icon{width:42px;height:42px;background:rgba(212,153,63,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px}
+.faq-q{font-size:15px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.4}
+.faq-a{font-size:14px;color:var(--gray-400);line-height:1.75}
+.faq-hl{color:var(--gold);font-weight:600}
+.faq-full{grid-column:1/-1}
+.contrat-note{margin-top:40px;padding:22px 28px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;display:flex;gap:16px;align-items:flex-start}
+@media(max-width:768px){.faq-grid{grid-template-columns:1fr}.faq-full{grid-column:unset}}
+
+/* CTA */
+.cta-sec{padding:100px 0;text-align:center;background:linear-gradient(135deg,#0D2035 0%,var(--navy-lighter) 50%,#0D2035 100%);position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,153,63,.1),transparent 55%)}
+.cta-sec::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:2px;background:linear-gradient(90deg,transparent,rgba(212,153,63,.4),transparent)}
+.cta-ring{position:absolute;border-radius:50%;border:1px solid rgba(212,153,63,.08)}
+.cta-ring1{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-ring2{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-ring3{width:800px;height:800px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-sec .container{position:relative}
+.cta-t{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:16px}
+.cta-p{font-size:17px;color:var(--gray-400);max-width:560px;margin:0 auto 36px;line-height:1.75}
+.cta-u{font-size:14px;color:var(--gray-500);margin-top:20px;font-style:italic}
+
+/* FOOTER */
+footer{background:linear-gradient(180deg,var(--navy-light),var(--navy));padding:48px 0 32px;border-top:1px solid rgba(212,153,63,.1);position:relative}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer p{font-size:13px;color:var(--gray-500)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);opacity:.7;letter-spacing:2px}
+
+/* CONTATO */
+#contato{background:var(--navy);padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.contact-item{text-align:center;padding:24px}
+.contact-ic{width:48px;height:48px;border-radius:50%;background:rgba(200,150,62,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 16px}
+.contact-item h3{font-size:14px;font-weight:600;color:var(--gray-400);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.contact-item a{color:var(--gold);text-decoration:none;font-size:16px;font-weight:500;transition:.3s}
+.contact-item a:hover{color:var(--gold-light)}
+
+/* FOOTER */
+footer{background:var(--navy-light);padding:32px 0;border-top:1px solid rgba(200,150,62,.08)}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer p{font-size:13px;color:var(--gray-500)}
+
+/* DEPOIMENTOS - CARROSSEL HORIZONTAL */
+.dep-carousel-container{position:relative;overflow:hidden;padding:0 40px}
+.dep-carousel{display:flex;gap:24px;transition:transform 0.5s ease-in-out}
+.dep-card{background:var(--navy-light);border:1px solid rgba(212,153,63,.1);border-radius:16px;padding:32px;transition:.3s;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;flex-direction:column;min-width:calc(33.333% - 16px);flex-shrink:0}
+@media(max-width:992px){.dep-card{min-width:calc(50% - 12px)}}
+@media(max-width:768px){.dep-card{min-width:100%}}
+.dep-card:hover{border-color:rgba(212,153,63,.25);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.dep-stars{color:var(--gold);font-size:20px;letter-spacing:3px;margin-bottom:16px}
+.dep-text{font-size:15px;color:var(--gray-300);line-height:1.7;font-style:italic;margin-bottom:24px}
+.dep-author{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(212,153,63,.08);padding-top:20px;margin-top:auto}
+.dep-avatar{width:42px;height:42px;border-radius:50%;border:1px solid;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;flex-shrink:0;font-size:16px}
+.dep-name{font-size:14px;font-weight:600;color:var(--white)}
+.dep-role{font-size:12px;color:var(--gray-400);margin-top:1px}
+.dep-sector{font-size:11px;color:var(--gray-500);margin-top:3px}
+
+/* Carousel Navigation */
+.dep-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(212,153,63,.15);border:1px solid rgba(212,153,63,.3);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:.3s}
+.dep-nav-btn:hover{background:rgba(212,153,63,.25);border-color:var(--gold)}
+.dep-nav-btn svg{width:20px;height:20px;fill:var(--gold)}
+.dep-nav-prev{left:0}
+.dep-nav-next{right:0}
+
+/* Carousel Dots Indicator */
+.dep-dots{display:flex;justify-content:center;gap:8px;margin-top:24px}
+.dep-dot{width:10px;height:10px;border-radius:50%;background:rgba(212,153,63,.2);cursor:pointer;transition:.3s}
+.dep-dot.active{background:var(--gold);transform:scale(1.2)}
+
+/* WHATSAPP FLOATING */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);text-decoration:none;transition:.3s;animation:wa-bounce 2.5s ease-in-out 3s 3}
+.wa-btn svg{width:30px;height:30px;fill:#fff}
+.wa-btn:hover{background:#20c75a;transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.55)}
+.wa-btn::before{content:'Fale comigo no WhatsApp';position:absolute;right:70px;white-space:nowrap;background:var(--navy-lighter);color:var(--white);font-size:13px;font-weight:500;padding:8px 14px;border-radius:8px;opacity:0;transform:translateX(10px);transition:.3s;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.wa-btn:hover::before{opacity:1;transform:translateX(0)}
+.wa-pulse{position:absolute;width:100%;height:100%;border-radius:50%;background:#25D366;animation:wa-pulse 2s ease-out infinite;top:0;left:0}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.7);opacity:0}}
+@keyframes wa-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@media(max-width:480px){.wa-btn{width:52px;height:52px;bottom:20px;right:20px}.wa-btn svg{width:26px;height:26px}.wa-btn::before{display:none}}
+
+/* ANIMATIONS */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.fu.vis{opacity:1;transform:translateY(0)}
+/* Respeita preferência de movimento reduzido (acessibilidade) */
+@media(prefers-reduced-motion:reduce){
+.fp,.wa-pulse,.profile-mono::after{animation:none!important}
+.hero::before,.hero::after{animation:none!important}
+.fu{opacity:1;transform:none;transition:none}
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+.nav-links{gap:20px}
+.nav-links a{font-size:11px;letter-spacing:1.5px}
+}
+@media(max-width:992px){
+.hero .container{grid-template-columns:1fr;text-align:center}
+.hero-content{max-width:100%}
+.hero-sub{margin-left:auto;margin-right:auto}
+.hero-btns{justify-content:center}
+.hero-visual{max-width:420px;margin:0 auto}
+.hero-stats{max-width:500px;margin:0 auto}
+.res-grid{grid-template-columns:repeat(2,1fr)}
+.srv-grid{grid-template-columns:repeat(2,1fr)!important}
+.port-grid{grid-template-columns:repeat(2,1fr)}
+.meth-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+.meth-step::after{display:none}
+.diff-grid{grid-template-columns:1fr}
+.cred-grid{grid-template-columns:1fr 1fr}
+.art-grid{grid-template-columns:repeat(2,1fr)}
+.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+:root{--sp:56px 0}
+html,body{overflow-x:hidden}
+.hero-visual{max-width:320px}
+.nav-links{display:none}
+.mob-toggle{display:block}
+.nav-links.active{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:24px;gap:20px;border-bottom:1px solid rgba(200,150,62,.1)}
+.srv-grid{grid-template-columns:1fr!important}
+.meth-steps{grid-template-columns:1fr}
+.port-grid{grid-template-columns:1fr}
+.art-grid{grid-template-columns:1fr}
+.cred-grid{grid-template-columns:1fr}
+.proof-bar .container{gap:16px}
+.proof-item{font-size:13px}
+.hero-stats{padding:24px}
+.stat{padding:12px}
+.port-img{height:180px}
+.diff-quote{padding:24px}
+.diff-quote blockquote{font-size:18px}
+.contact-grid{gap:16px}
+.contact-item{padding:16px}
+.hero h1{font-size:clamp(28px,8vw,42px)}
+}
+@media(max-width:480px){
+:root{--sp:48px 0}
+.hero-btns{flex-direction:column}
+.btn-p,.btn-s{width:100%;justify-content:center}
+.res-grid{grid-template-columns:1fr}
+.hero-stats{grid-template-columns:1fr 1fr;padding:20px 12px;gap:12px}
+.stat{padding:10px 6px}
+.stat-v{font-size:28px}
+.proof-bar .container{flex-direction:column;align-items:flex-start;gap:10px;padding:0 24px}
+.proof-item{font-size:13px}
+.s-title{font-size:clamp(22px,6vw,32px)}
+.diff-quote{padding:20px}
+.diff-quote blockquote{font-size:16px}
+.port-img{height:160px}
+.art-card h3{font-size:15px}
+.res-num{font-size:26px}
+.modal-content{padding:16px}
+}
+@media(max-width:360px){
+.hero-stats{grid-template-columns:1fr}
+.stat:nth-child(even){border-left:none;border-top:1px solid rgba(200,150,62,.15)}
+.nav-links a{font-size:14px}
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DESIGN REFINEMENT — Elegante · Confortável · Premium
+   Inspirado em sites de consultoria de alto nível
+═══════════════════════════════════════════════════════════════════════ */
+
+/* Borda dourada no topo da página */
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light),var(--gold-dark));z-index:9999;pointer-events:none}
+
+/* Nav — espaçamento mais refinado */
+nav{padding:16px 0}
+nav.scrolled{padding:10px 0}
+.logo{font-size:24px;letter-spacing:3px;opacity:.95}
+.nav-links{gap:22px}
+.nav-links a{font-size:11px;letter-spacing:2.5px;opacity:.85}
+.nav-links a:hover{opacity:1}
+
+/* Hero — eyebrow line dourada mais elegante */
+.hero-badge{background:rgba(212,153,63,.08);border:1px solid rgba(212,153,63,.2);font-size:12px;letter-spacing:.5px;font-weight:500;padding:7px 18px;border-radius:4px}
+.hero h1{letter-spacing:-.025em}
+
+/* Proof bar — levemente mais elegante */
+.proof-bar{padding:14px 0;border-top:none;border-bottom:none;background:linear-gradient(135deg,#102030 0%,#0F1D2C 100%)}
+
+/* ─── SEÇÕES CREME — quebram o layout todo-escuro ──────────────────── */
+
+/* Resultados → fundo creme quente */
+#resultados{background:#F9F4EC!important}
+#resultados .s-label{color:#9A6E24}
+#resultados .s-title{color:#1A2C3D}
+#resultados .s-sub{color:#5A6577}
+#resultados .s-accent{background:linear-gradient(90deg,#9A6E24,#C8963E)}
+#resultados .res-card{background:#FFFFFF;border-color:rgba(154,110,36,.14);box-shadow:0 2px 24px rgba(26,44,61,.07);color:#1A2C3D}
+#resultados .res-card:hover{border-color:rgba(200,150,62,.35);box-shadow:0 12px 40px rgba(26,44,61,.11)}
+#resultados .res-card::before{opacity:0}
+#resultados .res-card:hover::before{opacity:1}
+#resultados .res-num{color:#9A6E24}
+#resultados .res-txt{color:#5A6577}
+#resultados + p{color:#9A9A9A!important}
+
+/* Diferencial → fundo creme quente */
+#diferencial{background:#F9F4EC!important}
+#diferencial .s-label{color:#9A6E24}
+#diferencial .s-title{color:#1A2C3D}
+#diferencial .s-sub{color:#5A6577}
+#diferencial .s-accent{background:linear-gradient(90deg,#9A6E24,#C8963E)}
+#diferencial .diff-item{background:#FFFFFF;border-color:rgba(154,110,36,.12);box-shadow:0 2px 16px rgba(26,44,61,.05)}
+#diferencial .diff-item h3{color:#1A2C3D}
+#diferencial .diff-item p{color:#5A6577}
+#diferencial .diff-item:hover{border-color:rgba(200,150,62,.3);box-shadow:0 8px 28px rgba(26,44,61,.09)}
+#diferencial .diff-ic{background:rgba(154,110,36,.1)}
+#diferencial .diff-quote{background:#FFFFFF;border-left-color:#C8963E;box-shadow:0 2px 16px rgba(26,44,61,.05)}
+#diferencial .diff-quote blockquote{color:#1A2C3D}
+#diferencial .diff-quote cite{color:#9A6E24}
+#diferencial .profile-card{background:#FFFFFF;border-color:rgba(154,110,36,.15);box-shadow:0 4px 24px rgba(26,44,61,.08)}
+#diferencial .profile-card::before{background:linear-gradient(90deg,transparent,#C8963E,transparent)}
+#diferencial .profile-name{color:#1A2C3D}
+#diferencial .profile-title{color:#9A6E24}
+#diferencial .profile-tag{background:rgba(154,110,36,.09);border-color:rgba(154,110,36,.18);color:#5A6577}
+#diferencial .profile-card > p{color:#5A6577}
+#diferencial .cred-group{background:#FFFFFF;border-color:rgba(154,110,36,.1)}
+#diferencial .cred-group h3{color:#9A6E24}
+#diferencial .cred-list li{color:#1A2C3D;border-color:rgba(154,110,36,.08)}
+#diferencial .cred-list .ck{color:#9A6E24}
+
+/* Contratação → fundo creme quente */
+#contratacao{background:#F9F4EC!important}
+#contratacao .s-label{color:#9A6E24}
+#contratacao .s-title{color:#1A2C3D}
+#contratacao .s-sub{color:#5A6577}
+#contratacao .s-accent{background:linear-gradient(90deg,#9A6E24,#C8963E)}
+#contratacao .faq-item{background:#FFFFFF;border-color:rgba(154,110,36,.12);box-shadow:0 2px 16px rgba(26,44,61,.05)}
+#contratacao .faq-item:hover{border-color:rgba(200,150,62,.3);background:#FFFFFF;box-shadow:0 8px 32px rgba(26,44,61,.1)}
+#contratacao .faq-icon{background:rgba(154,110,36,.1)}
+#contratacao .faq-q{color:#1A2C3D}
+#contratacao .faq-a{color:#5A6577}
+#contratacao .faq-hl{color:#9A6E24}
+#contratacao .contrat-note{background:#FFFFFF;border-color:rgba(154,110,36,.18);border-left-color:#C8963E}
+#contratacao .contrat-note > span{color:#C8963E}
+
+/* ─── CARD E TIPOGRAFIA — refinamentos globais ──────────────────────── */
+.srv-card{border-radius:12px}
+.dep-card{border-radius:12px}
+.art-card{border-radius:12px}
+.res-card{border-radius:12px}
+.profile-card{border-radius:14px}
+
+/* Seção de artigos — tom levemente mais quente */
+#artigos{background:linear-gradient(180deg,#0E1C2E 0%,#0B1929 100%)}
+
+/* CTA — botão primário mais elegante */
+.btn-p{border-radius:6px;letter-spacing:.3px}
+.btn-s{border-radius:6px}
+
+/* Rodapé — linha decorativa */
+footer{border-top:1px solid rgba(212,153,63,.12)}
+.footer-logo{font-size:22px;letter-spacing:3px}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   EFEITOS MEMORÁVEIS — O site que gruda
+   Marketing · NLP · Microinterações · Shareability
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Scroll Progress Bar (ouro no topo) ──────────────────────────────── */
+.scroll-prog{position:fixed;top:3px;left:0;height:2px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));z-index:10000;width:0;pointer-events:none;border-radius:0 2px 2px 0}
+
+/* ── Contador animado ────────────────────────────────────────────────── */
+.counter{display:inline-block;font-variant-numeric:tabular-nums;transition:color .3s}
+
+/* ── Typewriter cursor ───────────────────────────────────────────────── */
+.tw-cursor{display:inline-block;width:3px;height:.85em;background:var(--gold);margin-left:3px;animation:blink-tw .65s step-end infinite;vertical-align:text-bottom;border-radius:1px}
+@keyframes blink-tw{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ── Highlight sweep (palavra ganha highlight ao aparecer) ──────────── */
+.hl-sweep{position:relative;display:inline;white-space:nowrap}
+.hl-sweep::after{content:'';position:absolute;left:-4px;right:-4px;bottom:0;height:38%;background:rgba(212,153,63,.12);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.23,1,.32,1);border-radius:2px;z-index:-1}
+.hl-sweep.vis::after{transform:scaleX(1)}
+
+/* ── 3D Card Tilt no hover ───────────────────────────────────────────── */
+.srv-card{transform-style:preserve-3d;transition:transform .45s ease,box-shadow .45s ease,border-color .45s ease!important}
+.srv-card:hover{transform:perspective(800px) rotateX(-1.5deg) rotateY(2deg) translateY(-8px)!important;box-shadow:0 28px 70px rgba(0,0,0,.28)!important}
+
+/* ── Stagger children delay ──────────────────────────────────────────── */
+.stagger>.fu:nth-child(1),.stagger>*:nth-child(1)>.fu{transition-delay:.06s}
+.stagger>.fu:nth-child(2),.stagger>*:nth-child(2)>.fu{transition-delay:.14s}
+.stagger>.fu:nth-child(3),.stagger>*:nth-child(3)>.fu{transition-delay:.22s}
+.stagger>.fu:nth-child(4),.stagger>*:nth-child(4)>.fu{transition-delay:.30s}
+.stagger>.fu:nth-child(5),.stagger>*:nth-child(5)>.fu{transition-delay:.38s}
+
+/* ── Pattern Interrupt Section ───────────────────────────────────────── */
+.pi-sec{padding:72px 24px;text-align:center;background:linear-gradient(135deg,#08111D 0%,#0B1929 50%,#08111D 100%);position:relative;overflow:hidden;border-top:1px solid rgba(212,153,63,.06);border-bottom:1px solid rgba(212,153,63,.06)}
+.pi-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,153,63,.07),transparent 55%)}
+.pi-quote{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,38px);font-weight:400;font-style:italic;color:var(--gray-200);line-height:1.55;max-width:780px;margin:0 auto;position:relative}
+.pi-rule{display:block;width:48px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto;border-radius:1px}
+.pi-author{font-size:13px;color:var(--gold);font-style:normal;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:8px}
+
+/* ── Mini-Assessment ─────────────────────────────────────────────────── */
+.assess-sec{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-lighter) 100%);padding:var(--sp);position:relative}
+.assess-card{max-width:680px;margin:0 auto;background:var(--navy-light);border:1px solid rgba(212,153,63,.18);border-radius:16px;padding:44px 40px;position:relative;overflow:hidden}
+.assess-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light))}
+.assess-step{display:none}
+.assess-step.active{display:block;animation:fadeSlide .4s ease}
+@keyframes fadeSlide{0%{opacity:0;transform:translateX(16px)}100%{opacity:1;transform:translateX(0)}}
+.assess-num{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.assess-q{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);font-weight:600;margin-bottom:20px;line-height:1.4}
+.assess-hint{font-size:13px;color:var(--gray-500);margin-bottom:20px;font-style:italic;line-height:1.6}
+.assess-opts{display:flex;gap:12px;flex-wrap:wrap}
+.assess-opt{flex:1;min-width:120px;padding:14px 20px;border:1.5px solid rgba(212,153,63,.2);border-radius:10px;background:transparent;color:var(--gray-300);font-size:14px;font-weight:500;cursor:pointer;transition:.3s;text-align:center;font-family:'Inter',sans-serif}
+.assess-opt:hover{border-color:var(--gold);background:rgba(212,153,63,.06);color:var(--white);transform:translateY(-1px)}
+.assess-opt.sel{border-color:var(--gold);background:rgba(212,153,63,.14);color:var(--gold);font-weight:700;box-shadow:0 0 20px rgba(212,153,63,.12)}
+.assess-prog{width:100%;height:5px;background:rgba(255,255,255,.06);border-radius:3px;margin-bottom:28px;overflow:hidden}
+.assess-prog-bar{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:3px;transition:width .5s cubic-bezier(.23,1,.32,1);width:0}
+.assess-result{text-align:center;display:none;animation:fadeSlide .5s ease}
+.assess-result.show{display:block}
+.assess-score-ring{width:140px;height:140px;border-radius:50%;border:4px solid rgba(212,153,63,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;background:rgba(212,153,63,.04)}
+.assess-score-ring::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(212,153,63,.1);animation:ring-pulse 2.5s ease-in-out infinite}
+.assess-score-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
+.assess-score-of{font-size:14px;color:var(--gray-500);font-weight:400}
+.assess-level{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:12px}
+.assess-msg{font-size:15px;color:var(--gray-400);line-height:1.75;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.assess-share-row{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.assess-share-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--gray-400);border:1px solid rgba(212,153,63,.2);padding:8px 16px;border-radius:100px;cursor:pointer;transition:.3s;background:transparent;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.assess-share-btn:hover{background:rgba(212,153,63,.1);border-color:var(--gold);color:var(--gold)}
+
+/* ── Insight Toast (notificação sutil de NLP) ────────────────────────── */
+.insight-toast{position:fixed;bottom:100px;right:28px;background:var(--navy-lighter);border:1px solid rgba(212,153,63,.2);border-radius:14px;padding:16px 22px;font-size:13px;color:var(--gray-300);z-index:1500;opacity:0;transform:translateY(20px) scale(.96);transition:.5s cubic-bezier(.23,1,.32,1);pointer-events:none;box-shadow:0 12px 40px rgba(0,0,0,.35);max-width:320px;line-height:1.6}
+.insight-toast.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.insight-toast .it-gold{color:var(--gold);font-weight:600}
+.insight-toast .it-close{position:absolute;top:8px;right:12px;background:none;border:none;color:var(--gray-500);font-size:16px;cursor:pointer;padding:4px}
+.insight-toast .it-close:hover{color:var(--gold)}
+.insight-toast .it-icon{font-size:20px;margin-bottom:8px;display:block}
+
+/* ── "Designed to share" visual section ──────────────────────────────── */
+.share-visual{background:var(--navy);padding:80px 24px;text-align:center;border-top:1px solid rgba(212,153,63,.08)}
+.share-visual .sv-card{max-width:600px;margin:0 auto;padding:48px 40px;background:linear-gradient(145deg,var(--navy-light),var(--navy-lighter));border:1px solid rgba(212,153,63,.15);border-radius:20px;position:relative;overflow:hidden}
+.share-visual .sv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light))}
+.share-visual .sv-logo{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);letter-spacing:3px;margin-bottom:28px;font-weight:700}
+.share-visual .sv-title{font-family:'Playfair Display',serif;font-size:26px;color:var(--white);margin-bottom:32px;line-height:1.3}
+.share-visual .sv-items{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left;margin-bottom:32px}
+.share-visual .sv-item{display:flex;align-items:flex-start;gap:10px;padding:12px;background:rgba(212,153,63,.05);border-radius:8px;border:1px solid rgba(212,153,63,.08)}
+.share-visual .sv-item .sv-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);min-width:28px}
+.share-visual .sv-item .sv-txt{font-size:12px;color:var(--gray-300);line-height:1.5}
+.share-visual .sv-cta{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:1px}
+
+/* ── Animated entrance for sections ──────────────────────────────────── */
+section{opacity:1}
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* ── CTA pulse ring ──────────────────────────────────────────────────── */
+.btn-pulse{position:relative}
+.btn-pulse::after{content:'';position:absolute;inset:-4px;border-radius:10px;border:2px solid var(--gold);opacity:0;animation:btn-ring 2.5s ease-out infinite 3s}
+@keyframes btn-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.08);opacity:0}}
+
+/* ── Urgency counter ─────────────────────────────────────────────────── */
+.urg-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:6px;padding:6px 14px;font-size:12px;color:var(--gray-400);margin-top:16px}
+.urg-badge .urg-dot{width:6px;height:6px;border-radius:50%;background:var(--success);animation:pulse 1.5s infinite}
+.urg-badge .urg-num{color:var(--gold);font-weight:700}
+
+/* ── Hero Proof Social ───────────────────────────────────────────────── */
+.hero-proof{opacity:.95}
+.hero-proof > div{transition:.3s}
+.hero-proof > div:hover{transform:translateY(-2px)}
+.hero-proof strong{font-family:'Playfair Display',serif}
+
+@media(max-width:768px){
+.assess-card{padding:28px 20px}
+.assess-q{font-size:17px}
+.assess-opts{flex-direction:column}
+.assess-opt{min-width:unset}
+.share-visual .sv-items{grid-template-columns:1fr}
+.insight-toast{right:16px;left:16px;max-width:unset;bottom:80px}
+.pi-quote{font-size:clamp(18px,5vw,28px)}
+}
+
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="container">
+        <a href="#" class="logo">T2S</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Cases</a></li>
+            <li><a href="#diferencial">Diferencial</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contratacao">Contratação</a></li>
+            <li><a href="#artigos">Artigos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="diagnostico-gratuito.html"  class="nav-cta">Diagnóstico Gratuito</a></li>
+        </ul>
+        <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <!-- Partículas decorativas -->
+    <div class="fp fp1"></div>
+    <div class="fp fp2"></div>
+    <div class="fp fp3"></div>
+    <div class="fp fp4"></div>
+    <!-- Linha dourada vertical decorativa (desktop) -->
+    <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,transparent,rgba(212,153,63,.4),transparent);display:none" class="hero-vline"></div>
+    <div class="container">
+        <div class="hero-content">
+            <!-- Eyebrow elegante com linha dourada -->
+            <div style="display:inline-flex;align-items:center;gap:14px;margin-bottom:28px">
+                <div style="width:36px;height:2px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));border-radius:1px;flex-shrink:0"></div>
+                <span style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.9">Consultoria Estratégica · Lean Six Sigma</span>
+            </div>
+            <h1 id="heroTitle"></h1>
+            <p class="hero-sub">Imagine ter <strong style="color:var(--gray-200)">clareza total</strong> sobre cada gargalo que drena seu lucro — e um plano preciso para eliminá-los. É exatamente isso que faço: entro na sua operação, encontro o dinheiro que está escapando, e devolvo ele pro seu caixa. <strong style="color:var(--gray-200)">Você sente o resultado já nas primeiras semanas.</strong></p>
+            
+            <!-- PROVA SOCIAL IMEDIATA - Novos logos/indicadores -->
+            <div class="hero-proof fu" style="display:flex;gap:20px;flex-wrap:wrap;margin:28px 0;align-items:center">
+                <div style="display:flex;align-items:center;gap:8px">
+                    <span style="font-size:20px">🏆</span>
+                    <span style="font-size:13px;color:var(--gray-400)"><strong style="color:var(--gold)">+R$ 3,2 Mi</strong> recuperados</span>
+                </div>
+                <div style="width:1px;height:20px;background:rgba(200,150,62,.2)"></div>
+                <div style="display:flex;align-items:center;gap:8px">
+                    <span style="font-size:20px">🏭</span>
+                    <span style="font-size:13px;color:var(--gray-400)"><strong style="color:var(--gold)">50+</strong> empresas transformadas</span>
+                </div>
+                <div style="width:1px;height:20px;background:rgba(200,150,62,.2)"></div>
+                <div style="display:flex;align-items:center;gap:8px">
+                    <span style="font-size:20px">⭐</span>
+                    <span style="font-size:13px;color:var(--gray-400)">Alta taxa de <strong style="color:var(--gold)">retenção de clientes</strong></span>
+                </div>
+            </div>
+            
+            <div class="hero-btns">
+                <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse">Descobrir onde estou perdendo dinheiro &rarr;</a>
+                <a href="#assessment" class="btn-s">Teste rápido: sua empresa está saudável? &darr;</a>
+            </div>
+            <div class="urg-badge fu"><span class="urg-dot"></span> <span class="urg-num" id="diagCount">7</span> diagnósticos realizados esta semana</div>
+        </div>
+        <div class="hero-visual fu">
+            <!-- Ilustração decorativa: gráfico de melhoria contínua -->
+            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#C8963E;stop-opacity:.15"/>
+                        <stop offset="100%" style="stop-color:#C8963E;stop-opacity:.03"/>
+                    </linearGradient>
+                    <linearGradient id="gB" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#C8963E;stop-opacity:.6"/>
+                        <stop offset="100%" style="stop-color:#D4A84F;stop-opacity:.9"/>
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="blur"/>
+                        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                </defs>
+                <!-- fundo painel -->
+                <rect x="20" y="20" width="440" height="320" rx="16" fill="url(#gA)" stroke="rgba(200,150,62,.2)" stroke-width="1"/>
+                <!-- linhas de grade -->
+                <line x1="60" y1="60" x2="60" y2="300" stroke="rgba(200,150,62,.08)" stroke-width="1"/>
+                <line x1="60" y1="300" x2="440" y2="300" stroke="rgba(200,150,62,.12)" stroke-width="1"/>
+                <line x1="60" y1="240" x2="440" y2="240" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="60" y1="180" x2="440" y2="180" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <line x1="60" y1="120" x2="440" y2="120" stroke="rgba(200,150,62,.06)" stroke-width="1" stroke-dasharray="4,4"/>
+                <!-- curva de melhoria - linha de fundo -->
+                <polyline points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80" fill="none" stroke="rgba(200,150,62,.2)" stroke-width="2"/>
+                <!-- área sob a curva -->
+                <polygon points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80 440,300 60,300" fill="rgba(200,150,62,.06)"/>
+                <!-- curva principal com glow -->
+                <polyline points="60,280 120,270 180,250 230,230 270,200 310,175 350,145 400,110 440,80" fill="none" stroke="url(#gB)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                <!-- pontos chave -->
+                <circle cx="60" cy="280" r="5" fill="#C8963E" opacity=".7"/>
+                <circle cx="180" cy="250" r="5" fill="#C8963E" opacity=".8"/>
+                <circle cx="310" cy="175" r="6" fill="#C8963E"/>
+                <circle cx="440" cy="80" r="7" fill="#D4A84F" filter="url(#glow)"/>
+                <!-- label ponto final -->
+                <rect x="370" y="56" width="68" height="22" rx="6" fill="rgba(200,150,62,.2)" stroke="rgba(200,150,62,.4)" stroke-width="1"/>
+                <text x="404" y="71" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#D4A84F">+R$3,2M+</text>
+                <!-- mini cards de métricas -->
+                <rect x="80" y="50" width="90" height="54" rx="8" fill="rgba(22,35,55,.8)" stroke="rgba(200,150,62,.15)" stroke-width="1"/>
+                <text x="125" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#C8963E">8+</text>
+                <text x="125" y="90" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8B95A5">anos de impacto</text>
+                <rect x="196" y="130" width="90" height="54" rx="8" fill="rgba(22,35,55,.8)" stroke="rgba(200,150,62,.15)" stroke-width="1"/>
+                <text x="241" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="20" font-weight="700" fill="#C8963E">400+</text>
+                <text x="241" y="170" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8B95A5">capacitados</text>
+                <!-- ícone seta crescimento -->
+                <text x="380" y="175" font-family="Inter,sans-serif" font-size="28" fill="rgba(200,150,62,.3)">↗</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- WAVE -->
+<div class="wave-div" style="background:linear-gradient(145deg,var(--navy) 0%,#0F2035 55%,#152840 100%)">
+    <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C240,56 480,0 720,28 C960,56 1200,0 1440,28 L1440,56 L0,56 Z" fill="#132035"/>
+    </svg>
+</div>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+    <div class="container">
+        <div class="proof-item"><span class="ic">&#127942;</span> Master Black Belt Lean Six Sigma</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#128203;</span> 5 MBAs em Gestão</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#10003;</span> Auditor ISO 9001</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#128204;</span> Gerente de Projetos PMI</div>
+        <div class="proof-sep"></div>
+        <div class="proof-item"><span class="ic">&#127758;</span> Atende todo o Brasil</div>
+    </div>
+</div>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+    <div class="container">
+        <div class="tc">
+            <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px">
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,#9A6E24,#C8963E);border-radius:1px"></div>
+                <span class="s-label" style="margin-bottom:0">Impacto Comprovado</span>
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,#C8963E,#9A6E24);border-radius:1px"></div>
+            </div>
+            <h2 class="s-title">O que esperar de uma consultoria com método</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Projetos estruturados, metas claras e retorno mensurável desde as primeiras semanas de trabalho.</p>
+        </div>
+        <div class="res-grid stagger">
+            <div class="res-card fu"><div class="res-icon">&#128176;</div><div class="res-num">R$<span class="counter" data-target="3.2" data-decimals="1">0</span>M+</div><div class="res-txt">em savings gerados<br><em style="font-size:12px;color:var(--gray-500)">dinheiro real devolvido a operações</em></div></div>
+            <div class="res-card fu"><div class="res-icon">&#128200;</div><div class="res-num"><span class="counter" data-target="34" data-decimals="0">0</span>º→<span class="counter" data-target="2" data-decimals="0">0</span>º</div><div class="res-txt">salto em ranking de<br>excelência operacional</div></div>
+            <div class="res-card fu"><div class="res-icon">&#127891;</div><div class="res-num"><span class="counter" data-target="400" data-decimals="0">0</span>+</div><div class="res-txt">colaboradores que agora<br><strong style="color:var(--gold)">pensam Lean</strong> todos os dias</div></div>
+            <div class="res-card fu"><div class="res-icon">&#9200;</div><div class="res-num"><span class="counter" data-target="8" data-decimals="0">0</span>+ anos</div><div class="res-txt">de obsessão por resultados<br>mensuráveis e reais</div></div>
+        </div>
+        <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--gray-500);font-style:italic">Resultados verificáveis obtidos entre 2016 e 2024. <a href="#depoimentos" style="color:var(--gold);text-decoration:none;font-weight:600">Veja quem confirma &rarr;</a></p>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+    <div class="container">
+        <div class="tc">
+            <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px">
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));border-radius:1px"></div>
+                <span class="s-label" style="margin-bottom:0">Serviços</span>
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,var(--gold-light),var(--gold-dark));border-radius:1px"></div>
+            </div>
+            <h2 class="s-title">Como posso transformar sua operação</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Soluções sob medida que geram retorno mensurável. Cada projeto é desenhado para a realidade específica da sua empresa.</p>
+        </div>
+        <div class="srv-grid">
+            <!-- Serviço 1: DRO -->
+            <a href="servico-diagnostico-gratuito.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <span class="new-badge" style="background:#2ECC71;color:#FFF">GRATUITO</span>
+                <div class="srv-icon">&#128269;</div>
+                <h3>Diagnóstico Rápido de Oportunidades (DRO)</h3>
+                <p>Avaliação gratuita e sem compromisso da sua operação. Você responde sobre sua empresa e eu identifico onde está o dinheiro que ela está deixando na mesa. Primeiro passo para qualquer transformação.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+            
+            <!-- Serviço 2: Consultoria Completa -->
+            <a href="servico-consultoria-completa.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <div class="srv-icon">&#127942;</div>
+                <h3>Consultoria Completa (DCMO + Implementação)</h3>
+                <p>Diagnóstico aprofundado de maturidade organizacional, plano de ação estratégico e implementação lado a lado. Inclui Lean Six Sigma, PDCA, gestão por indicadores, automação, auditorias ISO e tudo que sua operação precisar.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+            
+            <!-- Serviço 3: Mapeamento de Processos -->
+            <a href="servico-mapeamento-processos.html" class="srv-card fu" style="text-decoration:none;color:inherit">
+                <span class="new-badge">NOVO</span>
+                <div class="srv-icon">&#128736;</div>
+                <h3>Mapeamento de Processos (Avulso)</h3>
+                <p>Desenho profissional de fluxogramas no padrão BPMN, mapeamento AS-IS/TO-BE, SIPOC e VSM. Ideal para empresas que precisam documentar ou terceirizar a modelagem dos seus processos.</p>
+                <span style="display:inline-block;margin-top:12px;color:var(--gold);font-size:13px;font-weight:600">Saiba mais &rarr;</span>
+            </a>
+            
+            <!-- ✨ Serviço 4: Cursos & Treinamentos (com os 3 cursos listados dentro) -->
+            <div class="srv-card fu" style="padding:32px 28px">
+                <span class="new-badge" style="background:var(--gold);color:var(--navy)">TREINAMENTOS</span>
+                <div class="srv-icon">&#127891;</div>
+                <h3 style="margin-bottom:20px">Cursos & Treinamentos</h3>
+                <p style="margin-bottom:20px;font-size:13px;color:var(--gray-400)">Capacite sua equipe com metodologias práticas de Excelência Operacional. Todos os cursos incluem material exclusivo, certificado e podem ser realizados online ou presencial.</p>
+                
+                <!-- Lista dos 3 cursos dentro do card -->
+                <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
+                    <a href="curso-kaizen.html" style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:8px;text-decoration:none;color:inherit;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.12)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(212,153,63,.06)';this.style.borderColor='rgba(212,153,63,.15)'">
+                        <span style="font-size:18px">⚡</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:600;color:var(--white)">Curso Kaizen</div>
+                            <div style="font-size:11px;color:var(--gray-500)">Melhoria Contínua na Prática</div>
+                        </div>
+                        <span style="margin-left:auto;font-size:14px;color:var(--gold)">&rarr;</span>
+                    </a>
+                    
+                    <a href="curso-5s.html" style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:8px;text-decoration:none;color:inherit;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.12)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(212,153,63,.06)';this.style.borderColor='rgba(212,153,63,.15)'">
+                        <span style="font-size:18px">🗂️</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:600;color:var(--white)">Curso 5S</div>
+                            <div style="font-size:11px;color:var(--gray-500)">Organização e Produtividade</div>
+                        </div>
+                        <span style="margin-left:auto;font-size:14px;color:var(--gold)">&rarr;</span>
+                    </a>
+                    
+                    <a href="curso-a3-pdca.html" style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:8px;text-decoration:none;color:inherit;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.12)';this.style.borderColor='var(--gold)'" onmouseout="this.style.background='rgba(212,153,63,.06)';this.style.borderColor='rgba(212,153,63,.15)'">
+                        <span style="font-size:18px">📊</span>
+                        <div>
+                            <div style="font-size:14px;font-weight:600;color:var(--white)">Curso A3/PDCA</div>
+                            <div style="font-size:11px;color:var(--gray-500)">Resolução Estruturada de Problemas</div>
+                        </div>
+                        <span style="margin-left:auto;font-size:14px;color:var(--gold)">&rarr;</span>
+                    </a>
+                </div>
+                
+                <a href="diagnostico-gratuito.html"  style="display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 18px;border-radius:6px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">
+                    Solicitar proposta de treinamento &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PORTFOLIO / CASES -->
+<section id="portfolio">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Portfólio</span>
+            <h2 class="s-title">Cases de Mapeamento de Processos</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Exemplos reais de fluxogramas e mapeamentos desenvolvidos para diferentes setores. Clique para ampliar.</p>
+        </div>
+        <!-- Setores atendidos -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px">
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏭 Industrial &amp; Manufatura</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏥 Saúde</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🚛 Logística &amp; Distribuição</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">👥 RH &amp; Administrativo</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;border:1px solid rgba(212,153,63,.2);font-size:13px;color:var(--gray-300)">🏗️ Construção &amp; Projetos</span>
+        </div>
+        <div class="port-grid">
+            <div class="port-card fu" onclick="openModal('cases/fluxo-producao-industrial.svg','Processo de Produção - Linha de Envase')">
+                <div class="port-img"><img src="cases/fluxo-producao-industrial.svg" alt="Fluxo de Produção Industrial" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-ind">Industrial</span>
+                    <h3>Linha de Envase — Produção</h3>
+                    <p>Mapeamento completo do fluxo produtivo com pontos de inspeção de qualidade, loops de retrabalho e gates de aprovação.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-manutencao-industrial.svg','Plano de Manutenção Preventiva e Corretiva')">
+                <div class="port-img"><img src="cases/fluxo-manutencao-industrial.svg" alt="Fluxo de Manutenção Industrial" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-ind">Industrial</span>
+                    <h3>Manutenção Preventiva e Corretiva</h3>
+                    <p>Workflow de manutenção com classificação por criticidade, gestão de peças sobressalentes e ciclo de teste e liberação.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-atendimento-hospitalar.svg','Fluxo de Atendimento ao Paciente - Pronto Socorro')">
+                <div class="port-img"><img src="cases/fluxo-atendimento-hospitalar.svg" alt="Fluxo de Atendimento Hospitalar" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-srv">Saúde</span>
+                    <h3>Pronto Socorro — Atendimento ao Paciente</h3>
+                    <p>Fluxo de triagem com classificação de risco Manchester, roteamento por prioridade e decisões clínicas.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-logistica-distribuicao.svg','Gestão de Pedidos e Distribuição')">
+                <div class="port-img"><img src="cases/fluxo-logistica-distribuicao.svg" alt="Fluxo de Logística" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-srv">Logística</span>
+                    <h3>Gestão de Pedidos e Distribuição</h3>
+                    <p>Processo completo de fulfillment: do recebimento do pedido à confirmação de entrega, com verificações e tratamento de exceções.</p>
+                </div>
+            </div>
+            <div class="port-card fu" onclick="openModal('cases/fluxo-onboarding-rh.svg','Processo de Onboarding de Colaboradores')">
+                <div class="port-img"><img src="cases/fluxo-onboarding-rh.svg" alt="Fluxo de Onboarding RH" loading="lazy"></div>
+                <div class="port-info">
+                    <span class="port-tag tag-rh">RH</span>
+                    <h3>Onboarding de Colaboradores</h3>
+                    <p>Jornada completa de integração: documentação, acessos, treinamentos e avaliações de 30 e 90 dias até efetivação.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="flowModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h3 id="modalTitle" style="font-size:18px;color:#1B2A3D;margin-bottom:16px;font-family:'Playfair Display',serif"></h3>
+        <img id="modalImg" src="" alt="" style="width:100%;max-width:1000px">
+    </div>
+</div>
+
+<!-- METODOLOGIA -->
+<section id="metodologia" class="dots-bg">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Metodologia</span>
+            <h2 class="s-title">Do diagnóstico à implementação</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Um processo estruturado em 4 etapas — transparente, mensurável e com resultados desde o início.</p>
+        </div>
+        <div class="meth-steps">
+            <div class="meth-step fu"><div class="step-num">01</div><span class="step-badge b-free">Gratuito</span><h3>DRO</h3><p>Diagnóstico Rápido de Oportunidades. Você responde sobre sua operação e eu identifico onde está o dinheiro que sua empresa está deixando na mesa.</p></div>
+            <div class="meth-step fu"><div class="step-num">02</div><span class="step-badge b-paid">Contratado</span><h3>DCMO</h3><p>Diagnóstico Completo de Maturidade Organizacional. Estudo aprofundado de processos, indicadores, cultura e gargalos reais.</p></div>
+            <div class="meth-step fu"><div class="step-num">03</div><span class="step-badge b-paid">Entrega</span><h3>Relatório + Plano</h3><p>Apresentação detalhada com diagnóstico, prioridades e plano de ação personalizado com metas, cronograma e ROI projetado.</p></div>
+            <div class="meth-step fu"><div class="step-num">04</div><span class="step-badge b-paid">Execução</span><h3>Implementação</h3><p>Execução lado a lado com sua equipe, transferindo conhecimento para que a empresa sustente os resultados sozinha.</p></div>
+        </div>
+        <div class="meth-hl fu">
+            <p><span class="hl-t">Recomendação:</span> Para máximo impacto, contrate o pacote completo DCMO + Plano de Ação + Implementação — garantindo velocidade, economia e resultados duradouros.</p>
+            <a href="diagnostico-gratuito.html"  class="btn-p">Começar pelo Diagnóstico Gratuito &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ MINI-ASSESSMENT INTERATIVO ═══════════════════════════════════ -->
+<!-- Técnica: micro-commitment + curiosidade + shareability -->
+<section id="assessment" class="assess-sec">
+    <div class="container">
+        <div class="tc">
+            <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px">
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));border-radius:1px"></div>
+                <span class="s-label" style="margin-bottom:0">Teste Rápido</span>
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,var(--gold-light),var(--gold-dark));border-radius:1px"></div>
+            </div>
+            <h2 class="s-title">Descubra em 60 segundos o nível de<br>maturidade da sua operação</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">5 perguntas rápidas. Sem e-mail, sem cadastro. Resultado instantâneo — e talvez surpreendente.</p>
+        </div>
+        <div class="assess-card fu" id="assessCard">
+            <div class="assess-prog"><div class="assess-prog-bar" id="assessBar"></div></div>
+
+            <!-- Pergunta 1 -->
+            <div class="assess-step active" data-step="1">
+                <div class="assess-num">Pergunta 1 de 5</div>
+                <div class="assess-q">Seus processos críticos estão documentados e atualizados?</div>
+                <div class="assess-hint">Pense nos 3 processos que mais geram receita na sua empresa.</div>
+                <div class="assess-opts">
+                    <button class="assess-opt" data-val="3" onclick="assessAnswer(this)">Sim, todos</button>
+                    <button class="assess-opt" data-val="2" onclick="assessAnswer(this)">Alguns</button>
+                    <button class="assess-opt" data-val="1" onclick="assessAnswer(this)">Poucos</button>
+                    <button class="assess-opt" data-val="0" onclick="assessAnswer(this)">Nenhum</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="assess-step" data-step="2">
+                <div class="assess-num">Pergunta 2 de 5</div>
+                <div class="assess-q">Seus indicadores de desempenho (KPIs) são acompanhados toda semana?</div>
+                <div class="assess-hint">KPIs como produtividade, tempo de ciclo, custo por unidade, taxa de defeito.</div>
+                <div class="assess-opts">
+                    <button class="assess-opt" data-val="3" onclick="assessAnswer(this)">Semanalmente</button>
+                    <button class="assess-opt" data-val="2" onclick="assessAnswer(this)">Mensalmente</button>
+                    <button class="assess-opt" data-val="1" onclick="assessAnswer(this)">Quando dá</button>
+                    <button class="assess-opt" data-val="0" onclick="assessAnswer(this)">Não temos</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="assess-step" data-step="3">
+                <div class="assess-num">Pergunta 3 de 5</div>
+                <div class="assess-q">Qual é o nível de retrabalho ou desperdício na sua operação?</div>
+                <div class="assess-hint">Inclui refazer tarefas, corrigir erros, esperas, movimentação desnecessária.</div>
+                <div class="assess-opts">
+                    <button class="assess-opt" data-val="3" onclick="assessAnswer(this)">Mínimo</button>
+                    <button class="assess-opt" data-val="2" onclick="assessAnswer(this)">Moderado</button>
+                    <button class="assess-opt" data-val="1" onclick="assessAnswer(this)">Significativo</button>
+                    <button class="assess-opt" data-val="0" onclick="assessAnswer(this)">Muito alto</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="assess-step" data-step="4">
+                <div class="assess-num">Pergunta 4 de 5</div>
+                <div class="assess-q">Sua equipe sabe identificar e reportar desperdícios no dia a dia?</div>
+                <div class="assess-hint">Cultura de melhoria contínua — todos participam, não só a gestão.</div>
+                <div class="assess-opts">
+                    <button class="assess-opt" data-val="3" onclick="assessAnswer(this)">Sim, faz parte da cultura</button>
+                    <button class="assess-opt" data-val="2" onclick="assessAnswer(this)">Alguns reportam</button>
+                    <button class="assess-opt" data-val="1" onclick="assessAnswer(this)">Só a gestão percebe</button>
+                    <button class="assess-opt" data-val="0" onclick="assessAnswer(this)">Ninguém identifica</button>
+                </div>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="assess-step" data-step="5">
+                <div class="assess-num">Pergunta 5 de 5</div>
+                <div class="assess-q">Você sabe exatamente quanto custa uma hora de parada na sua operação?</div>
+                <div class="assess-hint">O custo real — incluindo mão de obra ociosa, atrasos em cadeia e impacto no cliente.</div>
+                <div class="assess-opts">
+                    <button class="assess-opt" data-val="3" onclick="assessAnswer(this)">Sei com precisão</button>
+                    <button class="assess-opt" data-val="2" onclick="assessAnswer(this)">Tenho uma estimativa</button>
+                    <button class="assess-opt" data-val="1" onclick="assessAnswer(this)">Não sei ao certo</button>
+                    <button class="assess-opt" data-val="0" onclick="assessAnswer(this)">Nunca calculei</button>
+                </div>
+            </div>
+
+            <!-- Resultado -->
+            <div class="assess-result" id="assessResult">
+                <div class="assess-score-ring">
+                    <div>
+                        <div class="assess-score-num" id="assessScoreNum">0</div>
+                        <div class="assess-score-of">/15</div>
+                    </div>
+                </div>
+                <div class="assess-level" id="assessLevel"></div>
+                <div class="assess-msg" id="assessMsg"></div>
+                <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse" id="assessCTA" style="margin-bottom:8px">Quero o Diagnóstico Completo (Gratuito) &rarr;</a>
+                <div class="assess-share-row">
+                    <button class="assess-share-btn" onclick="shareResult('whatsapp')">📱 Compartilhar no WhatsApp</button>
+                    <button class="assess-share-btn" onclick="shareResult('linkedin')">💼 Compartilhar no LinkedIn</button>
+                    <button class="assess-share-btn" onclick="shareResult('copy')">🔗 Copiar link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PATTERN INTERRUPT — Frase que para o scroll ═══════════════════ -->
+<div class="pi-sec fu">
+    <div class="pi-rule"></div>
+    <p class="pi-quote">&ldquo;O custo de não agir é invisível — até que você finalmente enxerga. E quando enxerga, percebe que já pagou ele dezenas de vezes.&rdquo;</p>
+    <div class="pi-rule"></div>
+    <span class="pi-author">Tiago Fernandes</span>
+</div>
+
+<!-- DIFERENCIAL -->
+<section id="diferencial">
+    <div class="container">
+        <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:12px">
+            <div style="width:28px;height:2px;background:linear-gradient(90deg,#9A6E24,#C8963E);border-radius:1px"></div>
+            <span class="s-label" style="margin-bottom:0">Diferencial</span>
+        </div>
+        <h2 class="s-title">Por que escolher a T2S Consultoria</h2>
+        <span class="s-accent"></span>
+        <p class="s-sub">Não trabalho com fórmulas prontas. Cada solução é construída para a realidade, cultura e desafios da sua empresa.</p>
+        <div class="diff-grid">
+            <div class="diff-items">
+                <div class="diff-item fu"><div class="diff-ic">&#128170;</div><div><h3>Soluções sob medida</h3><p>Cada projeto é customizado. Nada de templates genéricos — entro na sua operação para entender o que realmente precisa mudar.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#127793;</div><div><h3>Impacto em todos os níveis</h3><p>Da operação à alta liderança: ajudo a saber para onde ir, qual caminho seguir e como executar com consistência.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#128640;</div><div><h3>Transferência de conhecimento</h3><p>O objetivo é que sua empresa caminhe sozinha. Capacito a equipe para sustentar e evoluir os resultados sem depender de consultor.</p></div></div>
+                <div class="diff-item fu"><div class="diff-ic">&#128202;</div><div><h3>Resultados mensuráveis</h3><p>Todo projeto tem KPIs claros, metas definidas e ROI projetado. Você acompanha o retorno em tempo real.</p></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:24px">
+                <!-- Profile Card -->
+                <!-- 💡 FOTO: Para adicionar sua foto, substitua a linha abaixo:
+                     <div class="profile-mono">T2S</div>
+                     por:
+                     <img src="foto-tiago.jpg" alt="Tiago Teles Fernandes" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(212,153,63,.4);box-shadow:0 0 40px rgba(212,153,63,.15)">
+                     Uma foto profissional aumenta muito a confiança do visitante. -->
+                <div class="profile-card fu">
+                    <div class="profile-mono">T2S Consultoria</div>
+                    <div>
+                        <div class="profile-name">Tiago Teles Fernandes</div>
+                        <div class="profile-title">Consultor &amp; Master Black Belt</div>
+                    </div>
+                    <div class="profile-tags">
+                        <span class="belt-badge belt-master"><span class="belt-icon">&#127942;</span> Master Black Belt</span>
+                        <span class="profile-tag">&#128203; 5 MBAs</span>
+                        <span class="profile-tag">&#10003; ISO 9001</span>
+                        <span class="profile-tag">&#128640; +8 anos</span>
+                    </div>
+                    <p style="font-size:14px;color:var(--gray-400);line-height:1.65;font-style:italic;max-width:320px">&ldquo;O verdadeiro sucesso de uma consultoria está em capacitar a empresa a caminhar sozinha — com método, dados e autonomia.&rdquo;</p>
+                    <a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:8px 20px;border-radius:100px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Ver perfil no LinkedIn &rarr;</a>
+                </div>
+                <!-- Credenciais -->
+                <div class="cred-grid">
+                    <div class="cred-group fu">
+                        <h3>Certificações</h3>
+                        <ul class="cred-list">
+                            <li><span class="belt-badge belt-black" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Black Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
+                            <li><span class="belt-badge belt-green" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Green Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
+                            <li><span class="belt-badge belt-yellow" style="font-size:11px;padding:4px 10px"><span class="belt-icon">&#9679;</span> Yellow Belt</span> <span style="color:var(--gray-400);font-size:13px">Lean Seis Sigma</span></li>
+                            <li><span class="ck">&#10003;</span> Gestão de Projetos e Liderança</li>
+                            <li><span class="ck">&#10003;</span> Auditor SGQ ISO 9001</li>
+                            <li><span class="ck">&#10003;</span> Design Sprint Master</li>
+                        </ul>
+                    </div>
+                    <div class="cred-group fu">
+                        <h3>MBAs</h3>
+                        <ul class="cred-list">
+                            <li><span class="ck">&#10003;</span> Gestão Ágil</li>
+                            <li><span class="ck">&#10003;</span> Lean Manufacturing</li>
+                            <li><span class="ck">&#10003;</span> Gestão e Liderança</li>
+                            <li><span class="ck">&#10003;</span> Gestão Industrial</li>
+                            <li><span class="ck">&#10003;</span> Gestão da Qualidade</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<!-- ⚠️ LEMBRETE: Substitua estes depoimentos pelos relatos reais dos seus clientes.
+     Os nomes de empresas são mantidos em sigilo por política de confidencialidade. -->
+<section id="depoimentos" style="background:linear-gradient(180deg,var(--navy) 0%,var(--navy-lighter) 100%);padding:var(--sp)">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">O que dizem os clientes</span>
+            <h2 class="s-title">Resultados que falam por si</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Empresas que transformaram a operação. Nomes preservados a pedido — a discrição faz parte do nosso compromisso.</p>
+        </div>
+        
+        <!-- NOVO: Video/Depoimento em Destaque -->
+        <div class="fu" style="max-width:720px;margin:0 auto 48px;padding:32px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:16px;text-align:center">
+            <div style="font-size:42px;margin-bottom:16px">🎥</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:var(--white);margin-bottom:12px">Quer ver cases reais em vídeo?</h3>
+            <p style="font-size:14px;color:var(--gray-400);margin-bottom:20px;line-height:1.6">Estou produzindo uma série com depoimentos exclusivos de clientes e cases detalhados de transformação. <strong style="color:var(--gold)">Em breve disponível aqui.</strong></p>
+            <a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(212,153,63,.3);padding:10px 20px;border-radius:8px;transition:.3s" onmouseover="this.style.background='rgba(212,153,63,.1)'" onmouseout="this.style.background='transparent'">Acompanhe no LinkedIn &rarr;</a>
+        </div>
+        
+        <!-- Slider Automático de Depoimentos (CARROSSEL HORIZONTAL) -->
+        <div class="dep-carousel-container fu">
+            <!-- Botão Anterior -->
+            <button class="dep-nav-btn dep-nav-prev" onclick="moveCarousel(-1)" aria-label="Depoimento anterior">
+                <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            
+            <!-- Carrossel -->
+            <div class="dep-carousel" id="testimonialCarousel">
+                <!-- Depoimento 1 - Industrial -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;O mapeamento dos processos produtivos revelou gargalos que nos custavam horas de parada. Em 3 meses, reduzimos o retrabalho em 38%. O Tiago não entrega só diagnóstico — ele fica até o resultado aparecer.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(212,153,63,.15);border-color:rgba(212,153,63,.3);color:var(--gold)">C</div>
+                        <div>
+                            <div class="dep-name">C. Moreira</div>
+                            <div class="dep-role">Gerente Industrial</div>
+                            <div class="dep-sector">🏭 Indústria Metalúrgica &middot; São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 2 - Saúde -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Redesenhamos o fluxo de atendimento hospitalar. Os fluxogramas BPMN são tão claros que viraram material de treinamento. A equipe toda ganhou agilidade e os pacientes perceberam a diferença.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(46,204,113,.12);border-color:rgba(46,204,113,.3);color:var(--success)">A</div>
+                        <div>
+                            <div class="dep-name">A. Pereira</div>
+                            <div class="dep-role">Diretora de Operações</div>
+                            <div class="dep-sector">🏥 Rede Hospitalar &middot; Minas Gerais</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 3 - Logística -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Aplicamos o DCMO em dois departamentos e em 4 meses reduzimos o lead time de entrega em 22%. O que mais me surpreendeu foi a capacidade de engajar a equipe — saímos com cultura de melhoria instalada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#5dade2">R</div>
+                        <div>
+                            <div class="dep-name">R. Figueiredo</div>
+                            <div class="dep-role">CEO</div>
+                            <div class="dep-sector">🚛 Transportadora &middot; Minas Gerais</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 4 - Varejo -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Nosso estoque era um caos. Com a consultoria, implementamos controle visual e reduzimos rupturas em 65%. O ROI veio em menos de 2 meses. Recomendo para qualquer varejista que queira profissionalizar a gestão.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(155,89,182,.12);border-color:rgba(155,89,182,.3);color:#af7ac5">L</div>
+                        <div>
+                            <div class="dep-name">L. Santos</div>
+                            <div class="dep-role">Gerente de Operações</div>
+                            <div class="dep-sector">🛒 Rede de Varejo &middot; Rio de Janeiro</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 5 - Alimentos -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Trabalhamos desperdício na linha de produção. O Lean Six Sigma trouxe método e disciplina. Economizamos R$ 180 mil no primeiro ano só com redução de matéria-prima descartada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(230,126,34,.12);border-color:rgba(230,126,34,.3);color:#e67e22">M</div>
+                        <div>
+                            <div class="dep-name">M. Oliveira</div>
+                            <div class="dep-role">Diretor Industrial</div>
+                            <div class="dep-sector">🍞 Indústria de Alimentos &middot; São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 6 - Serviços -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Somos uma empresa de serviços e achávamos que Lean não se aplicava. Estávamos errados. Otimizamos processos administrativos e reduzimos tempo de faturamento de 5 dias para 2.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(26,188,156,.12);border-color:rgba(26,188,156,.3);color:#1abc9c">F</div>
+                        <div>
+                            <div class="dep-name">F. Costa</div>
+                            <div class="dep-role">Sócio-Diretor</div>
+                            <div class="dep-sector">💼 Escritório de Contabilidade &middot; Paraná</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 7 - Tecnologia -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Implementamos Agile + Lean no desenvolvimento. Entregas mais rápidas, menos bugs e equipe mais motivada. O Tiago tem didática incrível para traduzir conceitos complexos.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(52,152,219,.12);border-color:rgba(52,152,219,.3);color:#3498db">P</div>
+                        <div>
+                            <div class="dep-name">P. Almeida</div>
+                            <div class="dep-role">CTO</div>
+                            <div class="dep-sector">💻 Software House &middot; São Paulo</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 8 - Construção -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Na construção civil, cada dia de atraso custa caro. Com o planejamento Lean, reduzimos atrasos em 45% e melhoramos a previsibilidade das obras. Cliente mais satisfeito, caixa mais saudável.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(149,165,166,.12);border-color:rgba(149,165,166,.3);color:#95a5a6">J</div>
+                        <div>
+                            <div class="dep-name">J. Rodrigues</div>
+                            <div class="dep-role">Engenheiro Chefe</div>
+                            <div class="dep-sector">🏗️ Construtora &middot; Bahia</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 9 - Educação -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Aplicamos Lean em processos acadêmicos e administrativos da instituição. Reduzimos tempo de matrícula em 60% e aumentamos a satisfação dos alunos. Transformação cultural completa.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(231,76,60,.12);border-color:rgba(231,76,60,.3);color:#e74c3c">S</div>
+                        <div>
+                            <div class="dep-name">S. Martins</div>
+                            <div class="dep-role">Diretora Acadêmica</div>
+                            <div class="dep-sector">🎓 Instituição de Ensino &middot; Rio Grande do Sul</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Depoimento 10 - Energia -->
+                <div class="dep-card">
+                    <div class="dep-stars">★★★★★</div>
+                    <p class="dep-text">&ldquo;Setor de energia exige precisão. O trabalho de padronização e controle estatístico reduziu falhas em 52%. Segurança operacional e eficiência andaram juntas nessa jornada.&rdquo;</p>
+                    <div class="dep-author">
+                        <div class="dep-avatar" style="background:rgba(241,196,15,.12);border-color:rgba(241,196,15,.3);color:#f1c40f">E</div>
+                        <div>
+                            <div class="dep-name">E. Barbosa</div>
+                            <div class="dep-role">Gerente de Manutenção</div>
+                            <div class="dep-sector">⚡ Distribuidora de Energia &middot; Ceará</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão Próximo -->
+            <button class="dep-nav-btn dep-nav-next" onclick="moveCarousel(1)" aria-label="Próximo depoimento">
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+            </button>
+        </div>
+        
+        <!-- Indicadores (Dots) -->
+        <div class="dep-dots fu" id="carouselDots"></div>
+        <!-- Nota de confidencialidade -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:32px;padding:14px 24px;background:rgba(212,153,63,.05);border:1px solid rgba(212,153,63,.1);border-radius:10px;max-width:620px;margin-left:auto;margin-right:auto">
+            <span style="font-size:18px">🔒</span>
+            <p style="font-size:13px;color:var(--gray-400);line-height:1.5;margin:0">Preservamos a identidade das empresas clientes por compromisso de confidencialidade. Os resultados descritos são reais e verificáveis mediante contato direto.</p>
+        </div>
+        <p style="text-align:center;margin-top:24px;font-size:13px;color:var(--gray-500);font-style:italic">Atendimento presencial em todo o Brasil e online para qualquer lugar do mundo. <a href="#contato" style="color:var(--gold);text-decoration:none;font-weight:600">Agende seu diagnóstico gratuito &rarr;</a></p>
+    </div>
+</section>
+
+<!-- ARTIGOS -->
+<section id="artigos">
+    <div class="container">
+        <div class="tc">
+            <span class="s-label">Artigos</span>
+            <h2 class="s-title">Conhecimento que transforma</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Conteúdo prático sobre excelência operacional, Lean Six Sigma e gestão de processos — publicado toda semana.</p>
+        </div>
+        <div class="art-grid">
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag lean">Qualidade</span></div>
+                <h3>O custo invisível da Não-Qualidade: Quando os impactos vão muito além do retrabalho</h3>
+                <p>Os impactos mais silenciosos da não-qualidade corroem a saúde do negócio: reputação, motivação da equipe e oportunidades perdidas. Descubra os três fantasmas da Não-Qualidade.</p>
+                <div class="art-footer"><span class="art-date">12 Ago 2025</span><a href="artigo-custo-nao-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag gest">Lean</span></div>
+                <h3>A Arte da "Despadronização": Quando quebrar regras impulsiona a inovação Lean</h3>
+                <p>E se a verdadeira inovação estiver fora do padrão? O uso inteligente do desvio controlado como ferramenta estratégica para evolução contínua dentro do Lean Thinking.</p>
+                <div class="art-footer"><span class="art-date">5 Ago 2025</span><a href="artigo-arte-despadronizacao.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+            <article class="art-card fu">
+                <div class="art-top"><span class="art-tag lean">Qualidade</span><span style="font-size:11px;color:var(--gray-500);margin-left:auto">Clássico</span></div>
+                <h3>Desmistificando a Qualidade</h3>
+                <p>Por que a qualidade ainda tem má fama nas empresas? Descubra como transformar a cultura da qualidade em um diferencial competitivo — um dos artigos mais lidos da newsletter.</p>
+                <div class="art-footer"><span class="art-date">Jul 2021 · Evergreen</span><a href="artigo-desmistificando-qualidade.html" class="art-link">Ler artigo &rarr;</a></div>
+            </article>
+        </div>
+        <div style="margin-top:48px;padding:28px 32px;background:rgba(212,153,63,.06);border:1px solid rgba(212,153,63,.15);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <div>
+                <div style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Newsletter Semanal</div>
+                <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:4px">"Rumo à Excelência"</div>
+                <div style="font-size:14px;color:var(--gray-400)">Conteúdo prático de Lean, Qualidade e Gestão — toda semana. <strong style="color:var(--gray-300)">+1.457 líderes</strong> já assinam.</div>
+            </div>
+            <a href="https://www.linkedin.com/newsletters/rumo-%C3%A0-excel%C3%AAncia-7221899028705882112/"  class="btn-s" style="white-space:nowrap;flex-shrink:0">Assinar gratuitamente &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- COMO É A CONTRATAÇÃO -->
+<section id="contratacao">
+    <div class="container">
+        <div class="tc">
+            <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px">
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,#9A6E24,#C8963E);border-radius:1px"></div>
+                <span class="s-label" style="margin-bottom:0">Transparência</span>
+                <div style="width:28px;height:2px;background:linear-gradient(90deg,#C8963E,#9A6E24);border-radius:1px"></div>
+            </div>
+            <h2 class="s-title">Como funciona a contratação</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr">Clareza e segurança em cada etapa — para que você tome a decisão com total confiança.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item fu">
+                <div class="faq-icon">&#128196;</div>
+                <div class="faq-q">Existe contrato formal?</div>
+                <div class="faq-a">Sim. Todo projeto é formalizado em <span class="faq-hl">Contrato de Prestação de Serviços</span> com escopo, valores, prazos e entregáveis claramente definidos — protegendo ambas as partes desde o início.</div>
+            </div>
+            <div class="faq-item fu">
+                <div class="faq-icon">&#128274;</div>
+                <div class="faq-q">E a confidencialidade dos nossos dados?</div>
+                <div class="faq-a">Cláusula de <span class="faq-hl">sigilo absoluto</span> está prevista contratualmente — dados financeiros, processos internos, estratégias e informações de clientes. O compromisso de sigilo permanece <em>mesmo após o término do contrato</em>.</div>
+            </div>
+            <div class="faq-item fu">
+                <div class="faq-icon">&#128179;</div>
+                <div class="faq-q">Como funciona o pagamento?</div>
+                <div class="faq-a">Os valores e condições são definidos na <span class="faq-hl">proposta comercial aprovada</span> antes do início — com opção de parcelamento e regras transparentes sobre prazo e eventuais atrasos. Sem surpresas.</div>
+            </div>
+            <div class="faq-item fu">
+                <div class="faq-icon">&#128226;</div>
+                <div class="faq-q">Posso cancelar o contrato?</div>
+                <div class="faq-a">Sim. O contrato prevê <span class="faq-hl">rescisão por aviso prévio por escrito</span> — com condições claras e simétricas para ambas as partes. Nenhum cliente fica preso.</div>
+            </div>
+            <div class="faq-item fu faq-full">
+                <div class="faq-icon">&#128737;</div>
+                <div class="faq-q">A consultoria está em conformidade com a LGPD?</div>
+                <div class="faq-a">Sim. Operamos em plena conformidade com a <span class="faq-hl">Lei Geral de Proteção de Dados (Lei 13.709/2018)</span>. Os dados fornecidos pela sua empresa são tratados com medidas técnicas e organizacionais de segurança — e usados exclusivamente para a prestação dos serviços contratados.</div>
+            </div>
+        </div>
+        <div class="contrat-note fu">
+            <span style="font-size:24px;line-height:1;flex-shrink:0">&#9989;</span>
+            <div>
+                <div style="font-weight:700;color:var(--white);margin-bottom:5px">Tudo começa com o Diagnóstico Gratuito — sem compromisso</div>
+                <div style="font-size:14px;color:var(--gray-400)">Você conhece o método, entende o potencial da sua operação e recebe um plano inicial. Só decide contratar se fizer sentido para o seu momento. Sem pressão.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SHARE VISUAL — Seção feita para ser screenshotada ═════════════ -->
+<div class="share-visual fu">
+    <div class="sv-card">
+        <div class="sv-logo">T2S CONSULTORIA</div>
+        <div class="sv-title">Os 7 desperdícios que corroem<br>o lucro da sua empresa</div>
+        <div class="sv-items">
+            <div class="sv-item"><div class="sv-num">1.</div><div class="sv-txt"><strong style="color:var(--gold)">Superprodução</strong><br>Produzir mais do que o cliente precisa</div></div>
+            <div class="sv-item"><div class="sv-num">2.</div><div class="sv-txt"><strong style="color:var(--gold)">Espera</strong><br>Tempo ocioso entre processos</div></div>
+            <div class="sv-item"><div class="sv-num">3.</div><div class="sv-txt"><strong style="color:var(--gold)">Transporte</strong><br>Movimentação desnecessária de materiais</div></div>
+            <div class="sv-item"><div class="sv-num">4.</div><div class="sv-txt"><strong style="color:var(--gold)">Processamento</strong><br>Etapas que não agregam valor</div></div>
+            <div class="sv-item"><div class="sv-num">5.</div><div class="sv-txt"><strong style="color:var(--gold)">Estoque</strong><br>Mais material do que o necessário</div></div>
+            <div class="sv-item"><div class="sv-num">6.</div><div class="sv-txt"><strong style="color:var(--gold)">Movimentação</strong><br>Deslocamento desnecessário de pessoas</div></div>
+            <div class="sv-item"><div class="sv-num">7.</div><div class="sv-txt"><strong style="color:var(--gold)">Defeitos</strong><br>Retrabalho, correções, devoluções</div></div>
+            <div class="sv-item"><div class="sv-num">+1</div><div class="sv-txt"><strong style="color:var(--success)">Talento</strong><br>Subutilizar a inteligência da equipe</div></div>
+        </div>
+        <div class="sv-cta">📸 Salve e compartilhe com quem precisa ouvir isso &middot; t2sconsultoria.com</div>
+    </div>
+</div>
+
+<!-- ═══ PATTERN INTERRUPT 2 — Pergunta de NLP antes do CTA ═══════════ -->
+<div class="pi-sec fu">
+    <div class="pi-rule"></div>
+    <p class="pi-quote">A pergunta não é <em>se</em> sua empresa pode melhorar —<br>é <span style="color:var(--gold)">quanto tempo mais</span> você vai esperar.</p>
+    <div class="pi-rule"></div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sec">
+    <div class="cta-ring cta-ring1"></div>
+    <div class="cta-ring cta-ring2"></div>
+    <div class="cta-ring cta-ring3"></div>
+    <div class="container">
+        <span class="s-label">A decisão é sua</span>
+        <h2 class="cta-t">Enquanto você lê isso, sua operação<br>continua <span style="color:var(--gold)">sangrando dinheiro</span></h2>
+        <span class="s-accent ctr"></span>
+        <p class="cta-p">Em poucos minutos, você pode dar o primeiro passo para fechar essa torneira. Sem compromisso, sem custo. Apenas clareza sobre onde está o dinheiro que sua empresa está deixando na mesa — <strong style="color:var(--gray-300)">e como recuperá-lo</strong>.</p>
+        
+        <!-- NOVO: Garantia de Satisfação -->
+        <div class="fu" style="max-width:580px;margin:0 auto 28px;padding:20px 24px;background:rgba(46,204,113,.08);border:1px solid rgba(46,204,113,.25);border-radius:12px;display:flex;gap:14px;align-items:flex-start;text-align:left">
+            <div style="font-size:28px;flex-shrink:0">🛡️</div>
+            <div>
+                <div style="font-weight:700;color:var(--success);margin-bottom:4px;font-size:14px">Garantia de Satisfação</div>
+                <div style="font-size:13px;color:var(--gray-400);line-height:1.6">Se após o diagnóstico gratuito você não identificar pelo menos <strong style="color:var(--gray-300)">3 oportunidades claras de economia</strong>, eu mesmo te indico recursos gratuitos para começar sozinho. Meu compromisso é com seu resultado, não com venda.</div>
+            </div>
+        </div>
+        
+        <a href="diagnostico-gratuito.html"  class="btn-p btn-pulse" style="font-size:17px;padding:18px 44px;box-shadow:0 8px 40px rgba(212,153,63,.35)">Descobrir minhas oportunidades agora &rarr;</a>
+        <div style="display:flex;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap">
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> 100% gratuito</span>
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Resposta em 24h</span>
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Personalizado para sua empresa</span>
+            <span style="font-size:13px;color:var(--gray-500);display:flex;align-items:center;gap:6px"><span style="color:var(--success)">&#10003;</span> Sem compromisso algum</span>
+        </div>
+        <p class="cta-u" style="margin-top:24px;font-style:normal;font-size:15px">Cada semana sem ação é mais uma semana pagando pelo mesmo desperdício.</p>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+    <div class="container">
+        <div class="tc" style="margin-bottom:48px">
+            <span class="s-label">Contato</span>
+            <h2 class="s-title">Vamos conversar</h2>
+            <span class="s-accent ctr"></span>
+            <p class="s-sub ctr" style="margin-bottom:0">Prefiro o WhatsApp para uma resposta mais rápida. Geralmente respondo em até 2 horas em dias úteis.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item fu">
+                <div class="contact-ic">&#128222;</div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais." >(14) 99117-5103</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Resposta em até 2h &middot; dias úteis</p>
+            </div>
+            <div class="contact-item fu">
+                <div class="contact-ic">&#9993;</div>
+                <h3>Email</h3>
+                <a href="mailto:fernandes.rumoexcelencia@gmail.com">fernandes.rumoexcelencia@gmail.com</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Resposta em até 24h</p>
+            </div>
+            <div class="contact-item fu">
+                <div class="contact-ic">&#127760;</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/tiagotelesfernandes/" >Tiago Teles Fernandes</a>
+                <p style="font-size:12px;color:var(--gray-500);margin-top:6px">Newsletter · 1.457 seguidores</p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:48px">
+            <a href="diagnostico-gratuito.html"  class="btn-p" style="font-size:15px">
+                Prefere começar pelo Diagnóstico Gratuito? &rarr;
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5514991175103?text=Olá%20Tiago!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20consultoria."  class="wa-btn" aria-label="Fale comigo no WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div>
+            <span class="footer-logo">T2S Consultoria</span>
+            <p style="margin-top:8px">&copy; 2026 Tiago Teles Fernandes &middot; Consultoria em Excelência Operacional</p>
+        </div>
+        <div style="text-align:right">
+            <p>Ribeirão Preto, SP &middot; Brasil</p>
+            <p style="margin-top:4px"><a href="https://www.linkedin.com/in/tiagotelesfernandes/"  style="color:var(--gold);text-decoration:none;font-size:13px;font-weight:500;opacity:.8">LinkedIn ↗</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// ENGINE INTERATIVO — O site que gruda
+// ═══════════════════════════════════════════════════════════════════
+
+// ── Nav scroll ──────────────────────────────────────────────────────
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)});
+
+// ── Fade-up + Highlight sweep ───────────────────────────────────────
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis')}})},{threshold:.12});
+document.querySelectorAll('.fu,.hl-sweep').forEach(el=>obs.observe(el));
+
+// ── Smooth scroll ───────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('active')}})});
+
+// ── Modal ───────────────────────────────────────────────────────────
+function openModal(src,title){document.getElementById('modalImg').src=src;document.getElementById('modalTitle').textContent=title;document.getElementById('flowModal').classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('flowModal').classList.remove('active');document.body.style.overflow=''}
+document.getElementById('flowModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// ── Scroll Progress Bar ─────────────────────────────────────────────
+(function(){
+  const bar=document.createElement('div');
+  bar.className='scroll-prog';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(window.scrollY/h*100)+'%';
+  },{passive:true});
+})();
+
+// ── Typewriter no Hero ──────────────────────────────────────────────
+(function(){
+  const el=document.getElementById('heroTitle');
+  if(!el)return;
+  const phrases=[
+    'Sua empresa perde dinheiro todo dia — <span class="gold">sem perceber</span>',
+    'E se você soubesse <span class="gold">exatamente onde?</span>',
+    'Eu encontro. <span class="gold">Você lucra.</span>'
+  ];
+  let pi=0,ci=0,deleting=false,pauseEnd=0;
+  const speed=50,delSpeed=30,holdTime=3000,pauseBetween=800;
+
+  function tick(){
+    const raw=phrases[pi].replace(/<[^>]+>/g,'');
+    if(!deleting){
+      ci++;
+      if(ci>raw.length){
+        pauseEnd=Date.now()+holdTime;
+        deleting=true;
+      }
+    }else{
+      if(Date.now()<pauseEnd){requestAnimationFrame(tick);return;}
+      ci--;
+      if(ci<=0){
+        deleting=false;
+        pi=(pi+1)%phrases.length;
+        pauseEnd=Date.now()+pauseBetween;
+      }
+    }
+    // Build displayed HTML preserving tags
+    let displayed='',count=0,inTag=false;
+    const full=phrases[pi];
+    for(let i=0;i<full.length&&count<ci;i++){
+      if(full[i]==='<'){inTag=true;}
+      if(!inTag)count++;
+      displayed+=full[i];
+      if(full[i]==='>'&&inTag){inTag=false;}
+    }
+    // Close any open span
+    if(displayed.includes('<span')&&!displayed.includes('</span'))displayed+='</span>';
+    el.innerHTML=displayed+'<span class="tw-cursor"></span>';
+    requestAnimationFrame(tick);
+  }
+  // Start after a brief delay
+  setTimeout(tick,800);
+})();
+
+// ── Animated Counters ───────────────────────────────────────────────
+(function(){
+  const counters=document.querySelectorAll('.counter');
+  const cObs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const el=entry.target;
+      if(el.dataset.done)return;
+      el.dataset.done='1';
+      const target=parseFloat(el.dataset.target);
+      const dec=parseInt(el.dataset.decimals)||0;
+      const duration=1600;
+      const start=performance.now();
+      function step(now){
+        const p=Math.min((now-start)/duration,1);
+        const ease=1-Math.pow(1-p,3); // ease-out cubic
+        const val=ease*target;
+        el.textContent=dec>0?val.toFixed(dec):Math.round(val);
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  },{threshold:.3});
+  counters.forEach(c=>cObs.observe(c));
+})();
+
+// ── Mini-Assessment Engine ──────────────────────────────────────────
+let assessScore=0;
+let assessStep=0;
+const totalSteps=5;
+
+function assessAnswer(btn){
+  // Mark selected
+  btn.parentElement.querySelectorAll('.assess-opt').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  assessScore+=parseInt(btn.dataset.val);
+  assessStep++;
+
+  // Update progress bar
+  const bar=document.getElementById('assessBar');
+  bar.style.width=((assessStep/totalSteps)*100)+'%';
+
+  // Delay then move to next
+  setTimeout(()=>{
+    const steps=document.querySelectorAll('.assess-step');
+    steps.forEach(s=>s.classList.remove('active'));
+
+    if(assessStep>=totalSteps){
+      // Show result
+      showAssessResult();
+    }else{
+      steps[assessStep].classList.add('active');
+    }
+  },400);
+}
+
+function showAssessResult(){
+  const bar=document.getElementById('assessBar');
+  bar.style.width='100%';
+
+  const result=document.getElementById('assessResult');
+  const scoreEl=document.getElementById('assessScoreNum');
+  const levelEl=document.getElementById('assessLevel');
+  const msgEl=document.getElementById('assessMsg');
+  const ctaEl=document.getElementById('assessCTA');
+
+  result.classList.add('show');
+
+  // Animate score counting
+  let curr=0;
+  const interval=setInterval(()=>{
+    curr++;
+    scoreEl.textContent=curr;
+    if(curr>=assessScore)clearInterval(interval);
+  },120);
+
+  // Determine level + NLP message
+  let level,msg,cta;
+  if(assessScore>=12){
+    level='Operação Madura';
+    msg='Sua empresa já tem uma base sólida. O próximo passo é encontrar os ganhos ocultos — aqueles 5-15% de eficiência que separam uma boa operação de uma operação de classe mundial. <strong style="color:var(--gold)">Você está mais perto do que imagina.</strong>';
+    cta='Encontrar meus ganhos ocultos (Gratuito) →';
+  }else if(assessScore>=8){
+    level='Operação em Desenvolvimento';
+    msg='Você tem consciência dos desafios, mas falta método para transformar essa consciência em resultado. <strong style="color:var(--gold)">Cada mês sem ação é dinheiro que não volta.</strong> A boa notícia: o potencial de melhoria é enorme.';
+    cta='Descobrir meu potencial (Gratuito) →';
+  }else if(assessScore>=4){
+    level='Oportunidade Significativa';
+    msg='Sua operação tem oportunidades grandes e acessíveis de melhoria. Empresas nesse nível tipicamente recuperam <strong style="color:var(--gold)">15-30% de eficiência</strong> nos primeiros 3 meses com o método certo. O momento de agir é agora.';
+    cta='Quero entender minhas oportunidades (Gratuito) →';
+  }else{
+    level='Urgência Operacional';
+    msg='Sua empresa provavelmente está perdendo <strong style="color:var(--gold)">mais de 25% do faturamento</strong> com ineficiências invisíveis. Isso não é culpa — é falta de visibilidade. Com o diagnóstico certo, esses números mudam rápido.';
+    cta='Preciso de ajuda urgente (Gratuito) →';
+  }
+
+  levelEl.textContent=level;
+  msgEl.innerHTML=msg;
+  ctaEl.textContent=cta;
+}
+
+function shareResult(platform){
+  const level=document.getElementById('assessLevel').textContent;
+  const score=assessScore;
+  const text=`Fiz o teste de maturidade operacional da T2S Consultoria e meu resultado foi: ${level} (${score}/15). Faça o seu também:`;
+  const url=window.location.href.split('#')[0]+'#assessment';
+
+  if(platform==='whatsapp'){
+    window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+  }else if(platform==='linkedin'){
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(url),'_blank');
+  }else{
+    navigator.clipboard.writeText(url).then(()=>{
+      const btn=event.target;
+      btn.textContent='✓ Link copiado!';
+      setTimeout(()=>{btn.textContent='🔗 Copiar link'},2000);
+    });
+  }
+}
+
+// ── Insight Toast (NLP — aparecem após tempo no site) ───────────────
+(function(){
+  const insights=[
+    {icon:'💡',text:'Empresas que medem seus processos semanalmente têm <span class="it-gold">3x mais chance</span> de crescer acima do mercado.'},
+    {icon:'📊',text:'A empresa média perde <span class="it-gold">20-30% do faturamento</span> com desperdícios que ninguém percebe.'},
+    {icon:'🎯',text:'Projetos Lean Six Sigma bem executados geram ROI médio de <span class="it-gold">5:1 em 6 meses</span>.'},
+    {icon:'🧠',text:'O melhor momento para otimizar sua operação foi há 1 ano. O segundo melhor é <span class="it-gold">agora</span>.'}
+  ];
+
+  // Create toast element
+  const toast=document.createElement('div');
+  toast.className='insight-toast';
+  toast.innerHTML='<button class="it-close" onclick="this.parentElement.classList.remove(\'show\')">&times;</button><span class="it-icon"></span><span class="it-text"></span>';
+  document.body.appendChild(toast);
+
+  let idx=0;
+  function showInsight(){
+    if(idx>=insights.length)return;
+    const ins=insights[idx];
+    toast.querySelector('.it-icon').textContent=ins.icon;
+    toast.querySelector('.it-text').innerHTML=ins.text;
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),8000);
+    idx++;
+    if(idx<insights.length)setTimeout(showInsight,45000); // next insight after 45s
+  }
+  // First insight after 25 seconds on page
+  setTimeout(showInsight,25000);
+})();
+
+// ── Random urgency number ───────────────────────────────────────────
+(function(){
+  const el=document.getElementById('diagCount');
+  if(el)el.textContent=Math.floor(Math.random()*6)+5; // 5-10
+})();
+
+// ── Exit Intent Popup (última chance de conversão) ──────────────────
+(function(){
+  let shown=false;
+  const exitModal=document.createElement('div');
+  exitModal.className='exit-modal';
+  exitModal.innerHTML=`
+    <div class=\"exit-modal-content\">
+      <button class=\"exit-modal-close\" onclick=\"this.parentElement.parentElement.classList.remove('show')\">&times;</button>
+      <div style=\"font-size:36px;margin-bottom:12px\">⏳</div>
+      <h3 style=\"font-family:'Playfair Display',serif;font-size:22px;color:var(--white);margin-bottom:8px\">Espere! Antes de ir...</h3>
+      <p style=\"font-size:14px;color:var(--gray-400);line-height:1.6;margin-bottom:20px\">Você está saindo sem descobrir quanto dinheiro sua empresa está perdendo. O diagnóstico gratuito leva 2 minutos e pode revelar <strong style=\"color:var(--gold)\">oportunidades de até 30% de economia</strong>.</p>
+      <a href=\"diagnostico-gratuito.html\" target=\"_blank\" class=\"btn-p btn-pulse\" style=\"width:100%;justify-content:center\">Fazer diagnóstico agora &rarr;</a>
+      <p style=\"font-size:12px;color:var(--gray-500);text-align:center;margin-top:16px\">Sem compromisso • Resposta em 24h</p>
+    </div>
+  `;
+  document.body.appendChild(exitModal);
+  
+  function showExitModal(){
+    if(shown)return;
+    shown=true;
+    exitModal.classList.add('show');
+  }
+  
+  // Desktop: mouse saindo da janela
+  document.addEventListener('mouseleave',e=>{
+    if(e.clientY<=0&&!shown)setTimeout(showExitModal,200);
+  });
+  
+  // Mobile: tempo na página + scroll parcial
+  let mobileShown=false;
+  setTimeout(()=>{
+    if(window.scrollY>500&&!mobileShown){
+      mobileShown=true;
+      // Não mostra no mobile para não ser intrusivo
+      // showExitModal();
+    }
+  },15000);
+})();
+
+// ── Carrossel de Depoimentos ────────────────────────────────────────
+let currentSlide=0;
+const totalSlides=10;
+
+function getSlidesPerView(){
+  return window.innerWidth<=768?1:(window.innerWidth<=992?2:3);
+}
+
+function getMaxSlide(){
+  return totalSlides-getSlidesPerView();
+}
+
+function initCarousel(){
+  const dotsContainer=document.getElementById('carouselDots');
+  if(!dotsContainer)return;
+  
+  // Limpar dots existentes
+  dotsContainer.innerHTML='';
+  
+  // Criar dots
+  const maxSlide=getMaxSlide();
+  for(let i=0;i<=maxSlide;i++){
+    const dot=document.createElement('div');
+    dot.className='dep-dot'+(i===0?' active':'');
+    dot.onclick=()=>goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+  
+  updateCarousel();
+  
+  // Auto-play
+  setInterval(()=>{
+    moveCarousel(1);
+  },5000);
+}
+
+function moveCarousel(direction){
+  const carousel=document.getElementById('testimonialCarousel');
+  if(!carousel)return;
+  
+  const maxSlide=getMaxSlide();
+  currentSlide+=direction;
+  
+  // Loop infinito
+  if(currentSlide<0)currentSlide=maxSlide;
+  if(currentSlide>maxSlide)currentSlide=0;
+  
+  updateCarousel();
+}
+
+function goToSlide(index){
+  currentSlide=index;
+  updateCarousel();
+}
+
+function updateCarousel(){
+  const carousel=document.getElementById('testimonialCarousel');
+  const dots=document.querySelectorAll('.dep-dot');
+  if(!carousel)return;
+  
+  const cardWidth=carousel.querySelector('.dep-card').offsetWidth+24; // gap
+  carousel.style.transform=`translateX(-${currentSlide*cardWidth}px)`;
+  
+  // Atualizar dots - recalcula maxSlide para garantir consistência
+  const maxSlide=getMaxSlide();
+  dots.forEach((dot,i)=>{
+    dot.classList.toggle('active',i===currentSlide);
+  });
+}
+
+// Inicializar carrossel quando DOM estiver pronto
+document.addEventListener('DOMContentLoaded',initCarousel);
+
+// Reajustar carrossel no resize
+let resizeTimer;
+window.addEventListener('resize',()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer=setTimeout(()=>{
+    currentSlide=0;
+    updateCarousel();
+  },250);
+});
+
+</script>
+
+<style>
+/* Exit Modal Styles */
+.exit-modal{position:fixed;inset:0;background:rgba(5,10,18,.92);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s cubic-bezier(.23,1,.32,1)}
+.exit-modal.show{opacity:1;pointer-events:auto}
+.exit-modal-content{background:linear-gradient(145deg,var(--navy-light),var(--navy-lighter));border:1px solid rgba(212,153,63,.25);border-radius:20px;padding:40px 32px;max-width:480px;width:90%;position:relative;text-align:center;transform:scale(.92) translateY(20px);transition:.4s cubic-bezier(.23,1,.32,1);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.exit-modal.show .exit-modal-content{transform:scale(1) translateY(0)}
+.exit-modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--gray-500);font-size:28px;cursor:pointer;padding:4px;transition:.3s}
+.exit-modal-close:hover{color:var(--gold)}
+@media(max-width:768px){.exit-modal-content{padding:28px 20px}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"T2S Consultoria - Excelência Operacional","description":"Consultoria em Excelência Operacional com Lean Six Sigma. Master Black Belt com +8 anos de experiência.","telephone":"+55-14-99117-5103","email":"fernandes.rumoexcelencia@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ribeirão Preto","addressRegion":"SP","addressCountry":"BR"},"founder":{"@type":"Person","name":"Tiago Teles Fernandes","jobTitle":"Master Black Belt Lean Six Sigma"},"areaServed":"BR","serviceType":["Consultoria em Excelência Operacional","Lean Six Sigma","Mapeamento de Processos","Gestão por Indicadores","Automação de Processos"]}
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Rápido de Oportunidades (DRO) | TF Consultoria — Excelência Operacional</title>
+<meta name="description" content="DRO - Diagnóstico Rápido de Oportunidades 100% gratuito. Descubra em 10 minutos onde sua empresa está perdendo milhares de reais todo mês.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1929;--navy-light:#132035;--navy-lighter:#1B2D42;--gold:#C8963E;--gold-light:#D4A84F;--gold-dark:#B8832A;--cream:#F9F4EC;--white:#FFF;--gray-100:#F7F8FA;--gray-300:#C4CCD8;--gray-400:#8B95A5;--gray-500:#5A6577;--text:#E8ECF1;--success:#2ECC71}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:9999}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(11,25,41,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,150,62,.1)}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:2px}
+.back{color:var(--gray-300);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:.3s}
+.back:hover{color:var(--gold)}
+
+/* SCROLL PROGRESS */
+#progress-bar{position:fixed;top:3px;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0;z-index:9998;transition:width .1s ease}
+
+/* HERO */
+.hero-srv{padding:140px 0 80px;background:linear-gradient(135deg,var(--navy),var(--navy-light))}
+.hero-srv .container{position:relative}
+.breadcrumb{font-size:13px;color:var(--gray-400);margin-bottom:24px}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.eyebrow{display:inline-block;height:2px;width:48px;background:linear-gradient(90deg,var(--gold),var(--gold-light));margin-bottom:16px}
+.hero-srv h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.2;margin-bottom:16px}
+.hero-srv h1 .gold{color:var(--gold)}
+.hero-srv .desc{font-size:18px;color:var(--gray-300);max-width:700px;line-height:1.8;margin-bottom:32px}
+.badge-free{display:inline-block;background:var(--success);color:var(--white);font-size:13px;font-weight:700;padding:6px 18px;border-radius:100px;letter-spacing:1px;margin-bottom:20px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:16px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:.3s;border:none;cursor:pointer;animation:btn-pulse 2s infinite}
+.cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,150,62,.3);animation:none}
+@keyframes btn-pulse{0%,100%{box-shadow:0 4px 15px rgba(200,150,62,.2)}50%{box-shadow:0 4px 25px rgba(200,150,62,.4)}}
+
+/* SECTIONS */
+section{padding:80px 0}
+.s-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;position:relative;padding-left:56px}
+.s-label::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:48px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:24px;line-height:1.3}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:32px}
+.step{background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:28px;text-align:center;transition:.3s;transform:translateY(0);opacity:0;animation:fadeUp .6s ease forwards}
+.step:nth-child(1){animation-delay:.1s}
+.step:nth-child(2){animation-delay:.2s}
+.step:nth-child(3){animation-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.step:hover{border-color:rgba(200,150,62,.25);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.step-num{width:48px;height:48px;border-radius:50%;background:rgba(200,150,62,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);margin:0 auto 16px}
+.step h4{font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px}
+.step p{font-size:14px;color:var(--gray-400);line-height:1.6}
+
+/* CONTENT BLOCKS */
+.content-block{background:var(--navy-light);border:1px solid rgba(200,150,62,.08);border-radius:12px;padding:40px;margin-bottom:32px;opacity:0;animation:fadeUp .6s ease forwards .4s}
+.content-block h3{font-size:20px;font-weight:600;color:var(--white);margin-bottom:16px}
+.content-block p{font-size:15px;color:var(--gray-300);line-height:1.8;margin-bottom:16px}
+.content-block p:last-child{margin-bottom:0}
+
+/* CREAM SECTION */
+.cream-section{background:var(--cream);padding:60px 0}
+.cream-section .container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.cream-card{background:var(--white);border-radius:16px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,.08);border:1px solid rgba(200,150,62,.05)}
+.cream-card:nth-child(1){animation:fadeUp .6s ease forwards .5s;opacity:0}
+.cream-card:nth-child(2){animation:fadeUp .6s ease forwards .6s;opacity:0}
+.cream-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:16px}
+.cream-card p{color:var(--navy-light);font-size:15px;line-height:1.8}
+
+/* PATTERN INTERRUPT */
+.pattern-interrupt{background:linear-gradient(135deg,var(--navy-lighter),var(--navy-light));padding:60px 40px;border-radius:16px;text-align:center;margin:60px 0;border:1px solid rgba(200,150,62,.12);position:relative;overflow:hidden;opacity:0;animation:fadeUp .6s ease forwards .7s}
+.pattern-interrupt::before{content:'';position:absolute;top:-50%;right:-50%;width:400px;height:400px;background:radial-gradient(circle,rgba(200,150,62,.05),transparent 70%);border-radius:50%}
+.pattern-interrupt .container{position:relative;z-index:1}
+.pattern-interrupt h2{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);color:var(--white);margin-bottom:20px;font-weight:700;line-height:1.4}
+.pattern-interrupt .gold{color:var(--gold)}
+
+/* CTA SECTION */
+.cta-sec{padding:80px 0;text-align:center;background:linear-gradient(135deg,var(--navy-light),#1D2D44)}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;margin-bottom:16px;opacity:0;animation:fadeUp .6s ease forwards .8s}
+.cta-sec p{font-size:16px;color:var(--gray-400);max-width:500px;margin:0 auto 32px;line-height:1.7;opacity:0;animation:fadeUp .6s ease forwards .9s}
+.cta-sec .cta-btn{opacity:0;animation:fadeUp .6s ease forwards 1s}
+.cta-sec .subtext{font-size:14px;color:var(--gray-400);margin-top:20px;font-style:italic;opacity:0;animation:fadeUp .6s ease forwards 1.1s}
+
+/* FOOTER */
+footer{background:var(--navy-light);padding:32px 0;border-top:1px solid rgba(200,150,62,.08);text-align:center}
+footer p{font-size:13px;color:var(--gray-500)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+html,body{overflow-x:hidden}
+.hero-srv{padding:100px 0 56px}
+.hero-srv .desc{font-size:16px}
+.cta-btn{width:100%;justify-content:center}
+.steps{grid-template-columns:1fr}
+.content-block{padding:20px}
+section{padding:56px 0}
+.cream-section .container{grid-template-columns:1fr}
+.s-label{padding-left:56px}
+}
+@media(max-width:480px){
+.steps{gap:12px}
+.step{padding:20px}
+.pattern-interrupt{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav><div class="container"><a href="index.html" class="logo">TF</a><a href="index.html#servicos" class="back">← Todos os Serviços</a></div></nav>
+
+<section class="hero-srv">
+<div class="container">
+<div class="breadcrumb"><a href="index.html">Início</a> / <a href="index.html#servicos">Serviços</a> / Diagnóstico Gratuito</div>
+<div class="eyebrow"></div>
+<span class="badge-free">100% GRATUITO</span>
+<h1>Diagnóstico Rápido de <span class="gold">Oportunidades</span></h1>
+<p class="desc">E se em 10 minutos você descobrisse onde estão os milhares de reais que sua empresa perde todo mês? O DRO revela as oportunidades reais de melhoria — sem custo, sem compromisso, sem apresentação de vendas.</p>
+<a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="cta-btn">Começar o Diagnóstico Gratuito →</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<span class="s-label">Como Funciona</span>
+<h2 class="s-title">3 passos simples para descobrir suas oportunidades</h2>
+<div class="steps">
+<div class="step">
+<div class="step-num">01</div>
+<h4>Responde o formulário</h4>
+<p>São perguntas diretas e práticas sobre sua operação, equipe, indicadores e principais desafios. Leva menos de 10 minutos.</p>
+</div>
+<div class="step">
+<div class="step-num">02</div>
+<h4>Análise profunda</h4>
+<p>Com base na sua realidade, identifico gargalos, desperdícios invisíveis e oportunidades de ganho rápido e de longo prazo.</p>
+</div>
+<div class="step">
+<div class="step-num">03</div>
+<h4>Recebe diagnóstico</h4>
+<p>Um relatório claro e acionável com os pontos de atenção, estimativas de impacto e uma recomendação personalizada de próximos passos.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="content-block">
+<h3>O que o DRO revela?</h3>
+<p>O Diagnóstico Rápido de Oportunidades identifica sinais de que sua operação pode estar perdendo eficiência, dinheiro ou competitividade. Avalia: maturidade dos processos, uso de indicadores, cultura de melhoria contínua, nível de desperdício, oportunidades de automação e gargalos que sangram dinheiro todo mês.</p>
+<p>Perceba: este diagnóstico é a porta de entrada para a consultoria. Se os números fizerem sentido, posso propor um aprofundamento (DCMO) para mapear com precisão cada oportunidade e montar um plano de ação integrado.</p>
+</div>
+
+<div class="content-block">
+<h3>Para quem é?</h3>
+<p>Gestores, diretores e empresários que sentem que a operação pode render mais, mas não sabem exatamente por onde começar. Também é ideal para empresas que estão considerando contratar uma consultoria e querem entender primeiro o potencial de melhoria antes de investir.</p>
+</div>
+</div>
+</section>
+
+<section class="cream-section">
+<div class="container">
+<div class="cream-card">
+<h3>O que você vai saber</h3>
+<p>Quais processos estão custando mais do que deveriam, onde a equipe está gastando energia em retrabalho, qual é o impacto financeiro real dos desperdícios que você já conhece (mas não tem números), e o que fazer primeiro para começar a melhorar.</p>
+</div>
+<div class="cream-card">
+<h3>Sem compromisso</h3>
+<p>O diagnóstico é uma investigação científica da sua operação. Você escolhe o que fazer com os insights. Não há pressão de venda. A única questão é quão rápido você quer começar a recuperar esse dinheiro que está sendo desperdiçado.</p>
+</div>
+</div>
+</section>
+
+<div class="pattern-interrupt">
+<div class="container">
+<h2><span class="gold">10 minutos</span> do seu tempo. <span class="gold">Zero custo</span>. Potencialmente <span class="gold">milhares de reais</span> em oportunidades.</h2>
+</div>
+</div>
+
+<section class="cta-sec">
+<div class="container">
+<span class="s-label">Próximo Passo</span>
+<h2>Pronto para descobrir suas oportunidades?</h2>
+<p>O formulário leva menos de 10 minutos. O retorno pode transformar seus resultados operacionais.</p>
+<a href="https://aelqm0ft.forms.app/dro-tiagofernandes" target="_blank" class="cta-btn" style="font-size:17px;padding:18px 40px">Preencher meu Diagnóstico Gratuito →</a>
+<p class="subtext">Quando você olhar para trás em 6 meses, vai se perguntar por que não fez isso antes.</p>
+</div>
+</section>
+
+<footer><div class="container"><p>&copy; 2026 Tiago Teles Fernandes · Consultoria em Excelência Operacional</p></div></footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', function() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+});
+
+// Fade animations on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.animation = 'fadeUp 0.6s ease forwards';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.content-block, .cream-card, .pattern-interrupt').forEach(el => {
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
