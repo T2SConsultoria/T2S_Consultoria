@@ -21,8 +21,8 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? "shadow-[0_2px_20px_rgba(27,44,74,0.10)]" : "border-b border-border"
+      className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
+        scrolled ? "shadow-[0_4px_20px_rgba(27,44,74,0.15)] border-b border-transparent" : "border-b border-border shadow-none"
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
