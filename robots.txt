@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Não indexar arquivos auxiliares
+Disallow: /_og_template.html
+Disallow: /client/
+Disallow: /novo site/
+Disallow: /server/
+Disallow: /shared/
+Disallow: /patches/
+Disallow: /node_modules/
+
+Sitemap: https://t2sconsultoria.com.br/sitemap.xml

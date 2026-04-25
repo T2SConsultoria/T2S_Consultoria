@@ -1,0 +1,38 @@
+# Normaliza line endings — impede ruído de CRLF/LF entre Windows e Linux/Mac
+# Sem isso, o GitHub Desktop em Windows reescreve TODOS os arquivos com CRLF
+# e o git mostra "100 arquivos modificados" sem nenhuma mudança real.
+
+# Default: detecta texto e usa LF no repositório
+* text=auto eol=lf
+
+# Forçar LF em qualquer arquivo de texto/código (mais robusto)
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.svg   text eol=lf
+*.xml   text eol=lf
+*.txt   text eol=lf
+.gitignore       text eol=lf
+.gitattributes   text eol=lf
+.prettierrc      text eol=lf
+.prettierignore  text eol=lf
+
+# Binários: nunca normalizar
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.webp   binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.eot    binary
